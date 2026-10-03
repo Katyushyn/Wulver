@@ -1,0 +1,13 @@
+{% load i18n %}{% for node in nodes %}
+    <li class="admin-tree-item" data-id="{{ node.id }}">
+        <div class="admin-tree-item__row">
+            <button type="button" class="admin-tree-item__handle" title="{% trans "Drag item" %}" aria-label="{% trans "Drag item" %}">
+                <span class="material-symbols-outlined">drag_indicator</span>
+            </button>
+            <a href="{{ node.change_url }}" class="admin-tree-item__label">{{ node.label }}</a>
+        </div>
+        <ul class="admin-tree-list js-admin-tree-list" data-group="{{ group }}">
+            {% include "admin/shared/tree_sortable_nodes.html" with nodes=node.children group=group %}
+        </ul>
+    </li>
+{% endfor %}

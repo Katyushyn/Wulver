@@ -1,0 +1,12 @@
+{% load i18n %}{% if admin_help %}
+    {% if placement == "form" %}<li class="flex flex-row items-center">{% else %}<div class="flex flex-row items-center">{% endif %}
+        <button type="button"
+                class="admin-help-button bg-white border border-base-200 cursor-pointer flex font-medium gap-2 items-center px-3 py-2 rounded-default shadow-xs text-sm whitespace-nowrap dark:bg-base-900 dark:border-base-700 hover:text-primary-600 dark:hover:text-primary-500"
+                data-admin-help-open
+                aria-haspopup="dialog"
+                aria-controls="admin-help-dialog">
+            <span class="material-symbols-outlined" aria-hidden="true">info</span>
+            <span>{% trans "Info" %}</span>
+        </button>
+    {% if placement == "form" %}</li>{% else %}</div>{% endif %}
+{% endif %}

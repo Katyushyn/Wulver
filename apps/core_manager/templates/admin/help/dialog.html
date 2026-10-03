@@ -1,0 +1,46 @@
+{% load i18n %}{% if admin_help %}
+    <dialog id="admin-help-dialog"
+            class="admin-help-dialog"
+            data-admin-help-dialog
+            aria-labelledby="admin-help-title">
+        <div class="admin-help-dialog__panel">
+            <header class="admin-help-dialog__header">
+                <div>
+                    <p class="admin-help-dialog__eyebrow">{% trans "Administration guide" %}</p>
+                    <h2 id="admin-help-title">{{ admin_help.title }}</h2>
+                    <p>{{ admin_help.summary }}</p>
+                </div>
+                <button type="button"
+                        class="admin-help-dialog__close"
+                        data-admin-help-close
+                        title="{% trans "Close" %}"
+                        aria-label="{% trans "Close" %}">
+                    <span class="material-symbols-outlined" aria-hidden="true">close</span>
+                </button>
+            </header>
+
+            <div class="admin-help-dialog__content">
+                {% for section in admin_help.sections %}
+                    <section>
+                        <h3>{{ forloop.counter }}. {{ section.title }}</h3>
+                        {% for paragraph in section.paragraphs %}
+                            <p>{{ paragraph }}</p>
+                        {% endfor %}
+                        {% if section.items %}
+                            <ul>
+                                {% for item in section.items %}<li>{{ item }}</li>{% endfor %}
+                            </ul>
+                        {% endif %}
+                        {% if section.code %}<pre><code>{{ section.code }}</code></pre>{% endif %}
+                    </section>
+                {% endfor %}
+            </div>
+
+            <footer class="admin-help-dialog__footer">
+                <button type="button"
+                        class="admin-help-dialog__done"
+                        data-admin-help-close>{% trans "Close guide" %}</button>
+            </footer>
+        </div>
+    </dialog>
+{% endif %}

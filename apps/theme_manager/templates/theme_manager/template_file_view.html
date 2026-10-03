@@ -1,0 +1,134 @@
+{% load static %}{% load i18n %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+<style>
+    .field-template_html_code {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .field-template_html_code .readonly,
+    .field-template_html_code .max-w-2xl {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .CodeMirror {
+        width: 100% !important;
+        border: 1px solid #2d2d2d;
+        font-size: 15px;
+        height: calc(100vh - 120px);
+    }
+
+    .CodeMirror-gutters {
+        border-right: 1px solid #444;
+    }
+
+    .CodeMirror-linenumber {
+        padding-right: 10px;
+    }
+
+
+.template-file-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.template-file-header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Відступ під нижню панель */
+.CodeMirror {
+    height: calc(100vh - 120px);
+}
+
+/* Нижня панель */
+.template-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+
+    background: rgb(24 24 27);
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    z-index: 999;
+}
+
+.template-file-path {
+    font-family: monospace;
+    font-size: 13px;
+    opacity: .75;
+    color: aliceblue;
+}
+
+.template-preview-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white !important;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: .2s;
+}
+
+.template-preview-btn:hover {
+    background: #1d4ed8;
+}
+</style>
+
+<div class="template-file-header">
+    <h1>{% trans 'Theme HTML files' %} / {{ theme.name }}</h1>
+</div>
+
+<div class="template-footer">
+    <div class="template-file-path">
+        /static/{{ file_path }}
+    </div>
+
+    <a href="{% static file_path %}"
+       target="_blank"
+       class="template-preview-btn">
+        🌐 {% trans 'Open in browser' %}
+    </a>
+</div>
+
+
+<textarea id="template-code">{{ code }}</textarea>
+
+<script>
+    CodeMirror.fromTextArea(document.getElementById("template-code"), {
+        mode: "htmlmixed",
+        theme: "material-darker",
+        lineNumbers: true,
+        lineWrapping: true,
+        readOnly: true,
+        viewportMargin: Infinity
+    });
+</script>

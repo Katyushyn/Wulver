@@ -1,0 +1,6 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n authentication_texts %}
+{% block main %}{% authentication_page_text 'social_auth_error' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Social login failed" %}{% endif %}</h1>
+<p>{% if authentication_text.description %}{{ authentication_text.description|linebreaksbr }}{% else %}{% trans "An error occurred while signing in through the social account." %}{% endif %}</p>
+<a class="btn btn-primary btn-block" href="{% url 'account_login' %}">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Try again" %}{% endif %}</a></section>
+{% endblock %}

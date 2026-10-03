@@ -1,0 +1,24 @@
+{% extends "admin/help/change_form.html" %}
+{% load i18n %}
+
+{% block object-tools-items %}
+    {% if original %}
+        <a href="/sitemap.xml"
+           target="_blank"
+           rel="noopener"
+           class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 shadow-xs text-sm">
+            <span class="material-symbols-outlined">open_in_new</span>
+            <span>{% trans "Open sitemap" %}</span>
+        </a>
+        <form method="post"
+              action="{% url 'admin:core_manager_sitemapsettings_clear_cache' %}">
+            {% csrf_token %}
+            <button type="submit"
+                    class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 shadow-xs text-sm">
+                <span class="material-symbols-outlined">cached</span>
+                <span>{% trans "Clear sitemap cache" %}</span>
+            </button>
+        </form>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}

@@ -1,0 +1,39 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+
+# Generated static files
+staticfiles/
+
+# Local databases, user uploads, and generated backups
+db.sqlite3
+*.sqlite3
+media/
+backups/
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Django/runtime caches
+caches/
+*.sqlite3-journal
+
+# IDE and operating system files
+.idea/
+.vscode/
+.DS_Store

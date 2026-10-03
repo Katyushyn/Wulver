@@ -1,0 +1,67 @@
+.template-code-modal-backdrop {
+    align-items: center;
+    background: rgba(15, 23, 42, .72);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    padding: 24px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10060;
+}
+
+.template-code-modal {
+    background: #111827;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .35);
+    max-height: min(640px, 88vh);
+    max-width: 720px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.template-code-modal-header {
+    align-items: center;
+    border-bottom: 1px solid #374151;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 14px 16px;
+}
+
+.template-code-modal-title { color: #f8fafc; font-size: 15px; font-weight: 700; }
+.template-code-modal-close {
+    background: #1f2937; border: 1px solid #4b5563; border-radius: 7px;
+    color: #e5e7eb; cursor: pointer; font-size: 13px; font-weight: 600; padding: 7px 10px;
+}
+.template-code-modal-list {
+    display: flex; flex-direction: column; gap: 6px;
+    max-height: calc(min(640px, 88vh) - 58px); overflow: auto; padding: 12px;
+}
+.template-code-modal-option {
+    background: #0f172a; border: 1px solid #334155; border-radius: 7px;
+    color: #e5e7eb; cursor: pointer; font-size: 13px; line-height: 1.35;
+    padding: 10px 12px; text-align: left;
+}
+.template-code-modal-option:hover { background: #1e293b; border-color: #60a5fa; }
+.template-code-cms-link-modal { max-height: min(760px, calc(100vh - 40px)); }
+.template-code-cms-link-controls {
+    align-items: center; border-bottom: 1px solid #374151; display: flex; gap: 12px; padding: 12px;
+}
+.template-code-cms-link-search {
+    background: #0f172a; border: 1px solid #475569; border-radius: 7px;
+    color: #f8fafc; flex: 1; min-width: 0; padding: 9px 11px;
+}
+.template-code-cms-link-status { color: #94a3b8; font-size: 12px; white-space: nowrap; }
+.template-code-cms-link-list { min-height: 180px; }
+.template-code-cms-link-list .template-code-modal-option { display: flex; flex-direction: column; gap: 3px; }
+.template-code-cms-link-list .template-code-modal-option span { color: #94a3b8; font-size: 12px; }
+.template-code-cms-link-more { margin: 0 12px 12px; text-align: center; }
+
+@media (max-width: 640px) {
+    .template-code-modal-backdrop { padding: 10px; }
+    .template-code-cms-link-controls { align-items: stretch; flex-direction: column; }
+}

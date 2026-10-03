@@ -1,0 +1,83 @@
+{% extends 'account/_auth_layout.html' %}{% load static i18n %}
+{% block main %}
+    <section class="auth-email-management">
+        <header class="text-center">
+            <h1 class="h4">
+                {% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Email addresses" %}{% endif %}
+            </h1>
+            {% if authentication_text.description %}
+                <p>{{ authentication_text.description|linebreaksbr }}</p>
+            {% endif %}
+        </header>
+
+        {% if emailaddresses %}
+            <p>{% trans "The following email addresses are associated with your account:" %}</p>
+            <form method="post" action="{% url 'account_email' %}" class="auth-email-list">
+                {% csrf_token %}
+                <div class="auth-email-options">
+                    {% for radio in emailaddress_radios %}
+                        {% with emailaddress=radio.emailaddress %}
+                            <label class="auth-email-option" for="{{ radio.id }}">
+                                <input type="radio"
+                                       name="email"
+                                       value="{{ emailaddress.email }}"
+                                       id="{{ radio.id }}"
+                                       {% if radio.checked %}checked{% endif %}>
+                                <span class="auth-email-address">{{ emailaddress.email }}</span>
+                                {% if emailaddress.verified %}
+                                    <span class="badge badge-success">{% trans "Verified" %}</span>
+                                {% else %}
+                                    <span class="badge badge-warning">{% trans "Unverified" %}</span>
+                                {% endif %}
+                                {% if emailaddress.primary %}
+                                    <span class="badge badge-primary">{% trans "Primary" %}</span>
+                                {% endif %}
+                            </label>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+                <div class="auth-email-actions">
+                    <button class="btn btn-outline-primary" type="submit" name="action_primary">
+                        {% trans "Make primary" %}
+                    </button>
+                    <button class="btn btn-outline-secondary" type="submit" name="action_send">
+                        {% trans "Re-send verification" %}
+                    </button>
+                    <button class="btn btn-outline-danger" type="submit" name="action_remove">
+                        {% trans "Remove" %}
+                    </button>
+                </div>
+            </form>
+        {% endif %}
+
+        {% if can_add_email %}
+            <div class="auth-email-add">
+                <h2 class="h5">{% trans "Add email address" %}</h2>
+                <form method="post" action="{% url 'account_email' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="{{ form.email.id_for_label }}">{% trans "Email address" %}</label>
+                        <input type="email"
+                               class="form-control{% if form.email.errors %} is-invalid{% endif %}"
+                               name="{{ form.email.name }}"
+                               id="{{ form.email.id_for_label }}"
+                               value="{{ form.email.value|default_if_none:'' }}"
+                               autocomplete="email"
+                               required>
+                        {% for error in form.email.errors %}
+                            <div class="invalid-feedback">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <button class="btn btn-primary" type="submit" name="action_add">
+                        {% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Add email" %}{% endif %}
+                    </button>
+                </form>
+            </div>
+        {% endif %}
+    </section>
+    <script src="{% static 'account/js/account.js' %}"></script>
+    <script src="{% static 'account/js/onload.js' %}"></script>
+    <script data-allauth-onload="allauth.account.forms.manageEmailForm" type="application/json">{
+        "i18n": {"confirmDelete": "{% trans 'Do you really want to remove the selected email address?' %}"}
+    }</script>
+{% endblock %}

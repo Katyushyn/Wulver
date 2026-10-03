@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block content %}
+<div id="content-main" class="max-w-4xl">
+    <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+            <div class="mb-6 text-red-600">{{ form.non_field_errors }}</div>
+        {% endif %}
+        {% for field in form %}
+            <div class="mb-6">
+                <label class="block font-semibold mb-2" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}<p class="mt-1 text-sm text-base-500">{{ field.help_text }}</p>{% endif %}
+                {% if field.errors %}<div class="mt-1 text-sm text-red-600">{{ field.errors }}</div>{% endif %}
+            </div>
+        {% endfor %}
+        <div class="flex gap-3 mt-8">
+            <button type="submit" class="bg-primary-600 border border-transparent cursor-pointer font-medium px-4 py-2 rounded-default text-white">
+                {% block submit_label %}{% trans "Continue" %}{% endblock %}
+            </button>
+            <a href="{{ back_url }}" class="border border-base-200 dark:border-base-700 font-medium px-4 py-2 rounded-default">
+                {% trans "Cancel" %}
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

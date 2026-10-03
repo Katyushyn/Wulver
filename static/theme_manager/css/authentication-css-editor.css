@@ -1,0 +1,30 @@
+.CodeMirror {
+    background: #212121;
+    border: 1px solid #2d2d2d;
+    border-radius: 0.375rem;
+    color: #eeffff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 100%;
+    width: 100%;
+}
+
+.CodeMirror-gutters {
+    background: #212121;
+    border-right: 1px solid #444;
+}
+
+.CodeMirror-linenumber {
+    color: #6c7891;
+    padding-right: 10px;
+}
+
+.CodeMirror-cursor {
+    border-left-color: #ffcc00;
+}
+
+.CodeMirror-selected,
+.CodeMirror-focused .CodeMirror-selected {
+    background: rgba(128, 203, 196, 0.2) !important;
+}

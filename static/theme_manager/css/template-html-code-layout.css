@@ -1,0 +1,102 @@
+.field-template_html_code,
+.field-template_html_code .readonly,
+.field-template_html_code .max-w-2xl,
+.template-code-editor-shell,
+.template-code-editor-shell > .CodeMirror {
+    box-sizing: border-box;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+.field-template_html_code,
+.template-code-editor-shell,
+.template-code-editor-shell > .CodeMirror {
+    contain: inline-size;
+    overflow: hidden;
+}
+
+.template-code-editor-shell .CodeMirror-scroll {
+    max-width: 100%;
+    overflow-x: auto !important;
+}
+
+.CodeMirror-line.template-code-line-with-indent {
+    position: relative;
+}
+
+.CodeMirror-line.template-code-line-with-indent::before {
+    background-image: linear-gradient(
+        to right,
+        transparent calc(100% - 1px),
+        rgba(255, 255, 255, .13) calc(100% - 1px)
+    );
+    background-size: var(--template-code-indent-step) 100%;
+    bottom: 0;
+    content: "";
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: var(--template-code-indent-width);
+    z-index: 0;
+}
+
+.CodeMirror-line.template-code-line-with-indent > span {
+    position: relative;
+    z-index: 1;
+}
+
+.cm-s-material-darker .CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, .055);
+}
+
+.cm-s-material-darker .CodeMirror-matchingtag {
+    background: rgba(96, 165, 250, .22);
+    border-bottom: 1px solid rgba(147, 197, 253, .8);
+}
+
+.cm-s-material-darker.CodeMirror-focused .CodeMirror-selected {
+    background: #0759e6 !important;
+}
+
+.cm-s-material-darker .CodeMirror-selected {
+    background: #0759e6 !important;
+}
+
+.cm-s-material-darker .CodeMirror-selectedtext {
+    background: #0759e6 !important;
+}
+
+.cm-s-material-darker .CodeMirror-code ::selection {
+    background: #0759e6 !important;
+}
+
+.template-code-toolbar-save-button {
+    align-items: center;
+    background: #2563eb;
+    border: 1px solid #1d4ed8;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 700;
+    gap: 6px;
+    height: 34px;
+    margin-right: 6px;
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+.template-code-toolbar-save-button[hidden] {
+    display: none !important;
+}
+
+.template-code-toolbar-save-button:hover {
+    background: #1d4ed8;
+}
+
+.template-code-toolbar-save-button .material-symbols-outlined {
+    font-size: 18px;
+}

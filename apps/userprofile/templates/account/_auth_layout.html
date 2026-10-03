@@ -1,0 +1,29 @@
+{% load static i18n authentication_texts %}{% authentication_ui as auth_ui %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{{ auth_ui.site_name }}{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'userprofile/css/authentication.css' %}">
+    <link rel="stylesheet" href="{% url 'authentication_stylesheet' %}?v={{ auth_ui.settings.updated_at|date:'U' }}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="auth-page {% block auth_body_class %}{% endblock %}">
+    <main class="auth-shell {% block auth_shell_class %}{% endblock %}">
+        <section class="auth-card {% block auth_card_class %}{% endblock %}">
+            <header class="auth-brand">
+                {% if auth_ui.logo %}
+                    <img class="auth-logo" src="{{ auth_ui.logo.url }}" alt="{{ auth_ui.site_name }}">
+                {% else %}
+                    <div class="auth-site-name">{{ auth_ui.site_name }}</div>
+                {% endif %}
+            </header>
+            {% block main %}{% endblock %}
+            {% if authentication_text.footer_text %}
+                <footer class="auth-footer">{{ authentication_text.footer_text|linebreaksbr }}</footer>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n authentication_texts %}
+{% block extra_head %}<meta http-equiv="refresh" content="0;URL='{{ redirect_to }}'">{% endblock %}
+{% block main %}{% authentication_page_text 'social_login_redirect' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Redirecting" %}{% endif %}</h1>
+<p>{% if authentication_text.description %}{{ authentication_text.description|linebreaksbr }}{% else %}{% trans "Please wait while we redirect you to the authentication provider." %}{% endif %}</p>
+<a class="btn btn-primary btn-block" href="{{ redirect_to }}">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Continue" %}{% endif %}</a></section>
+{% endblock %}

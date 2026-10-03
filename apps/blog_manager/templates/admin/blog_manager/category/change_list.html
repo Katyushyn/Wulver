@@ -1,0 +1,6 @@
+﻿{% extends "admin/help/change_list.html" %}
+
+{% block filters %}
+    {{ block.super }}
+    {% include "admin/shared/tree_sortable_button.html" %}
+{% endblock %}

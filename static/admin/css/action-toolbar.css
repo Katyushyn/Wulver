@@ -1,0 +1,76 @@
+/* A single segmented control for every action toolbar rendered by Unfold. */
+.admin-action-group {
+    align-items: stretch;
+    background: var(--color-white, #fff);
+    border: 1px solid var(--color-base-200);
+    border-radius: var(--border-radius, 6px);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    display: flex;
+    gap: 0 !important;
+    overflow: hidden;
+}
+
+.dark .admin-action-group {
+    background: var(--color-base-900);
+    border-color: var(--color-base-700);
+}
+
+.admin-action-group > :is(div, li, form) {
+    align-items: stretch;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: flex;
+    margin: 0 !important;
+}
+
+.admin-action-group > :is(div, li, form):not(:first-child) {
+    border-left: 1px solid var(--color-base-200) !important;
+}
+
+.dark .admin-action-group > :is(div, li, form):not(:first-child) {
+    border-left-color: var(--color-base-700) !important;
+}
+
+.admin-action-group > :is(div, li, form) > :is(a, button),
+.admin-action-group > :is(a, button) {
+    align-items: center;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: flex;
+    height: 38px;
+    margin: 0 !important;
+    white-space: nowrap;
+}
+
+.admin-action-group > :is(div, li, form) > :is(a, button):hover,
+.admin-action-group > :is(a, button):hover {
+    background-color: color-mix(in oklab, var(--color-base-100) 80%, transparent);
+}
+
+.dark .admin-action-group > :is(div, li, form) > :is(a, button):hover,
+.dark .admin-action-group > :is(a, button):hover {
+    background-color: color-mix(in oklab, var(--color-base-800) 80%, transparent);
+}
+
+.admin-action-group .addlink:hover,
+.dark .admin-action-group .addlink:hover {
+    background-color: var(--color-base-100) !important;
+}
+
+.admin-action-group .addlink:hover .material-symbols-outlined,
+.dark .admin-action-group .addlink:hover .material-symbols-outlined {
+    color: var(--color-base-900) !important;
+}
+
+@media (max-width: 1023px) {
+    .admin-action-group--responsive > :is(div, li, form):not(:first-child) {
+        border-left: 0 !important;
+        border-top: 1px solid var(--color-base-200) !important;
+    }
+
+    .dark .admin-action-group--responsive > :is(div, li, form):not(:first-child) {
+        border-top-color: var(--color-base-700) !important;
+    }
+}

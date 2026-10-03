@@ -1,0 +1,12 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n socialaccount authentication_texts %}
+{% block main %}{% authentication_page_text 'social_connections' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Connected accounts" %}{% endif %}</h1>
+{% if authentication_text.description %}<p>{{ authentication_text.description|linebreaksbr }}</p>{% endif %}
+{% if form.accounts %}<form method="post" action="{% url 'socialaccount_connections' %}" class="auth-standard-form">{% csrf_token %}{{ form.as_p }}
+<button class="btn btn-outline-danger" type="submit">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Remove selected account" %}{% endif %}</button></form>
+{% else %}<p>{% trans "You currently have no connected social accounts." %}</p>{% endif %}
+<div class="auth-social-add"><h2 class="h5">{% trans "Connect an account" %}</h2>
+{% get_providers as socialaccount_providers %}{% for provider in socialaccount_providers %}
+<a class="btn btn-outline-primary btn-block" href="{% provider_login_url provider.id process='connect' %}"><i class="fab fa-{{ provider.id }} mr-2" aria-hidden="true"></i>{{ provider.name }}</a>
+{% endfor %}</div></section>
+{% endblock %}

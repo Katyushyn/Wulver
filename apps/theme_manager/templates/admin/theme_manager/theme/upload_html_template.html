@@ -1,0 +1,22 @@
+{% extends "admin/base_site.html" %}
+{% load i18n unfold %}
+
+{% block content %}
+<div class="max-w-3xl">
+    <form method="post" enctype="multipart/form-data" class="bg-white dark:bg-base-900 border border-base-200 dark:border-base-700 rounded-default p-6">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <div class="mt-6 flex gap-3">
+            <button type="submit" class="bg-primary-600 text-white px-4 py-2 rounded-default">
+                {% trans "Upload" %}
+            </button>
+
+            <a href="{% url 'admin:theme_manager_theme_changelist' %}" class="border px-4 py-2 rounded-default">
+                {% trans "Cancel" %}
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}

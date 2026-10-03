@@ -1,0 +1,25 @@
+{% extends 'account/_auth_layout.html' %}{% load static %}{% load i18n %}
+{% block main %}
+    <section class="min-vh-100 d-flex bg-primary align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 justify-content-center">
+                    <div class="card bg-primary shadow-soft border-light p-4">
+                        <div class="card-header text-center pb-0">
+                            <h2 class="h4">{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans 'Check your email' %}{% endif %}</h2>
+                            {% if authentication_text.description %}<p>{{ authentication_text.description|linebreaksbr }}</p>{% endif %}
+                        </div>
+                        <div class="card-body">
+                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                {% trans "We have sent a confirmation email to your email address. Please check your inbox and follow the link to activate your account." %}
+                            </div>
+                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                                {% trans "The email may appear in your spam folder. If you did not receive it, please try again." %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
