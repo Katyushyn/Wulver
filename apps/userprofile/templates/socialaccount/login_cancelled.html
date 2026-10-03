@@ -1,0 +1,6 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n authentication_texts %}
+{% block main %}{% authentication_page_text 'social_login_cancelled' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Login cancelled" %}{% endif %}</h1>
+<p>{% if authentication_text.description %}{{ authentication_text.description|linebreaksbr }}{% else %}{% trans "Social account login was cancelled." %}{% endif %}</p>
+<a class="btn btn-primary btn-block" href="{% url 'account_login' %}">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Back to sign in" %}{% endif %}</a></section>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'account/_auth_layout.html' %}{% load static %}{% load i18n %}{% load socialaccount %}
+{% block main %}
+    <section class="min-vh-100 d-flex bg-primary align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 justify-content-center">
+                    <div class="card bg-primary shadow-soft border-light p-4">
+                        <div class="card-header text-center pb-0">
+                            <h2 class="h4">{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans 'Website sign in' %}{% endif %}</h2>
+                            {% if authentication_text.description %}<p>{{ authentication_text.description|linebreaksbr }}</p>{% endif %}
+                        </div>
+                        <div class="card-body">
+                            <form method="post" class="mt-1">
+                                {% csrf_token %}
+                                {% if form.non_field_errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {% for error in form.non_field_errors %}
+                                            <div>{{ error }}</div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <!-- Form -->
+                                <div class="form-group">
+                                    <label for="{{ form.login.id_for_label }}">{% trans "Email or username" %}</label>
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><span class="fas fa-user"></span></span>
+                                        </div>
+                                        <input
+                                                type="text"
+                                                name="{{ form.login.name }}"
+                                                id="{{ form.login.id_for_label }}"
+                                                value="{{ form.login.value|default_if_none:'' }}"
+                                                class="form-control"
+                                                placeholder="{% trans 'Email or username' %}"
+                                                aria-label="{% trans 'Email or username' %}"
+                                                autocomplete="username"
+                                                required>
+                                    </div>
+                                    {% if form.login.errors %}
+                                        <div class="text-danger small mb-3">{{ form.login.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                <!-- End of Form -->
+                                <div class="form-group">
+                                    <!-- Form -->
+                                    <div class="form-group">
+                                        <label for="{{ form.password.id_for_label }}">{% trans 'Password' %}</label>
+                                        <div class="input-group mb-4">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
+                                            </div>
+                                            <input
+                                                    type="password"
+                                                    name="{{ form.password.name }}"
+                                                    value="{{ form.password.value|default_if_none:'' }}"
+                                                    id="{{ form.password.id_for_label }}"
+                                                    placeholder="{% trans "Password" %}"
+                                                    class="form-control"
+                                                    aria-label="{% trans "Password" %}"
+                                                    autocomplete="current-password"
+                                                    required>
+                                        </div>
+                                        {% if form.password.errors %}
+                                            <div class="text-danger small mb-3">{{ form.password.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <!-- End of Form -->
+                                    <div class="d-block d-sm-flex justify-content-between align-items-center mb-4">
+                                        <div class="form-check d-none">
+                                            <input
+                                                    type="checkbox"
+                                                    name="{{ form.remember.name }}"
+                                                    id="defaultCheck5"
+                                                    class="form-check-input"
+                                                    checked="checked"
+                                                    >
+                                            <label class="form-check-label" for="defaultCheck5">
+                                                {% trans "Remember me" %}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-primary">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans 'Sign in' %}{% endif %}</button>
+                            </form>
+                            <div class="mt-3 mb-4 text-center d-none">
+                                <span class="font-weight-normal">{% trans 'Other sign-in methods' %}</span>
+                            </div>
+                            <div class="btn-wrapper my-4 text-center">
+                                <a class="btn btn-google-auth btn-block" href="{% provider_login_url 'google' process='login' %}">
+                                    <svg class="btn-google-auth__icon" aria-hidden="true" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.4-.18-2.07H12v3.91h5.38a4.6 4.6 0 0 1-2 3.02v2.54h3.24c1.9-1.75 2.98-4.33 2.98-7.4Z"/>
+                                        <path fill="#34A853" d="M12 22c2.7 0 4.97-.9 6.62-2.43l-3.24-2.54c-.9.6-2.05.96-3.38.96-2.6 0-4.81-1.76-5.6-4.13H3.06v2.62A10 10 0 0 0 12 22Z"/>
+                                        <path fill="#FBBC05" d="M6.4 13.86A6 6 0 0 1 6.08 12c0-.65.11-1.28.32-1.86V7.52H3.06A10 10 0 0 0 2 12c0 1.61.39 3.14 1.06 4.48l3.34-2.62Z"/>
+                                        <path fill="#EA4335" d="M12 6.01c1.47 0 2.79.51 3.83 1.5l2.87-2.88A9.64 9.64 0 0 0 12 2a10 10 0 0 0-8.94 5.52l3.34 2.62C7.19 7.77 9.4 6.01 12 6.01Z"/>
+                                    </svg>
+                                    <span>{% trans "Continue with Google" %}</span>
+                                </a>
+                            </div>
+                            <div class="d-block d-sm-flex justify-content-center align-items-center mt-4 text-center">
+                                <div>
+                                    <a href="{% url 'account_reset_password' %}" class="badge badge-danger">{% trans 'Forgot password?' %}?</a>
+                                    <a href="{% url 'account_signup' %}" class="badge badge-secondary" rel="nofollow">{% trans 'Create an account' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

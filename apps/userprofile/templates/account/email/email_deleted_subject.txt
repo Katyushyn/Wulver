@@ -1,0 +1,1 @@
+{% load authentication_texts %}{% authentication_email_content 'email_deleted' 'subject' %}

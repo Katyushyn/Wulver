@@ -1,0 +1,290 @@
+{% load i18n %}
+
+<style>
+    .ai-chat-widget {
+        bottom: 24px;
+        position: fixed;
+        right: 24px;
+        z-index: 1040;
+    }
+
+    @media (max-width: 767.98px) {
+        .ai-chat-widget {
+            right: 14px;
+        }
+    }
+
+    .ai-chat-widget__toggle,
+    .ai-chat-widget__send,
+    .ai-chat-widget__close {
+        border: 0;
+        cursor: pointer;
+    }
+
+    .ai-chat-widget__toggle {
+        align-items: center;
+        background: #31344b;
+        border-radius: 999px;
+        box-shadow: 0 12px 30px rgba(38, 40, 51, 0.24);
+        color: #fff;
+        display: inline-flex;
+        font-weight: 600;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .ai-chat-widget__toggle-icon {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 50%;
+        display: inline-flex;
+        font-size: 12px;
+        height: 28px;
+        justify-content: center;
+        width: 28px;
+    }
+
+    .ai-chat-widget__panel {
+        background: #fff;
+        border: 1px solid rgba(49, 52, 75, 0.12);
+        border-radius: 8px;
+        bottom: 56px;
+        box-shadow: 0 18px 48px rgba(38, 40, 51, 0.22);
+        color: #31344b;
+        display: flex;
+        flex-direction: column;
+        max-height: min(520px, calc(100vh - 120px));
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        width: min(360px, calc(100vw - 32px));
+    }
+
+    @media (max-width: 767.98px) {
+        .ai-chat-widget__panel {
+            width: min(100vw, calc(100vw - 28px));;
+        }
+    }
+
+    .ai-chat-widget__panel[hidden] {
+        display: none;
+    }
+
+    .ai-chat-widget__header {
+        align-items: center;
+        border-bottom: 1px solid rgba(49, 52, 75, 0.1);
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 14px;
+    }
+
+    .ai-chat-widget__close {
+        background: transparent;
+        color: inherit;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .ai-chat-widget__messages {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 8px;
+        overflow: auto;
+        padding: 14px;
+    }
+
+    .ai-chat-widget__message {
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 1.45;
+        max-width: 85%;
+        padding: 9px 11px;
+    }
+
+    .ai-chat-widget__message--assistant {
+        align-self: flex-start;
+        background: #f3f7fa;
+    }
+
+    .ai-chat-widget__message--user {
+        align-self: flex-end;
+        background: #31344b;
+        color: #fff;
+    }
+
+    .ai-chat-widget__form {
+        border-top: 1px solid rgba(49, 52, 75, 0.1);
+        display: grid;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .ai-chat-widget__controls {
+        display: flex;
+        gap: 8px;
+    }
+
+    .ai-chat-widget__privacy {
+        align-items: flex-start;
+        display: flex;
+        font-size: 11px;
+        gap: 6px;
+        line-height: 1.35;
+    }
+
+    .ai-chat-widget__input {
+        border: 1px solid rgba(49, 52, 75, 0.16);
+        border-radius: 8px;
+        flex: 1;
+        min-width: 0;
+        padding: 9px 10px;
+    }
+
+    .ai-chat-widget__send {
+        background: #31344b;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        padding: 9px 12px;
+    }
+</style>
+
+{% load ai_assistant_ui %}
+{% ai_assistant_profile as ai_profile %}
+{% if ai_profile and ai_profile.is_enabled %}
+{% if ai_profile.allow_anonymous_users or user.is_authenticated %}
+<div class="ai-chat-widget" data-ai-chat-widget data-ai-chat-url="{% url 'ai_assistant:chat' %}">
+    <button class="ai-chat-widget__toggle" type="button" aria-expanded="false">
+        <span class="ai-chat-widget__toggle-icon" aria-hidden="true">AI</span>
+        <span class="ai-chat-widget__toggle-text">{% trans "AI assistant" %}</span>
+    </button>
+    <div class="ai-chat-widget__panel" hidden>
+        <div class="ai-chat-widget__header">
+            <strong>{% trans "AI assistant" %}</strong>
+            <button class="ai-chat-widget__close" type="button" aria-label="{% trans 'Close' %}">&times;</button>
+        </div>
+        <div class="ai-chat-widget__messages" data-ai-chat-messages>
+            <div class="ai-chat-widget__message ai-chat-widget__message--assistant">
+                {% trans "Hello. How can I help?" %}
+            </div>
+        </div>
+        <form class="ai-chat-widget__form" data-ai-chat-form>
+            {% csrf_token %}
+            {% if ai_profile.require_privacy_consent %}
+                <label class="ai-chat-widget__privacy">
+                    <input name="privacy_consent" type="checkbox" required>
+                    <span>{{ ai_profile.get_privacy_notice }}</span>
+                </label>
+            {% endif %}
+            <div class="ai-chat-widget__controls">
+                <input class="ai-chat-widget__input" name="message" type="text" autocomplete="off" required maxlength="{{ ai_profile.max_message_length }}" placeholder="{% trans 'Write a message...' %}">
+                <button class="ai-chat-widget__send" type="submit">{% trans "Send" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    (function () {
+        const widgets = document.querySelectorAll("[data-ai-chat-widget]:not([data-ai-chat-ready])");
+
+        widgets.forEach(function (widget) {
+            const toggle = widget.querySelector(".ai-chat-widget__toggle");
+            const closeButton = widget.querySelector(".ai-chat-widget__close");
+            const panel = widget.querySelector(".ai-chat-widget__panel");
+            const form = widget.querySelector("[data-ai-chat-form]");
+            const input = widget.querySelector(".ai-chat-widget__input");
+            const messages = widget.querySelector("[data-ai-chat-messages]");
+            const csrfToken = form.querySelector("[name=csrfmiddlewaretoken]").value;
+            const privacyConsent = form.querySelector("[name=privacy_consent]");
+            let sessionId = null;
+
+            widget.dataset.aiChatReady = "true";
+
+            function setOpen(isOpen) {
+                panel.hidden = !isOpen;
+                toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                if (isOpen) {
+                    input.focus();
+                }
+            }
+
+            function addMessage(role, text) {
+                const message = document.createElement("div");
+                message.className = "ai-chat-widget__message ai-chat-widget__message--" + role;
+                message.textContent = text;
+                messages.appendChild(message);
+                messages.scrollTop = messages.scrollHeight;
+                return message;
+            }
+
+            toggle.addEventListener("click", function () {
+                setOpen(panel.hidden);
+            });
+
+            document.addEventListener("click", function (event) {
+                const trigger = event.target.closest("[data-ai-chat-open-trigger]");
+                if (!trigger) {
+                    return;
+                }
+
+                event.preventDefault();
+                setOpen(panel.hidden);
+            });
+
+            closeButton.addEventListener("click", function () {
+                setOpen(false);
+            });
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const text = input.value.trim();
+                if (!text) {
+                    return;
+                }
+
+                addMessage("user", text);
+                input.value = "";
+                input.disabled = true;
+
+                const pending = addMessage("assistant", "...");
+
+                fetch(widget.dataset.aiChatUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": csrfToken,
+                    },
+                    body: JSON.stringify({
+                        message: text,
+                        session_id: sessionId,
+                        privacy_consent: !privacyConsent || privacyConsent.checked,
+                    }),
+                })
+                    .then(function (response) {
+                        return response.json().then(function (data) {
+                            return {response: response, data: data};
+                        });
+                    })
+                    .then(function (result) {
+                        if (!result.response.ok) {
+                            throw new Error(result.data.error || "AI assistant error");
+                        }
+                        sessionId = result.data.session_id || sessionId;
+                        pending.textContent = result.data.answer || "";
+                    })
+                    .catch(function (error) {
+                        pending.textContent = error.message || "AI assistant error";
+                    })
+                    .finally(function () {
+                        input.disabled = false;
+                        input.focus();
+                    });
+            });
+        });
+    })();
+</script>
+{% endif %}
+{% endif %}

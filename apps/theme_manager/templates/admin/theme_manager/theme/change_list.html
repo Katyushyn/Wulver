@@ -1,0 +1,23 @@
+{% extends "admin/help/change_list.html" %}{% load unfold %}{% load i18n %}
+
+{% block object-tools-items %}
+    <div class="flex flex-row items-center">
+        <a href="{{ upload_html_template_url }}" class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 rounded-default shadow-xs text-sm lg:ml-auto md:mt-0 ">
+            {% trans "Upload HTML template" %}
+        </a>
+    </div>
+    <div class="flex flex-row items-center">
+        <a href="#" class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 rounded-default shadow-xs text-sm lg:ml-auto md:mt-0 ">
+            {% trans "Upload Django template" %}
+        </a>
+    </div>
+    <div class="flex flex-row items-center">
+        <a href="{% url 'admin:theme_manager_theme_refresh_templates' %}" class="border border-base-200 dark:border-base-700 flex items-center h-[38px] justify-center rounded-full w-[38px] hover:bg-base-100 dark:hover:bg-base-800"
+           title="{% trans "Refresh templates" %}">
+            <span class="material-symbols-outlined">
+                refresh
+            </span>
+        </a>
+    </div>
+    {{ block.super }}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "admin/help/change_form.html" %}
+{% load i18n %}
+
+{% block object-tools-items %}
+    {% if original %}
+        <form method="post"
+              class="mr-3"
+              action="{% url 'admin:userprofile_personalaccounttemplate_reset_defaults' original.pk %}"
+              onsubmit="return confirm('{% trans "Reset the personal account template to its initial code?" %}');">
+            {% csrf_token %}
+            <button type="submit"
+                    class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 rounded-default shadow-xs text-sm lg:ml-auto md:mt-0">
+                <span class="material-symbols-outlined">restart_alt</span>
+                <span>{% trans "Reset to defaults" %}</span>
+            </button>
+        </form>
+    {% endif %}
+    {{ block.super }}
+{% endblock %}

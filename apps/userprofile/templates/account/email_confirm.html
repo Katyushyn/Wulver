@@ -1,0 +1,28 @@
+{% extends 'account/_auth_layout.html' %}{% load static %}{% load i18n %}
+{% block main %}
+    <section class="min-vh-100 d-flex bg-primary align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 justify-content-center">
+                    <div class="card bg-primary shadow-soft border-light p-4">
+                        <div class="card-header text-center pb-0">
+                            <h2 class="mb-0 h5">{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans 'Email confirmation' %}{% endif %}</h2>
+                            {% if authentication_text.description %}<p>{{ authentication_text.description|linebreaksbr }}</p>{% endif %}
+                        </div>
+                        <div class="card-body">
+                            {% if confirmation %}
+                                <p>{% trans "Click below to confirm your email address:" %}</p>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-success">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Confirm" %}{% endif %}</button>
+                                </form>
+                            {% else %}
+                                <p>{% trans "This confirmation link has already been used or is invalid." %}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

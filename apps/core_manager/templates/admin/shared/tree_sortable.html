@@ -1,0 +1,38 @@
+{% load i18n %}{% if drag_trees %}
+    <dialog class="admin-tree-modal" data-tree-modal aria-labelledby="admin-tree-modal-title">
+        <div class="admin-tree-modal__panel">
+            <header class="admin-tree-modal__header">
+                <div>
+                    <h2 id="admin-tree-modal-title">{% trans "Drag-and-drop ordering" %}</h2>
+                    <p>{% trans "Drag items to reorder them or move them under another parent." %}</p>
+                </div>
+                <div class="admin-tree-modal__header-actions">
+                    <span class="admin-tree-sorter__status" data-tree-status>{% trans "Ready" %}</span>
+                    <button type="button"
+                            class="admin-tree-modal__close"
+                            data-tree-modal-close
+                            title="{% trans "Close" %}"
+                            aria-label="{% trans "Close" %}">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+            </header>
+
+            <section class="admin-tree-sorter" data-tree-sorter>
+                <div class="admin-tree-sorter__grids">
+                    {% for tree in drag_trees %}
+                        <div class="admin-tree-sorter__group">
+                            <h3>{{ tree.title }}</h3>
+                            <ul class="admin-tree-list js-admin-tree-root"
+                                data-save-url="{{ tree.save_url }}"
+                                data-scope-id="{{ tree.scope_id|default:'' }}"
+                                data-group="{{ tree.group }}">
+                                {% include "admin/shared/tree_sortable_nodes.html" with nodes=tree.nodes group=tree.group %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </dialog>
+{% endif %}

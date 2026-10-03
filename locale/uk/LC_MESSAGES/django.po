@@ -1,0 +1,5240 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Wulver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 21:21+0000\n"
+"PO-Revision-Date: 2026-08-29 21:21+0000\n"
+"Last-Translator: Wulver\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Wulver locale builder (django)\n"
+
+#: apps/theme_manager/models.py
+msgid "-- Include block"
+msgstr "-- Включити блок"
+
+#: apps/theme_manager/models.py
+msgid "-- Parent Article"
+msgstr "-- Батьківська стаття"
+
+#: apps/theme_manager/models.py
+msgid "-- Parent Blog"
+msgstr "-- Батьківський блог"
+
+#: apps/theme_manager/models.py
+msgid "-- Parent Page"
+msgstr "-- Батьківська сторінка"
+
+#: apps/theme_manager/models.py
+msgid "-- Search Page"
+msgstr "-- Сторінка пошуку"
+
+#: apps/core_manager/models.py
+msgid "404 error template"
+msgstr "Шаблон помилки 404"
+
+#: apps/core_manager/admin_help.py
+msgid "A captured lead does not automatically prove marketing consent."
+msgstr "Захоплений лід не є автоматичним підтвердженням маркетингової згоди."
+
+#: apps/core_manager/admin_help.py
+msgid "A chronological inbox for website contact requests."
+msgstr "Хронологічна папка вхідних для запитів через контактні форми сайту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"A component is an editor building block, while its linked module stores "
+"content-selection settings."
+msgstr ""
+"Компонент — це будівельний блок редактора, а пов’язаний модуль зберігає "
+"налаштування вибору вмісту."
+
+#: apps/core_manager/admin_help.py
+msgid "A concise tag title and unique URL-safe slug."
+msgstr "Лаконічна назва тега та унікальний безпечний для URL slug."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"A database record is not a substitute for consent records and unsubscribe "
+"handling."
+msgstr ""
+"Запис у базі даних не замінює ведення записів про згоду та обробку відписки."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"A high similarity score indicates semantic proximity, not factual "
+"correctness."
+msgstr ""
+"Висока оцінка схожості вказує на семантичну близькість, а не на фактологічну"
+" точність."
+
+#: apps/core_manager/admin_help.py
+msgid "A lightweight workflow from new inquiry through follow-up and closure."
+msgstr "Легкий робочий процес від нового запиту до супроводу і закриття."
+
+#: apps/theme_manager/admin.py
+msgid "A page with this slug already exists."
+msgstr "Сторінка з таким slug уже існує."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"A reusable configuration selectable by compatible Latest blog articles "
+"components."
+msgstr ""
+"Повторно використовувана конфігурація, доступна для сумісних компонентів "
+"Latest blog articles."
+
+#: apps/core_manager/admin_help.py
+msgid "A unique group name and the Django permissions included in that role."
+msgstr "Унікальна назва групи та Django-дозволи, що включені в цю роль."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"A user's individual permissions are combined with permissions inherited from"
+" groups."
+msgstr ""
+"Індивідуальні дозволи користувача комбінуються з дозволами, успадкованими "
+"від груп."
+
+#: config/settings.py
+msgid "AI Assistant"
+msgstr "AI-асистент"
+
+#: apps/ai_assistant/apps.py
+#: apps/ai_assistant/templates/includes/ai_chat_widget.html
+msgid "AI assistant"
+msgstr "AI-асистент"
+
+#: apps/ai_assistant/models.py
+msgid "AI assistant log"
+msgstr "Лог асистента ШІ"
+
+#: apps/ai_assistant/models.py
+msgid "AI assistant logs"
+msgstr "Логи AI-асистента"
+
+#: apps/theme_manager/admin.py
+msgid "AI conversion"
+msgstr "Конвертація AI"
+
+#: apps/theme_manager/models.py
+msgid "AI conversion prompt"
+msgstr "Підказка для конвертації AI"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"AI prompts should describe the intended transformation without secrets or "
+"environment-specific data."
+msgstr ""
+"Підказки AI мають описувати потрібні перетворення без секретів чи даних "
+"середовища."
+
+#: apps/ai_assistant/models.py
+msgid "API"
+msgstr "API"
+
+#: apps/ai_assistant/models.py
+msgid "API Error"
+msgstr "Помилка API"
+
+#: apps/core_manager/admin_help.py
+msgid "API credentials belong in environment variables, never in the prompt."
+msgstr "API-ключі мають зберігатися в змінних оточення, ніколи в підказці."
+
+#: apps/core_manager/image_processing.py
+msgid ""
+"Accepts JPEG, PNG, WebP, or AVIF. Minimum 1200 x 630 px. The image is "
+"center-cropped and saved as a 1200 x 630 JPEG."
+msgstr ""
+"Підтримуються JPEG, PNG, WebP або AVIF. Мінімум 1200 x 630 пікселів. "
+"Зображення обрізається по центру та зберігається як JPEG 1200 x 630."
+
+#: apps/core_manager/image_processing.py
+msgid ""
+"Accepts JPEG, PNG, WebP, or AVIF. Minimum 180 x 180 px. The image is center-"
+"cropped and saved as a 180 x 180 PNG."
+msgstr ""
+"Підтримуються JPEG, PNG, WebP або AVIF. Мінімум 180 x 180 пікселів. "
+"Зображення обрізається по центру та зберігається як PNG 180 x 180."
+
+#: apps/core_manager/image_processing.py
+msgid ""
+"Accepts JPEG, PNG, WebP, or AVIF. Minimum 48 x 48 px. The image is center-"
+"cropped and saved as a multi-size ICO (16, 32, and 48 px)."
+msgstr ""
+"Підтримуються JPEG, PNG, WebP або AVIF. Мінімум 48 x 48 пікселів. Зображення"
+" обрізається по центру та зберігається як ICO із різними розмірами (16, 32, "
+"48 пікселів)."
+
+#: apps/core_manager/image_processing.py
+msgid ""
+"Accepts JPEG, PNG, WebP, or AVIF. Minimum 512 x 512 px. The image is center-"
+"cropped and saved as a 512 x 512 PNG for the Organization logo in "
+"schema.org."
+msgstr ""
+"Підтримуються JPEG, PNG, WebP або AVIF. Мінімум 512 x 512 пікселів. "
+"Зображення обрізається по центру та зберігається як PNG 512 x 512 для "
+"логотипу Організації у schema.org."
+
+#: apps/core_manager/image_processing.py
+msgid ""
+"Accepts JPEG, PNG, WebP, or AVIF. Minimum 512 x 512 px. The image is center-"
+"cropped and saved as a 512 x 512 PNG for the Person image in schema.org."
+msgstr ""
+"Підтримуються JPEG, PNG, WebP або AVIF. Мінімум 512 x 512 пікселів. "
+"Зображення обрізається по центру та зберігається як PNG 512 x 512 для "
+"зображення Особи у schema.org."
+
+#: apps/core_manager/image_processing.py
+msgid ""
+"Accepts JPEG, PNG, WebP, or AVIF. Minimum 512 x 512 px. The image is center-"
+"cropped and saved as a 512 x 512 PNG."
+msgstr ""
+"Підтримуються JPEG, PNG, WebP або AVIF. Мінімум 512 x 512 пікселів. "
+"Зображення обрізається по центру та зберігається як PNG 512 x 512."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Accessible breadcrumbs with automatic current title fallback."
+msgstr "Доступні хлібні крихти з автоматичним відновленням поточної назви."
+
+#: apps/userprofile/models.py
+msgid "Account already exists"
+msgstr "Обліковий запис уже існує"
+
+#: apps/userprofile/templates/account/account_inactive.html
+msgid "Account inactive"
+msgstr "Обліковий запис неактивний"
+
+#: apps/userprofile/templates/account/signup.html
+msgid "Account registration"
+msgstr "Реєстрація облікового запису"
+
+#: apps/ai_assistant/models.py apps/blog_manager/models.py
+#: apps/core_manager/models.py apps/theme_manager/models.py
+msgid "Active"
+msgstr "Активний"
+
+#: apps/userprofile/templates/account/email.html
+msgid "Add email"
+msgstr "Додати електронну адресу"
+
+#: apps/userprofile/templates/account/email.html
+msgid "Add email address"
+msgstr "Додати електронну адресу"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Add the provider and credentials here, then attach the current Site record."
+msgstr ""
+"Додайте провайдера та облікові дані тут, потім приєднайте поточний запис "
+"Сайту."
+
+#: apps/core_manager/admin_help.py
+msgid "Add valid default schema that is safe for broad reuse across the blog."
+msgstr ""
+"Додайте дійсну стандартну схему, безпечну для широкого використання у блозі."
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Add, verify, remove, or choose your primary email address."
+msgstr ""
+"Додайте, підтвердіть, видаліть або виберіть основну електронну адресу."
+
+#: apps/userprofile/models.py
+msgid "Additional option"
+msgstr "Додатковий параметр"
+
+#: apps/userprofile/models.py
+msgid "Additional options"
+msgstr "Додаткові параметри"
+
+#: apps/userprofile/admin.py
+msgid "Additional profile options"
+msgstr "Додаткові параметри профілю"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Adjust CSS carefully, then test the form, list and validation states on an "
+"article."
+msgstr ""
+"Обережно коригуйте CSS, потім протестуйте форму, список та стани валідації "
+"на статті."
+
+#: apps/core_manager/templates/admin/help/dialog.html
+msgid "Administration guide"
+msgstr "Інструкція для адміністратора"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"After changing the domain, verify login links, email links and OAuth "
+"callbacks."
+msgstr ""
+"Після зміни домену перевірте посилання для входу, посилання в email та OAuth"
+" callback."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"After removal, verify that the user still has another valid way to access "
+"the account."
+msgstr ""
+"Після видалення перевірте, чи користувач має інший діючий спосіб доступу до "
+"облікового запису."
+
+#: apps/blog_manager/models.py
+msgid "All classes on every tag"
+msgstr "Всі класи на кожен тег"
+
+#: apps/blog_manager/models.py
+msgid "All images"
+msgstr "Усі зображення"
+
+#: apps/comments_manager/models.py
+msgid "Allow comments from unauthenticated users"
+msgstr "Дозволити коментарі від неавторизованих користувачів"
+
+#: apps/blog_manager/models.py
+msgid "Alt text"
+msgstr "Альт-текст"
+
+#: apps/userprofile/templates/socialaccount/authentication_error.html
+msgid "An error occurred while signing in through the social account."
+msgstr "Під час входу через соціальний акаунт сталася помилка."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"An event explains what the system observed, but may still require "
+"reproduction to confirm the cause."
+msgstr ""
+"Подія пояснює, що система спостерігала, але для підтвердження причини може "
+"знадобитися відтворення."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Analytics and canonical settings can affect every page and should be tested "
+"in production-like conditions."
+msgstr ""
+"Аналітика і канонічні налаштування можуть впливати на всі сторінки і мають "
+"тестуватися в умовах, наближених до продуктиву."
+
+#: apps/userprofile/admin.py
+msgid "Appearance"
+msgstr "Зовнішній вигляд"
+
+#: apps/core_manager/models.py
+msgid "Apple touch icon"
+msgstr "Іконка Apple touch"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Apply only CSS classes and icons supported by the active theme, then test "
+"the rendered link."
+msgstr ""
+"Застосовуйте лише CSS-класи та іконки, підтримувані активною темою, після "
+"чого перевірте відображення посилання."
+
+#: apps/core_manager/admin_help.py
+msgid "Apply the site's moderation and retention policy consistently."
+msgstr "Послідовно застосовуйте політику модерації та зберігання сайту."
+
+#: apps/comments_manager/admin.py
+msgid "Approve selected comments"
+msgstr "Підтвердити вибрані коментарі"
+
+#: apps/comments_manager/admin.py
+msgid "Approved %(count)s comment(s)."
+msgstr "Підтверджено %(count)s коментар(і/ів)."
+
+#: apps/theme_manager/forms/theme_html_upload.py
+msgid "Archive must contain one root folder with theme files."
+msgstr "Архів має містити одну кореневу папку з файлами теми."
+
+#: apps/userprofile/templates/account/logout.html
+msgid "Are you sure you want to sign out?"
+msgstr "Ви впевнені, що хочете вийти?"
+
+#: apps/blog_manager/models.py apps/theme_manager/admin.py
+msgid "Article"
+msgstr "Стаття"
+
+#: apps/blog_manager/models.py
+msgid "Article body"
+msgstr "Текст статті"
+
+#: apps/blog_manager/models.py
+msgid "Article extra fields"
+msgstr "Додаткові поля статті"
+
+#: apps/theme_manager/admin.py apps/theme_manager/models.py
+msgid "Article extra fields schema"
+msgstr "Схема додаткових полів статті"
+
+#: apps/blog_manager/models.py
+msgid "Article image"
+msgstr "Зображення статті"
+
+#: apps/blog_manager/models.py
+msgid "Article images"
+msgstr "Зображення статті"
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: config/settings.py
+msgid "Articles"
+msgstr "Статті"
+
+#: apps/blog_manager/models.py
+msgid "Articles count"
+msgstr "Кількість статей"
+
+#: apps/blog_manager/models.py
+msgid "Articles per page"
+msgstr "Статей на сторінку"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Assign a small relevant set to each article and review unused tags "
+"periodically."
+msgstr ""
+"Призначайте кожній статті невеликий релевантний набір та періодично "
+"перевіряйте невикористані теги."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Assign users to the group from the Users section instead of repeating "
+"permissions per account."
+msgstr ""
+"Призначайте користувачів у групу з розділу Користувачі, а не дублюйте "
+"дозволи для кожного облікового запису."
+
+#: apps/ai_assistant/models.py
+msgid "Assistant"
+msgstr "Асистент"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Assistant Event Log"
+msgstr "Журнал подій асистента"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Assistant Profile"
+msgstr "Профіль Асистента"
+
+#: apps/ai_assistant/models.py
+msgid "Assistant profile"
+msgstr "Профіль асистента"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Assistant profile, channel, visitor contact data, IP/user agent, lead and "
+"closed flags, and activity times."
+msgstr ""
+"Профіль асистента, канал, контактні дані відвідувача, IP/агент користувача, "
+"прапори ліда та закриття, часи активності."
+
+#: apps/ai_assistant/models.py
+msgid "Assistant profiles"
+msgstr "Профілі асистентів"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Attach it to a compatible Template component and insert that component into "
+"the intended templates."
+msgstr ""
+"Прикріпіть модуль до сумісного компонента шаблону і вставте цей компонент у "
+"потрібні шаблони."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Audit which knowledge passages were supplied to an assistant response and "
+"how they ranked."
+msgstr ""
+"Аудит того, які фрагменти знань були надані у відповіді асистента і як вони "
+"ранжувалися."
+
+#: apps/theme_manager/defaults/template_components.py config/settings.py
+msgid "Authentication"
+msgstr "Автентифікація"
+
+#: apps/userprofile/models.py
+msgid "Authentication appearance"
+msgstr "Зовнішній вигляд автентифікації"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Authentication controls"
+msgstr "Керування автентифікацією"
+
+#: apps/userprofile/models.py
+msgid "Authentication email"
+msgstr "Лист автентифікації"
+
+#: apps/userprofile/models.py
+msgid "Authentication email template"
+msgstr "Шаблон листа автентифікації"
+
+#: apps/userprofile/admin.py
+msgid "Authentication email template was reset to its defaults."
+msgstr "Шаблон листа автентифікації скинуто до стандартних налаштувань."
+
+#: apps/userprofile/models.py
+msgid "Authentication email templates"
+msgstr "Шаблони листів автентифікації"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Authentication emails"
+msgstr "Листи автентифікації"
+
+#: apps/userprofile/admin.py apps/userprofile/models.py
+msgid "Authentication logo"
+msgstr "Логотип автентифікації"
+
+#: apps/userprofile/admin.py apps/userprofile/models.py
+msgid "Authentication stylesheet"
+msgstr "Стилі автентифікації (CSS)"
+
+#: apps/userprofile/models.py
+msgid "Authentication template"
+msgstr "Шаблон автентифікації"
+
+#: apps/userprofile/admin.py
+msgid "Authentication template was reset to its default."
+msgstr "Шаблон автентифікації скинуто до стандартного."
+
+#: apps/core_manager/admin_help.py apps/userprofile/models.py
+#: config/settings.py
+msgid "Authentication templates"
+msgstr "Шаблони автентифікації"
+
+#: apps/blog_manager/models.py
+msgid "Author"
+msgstr "Автор"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Author details, target content object, text, submission time, IP address and"
+" moderation flags."
+msgstr ""
+"Дані автора, цільовий об’єкт контенту, текст, час подання, IP-адреса та "
+"модераторські позначки."
+
+#: apps/core_manager/models.py
+msgid "Author name"
+msgstr "Ім’я автора"
+
+#: apps/theme_manager/models.py
+msgid "Available configurations for the Images component."
+msgstr "Доступні конфігурації для компонента зображень."
+
+#: apps/theme_manager/models.py
+msgid "Available configurations for the Latest blog articles component."
+msgstr "Доступні конфігурації для компонента останніх статей блогу."
+
+#: apps/theme_manager/models.py
+msgid "Available configurations for the Tags component."
+msgstr "Доступні конфігурації для компонента тегів."
+
+#: apps/userprofile/admin.py apps/userprofile/models.py
+msgid "Avatar"
+msgstr "Аватар"
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_done.html
+#: apps/userprofile/templates/account/password_reset_form.html
+#: apps/userprofile/templates/account/password_reset_from_key_done.html
+#: apps/userprofile/templates/account/signup_closed.html
+#: apps/userprofile/templates/socialaccount/login_cancelled.html
+msgid "Back to sign in"
+msgstr "Назад до входу"
+
+#: apps/theme_manager/models.py
+msgid "Base Template"
+msgstr "Базовий шаблон"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Blog category list"
+msgstr "Список категорій блогу"
+
+#: config/settings.py
+msgid "Blog manager"
+msgstr "Менеджер блогу"
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: config/settings.py
+msgid "Blog settings"
+msgstr "Налаштування блогу"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Breadcrumbs"
+msgstr "Хлібні крихти"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Broken or redirected URLs reduce usability and SEO quality; review them "
+"periodically."
+msgstr ""
+"Поламані або перенаправлені URL знижують зручність і якість SEO; перевіряйте"
+" їх періодично."
+
+#: apps/ai_assistant/templates/admin/ai_assistant/knowledgechunk/change_list.html
+msgid "Build missing embeddings"
+msgstr "Створити відсутні ембеддінги"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Build reusable optimized image collections for template components and "
+"rotating visual blocks."
+msgstr ""
+"Створюйте повторно використовувані оптимізовані колекції зображень для "
+"компонент шаблонів і обертових візуальних блоків."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Build reusable permission sets for editors, moderators and other "
+"administration roles."
+msgstr ""
+"Створюйте повторно використовувані набори дозволів для редакторів, "
+"модераторів і інших адміністративних ролей."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Build the blog hierarchy and configure category content, templates, "
+"pagination and SEO."
+msgstr ""
+"Створіть ієрархію блогу, налаштуйте контент категорій, шаблони, пагінацію та"
+" SEO."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Button linking to the next article prepared by the article detail view."
+msgstr ""
+"Кнопка, що веде до наступної статті, підготовлена детальним переглядом "
+"статті."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Button linking to the previous article prepared by the article detail view."
+msgstr ""
+"Кнопка, що веде до попередньої статті, підготовлена детальним переглядом "
+"статті."
+
+#: apps/userprofile/admin.py apps/userprofile/models.py
+msgid "CSS applied to all system authentication pages."
+msgstr "CSS застосовується до всіх системних сторінок автентифікації."
+
+#: apps/core_manager/models.py
+msgid "CSS class"
+msgstr "CSS-клас"
+
+#: apps/blog_manager/models.py
+msgid "CSS classes"
+msgstr "CSS-класи"
+
+#: apps/core_manager/admin_help.py
+msgid "CSS classes change presentation, not access permissions or URL safety."
+msgstr "CSS-класи змінюють оформлення, але не права доступу чи безпеку URL."
+
+#: apps/comments_manager/models.py
+msgid "CSS shared by all system comment templates."
+msgstr "CSS, спільний для всіх системних шаблонів коментарів."
+
+#: apps/ai_assistant/templates/admin/ai_assistant/knowledgechunk/import_json.html
+#: apps/theme_manager/templates/admin/theme_manager/theme/upload_html_template.html
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid "Canonical allowed params"
+msgstr "Дозволені параметри canonical"
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: config/settings.py
+msgid "Categories"
+msgstr "Категорії"
+
+#: apps/blog_manager/models.py apps/theme_manager/models.py
+msgid "Category"
+msgstr "Категорія"
+
+#: apps/userprofile/defaults/personal_account.py
+#: apps/userprofile/templates/account/password_change.html
+msgid "Change password"
+msgstr "Змінити пароль"
+
+#: apps/core_manager/admin_help.py
+msgid "Changing a live slug breaks its old URL unless a redirect is created."
+msgstr ""
+"Зміна активного slug порушує його старе URL без створення переадресації."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Changing a published slug changes its URL and can break external links."
+msgstr ""
+"Зміна опублікованого slug змінює URL і може порушити зовнішні посилання."
+
+#: apps/core_manager/admin_help.py
+msgid "Changing embedding model may require rebuilding all stored embeddings."
+msgstr ""
+"Зміна моделі ембеддінгу може вимагати перебудови всіх збережених "
+"ембеддінгів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Changing hierarchy or slug changes URLs for the category and may affect "
+"descendant navigation."
+msgstr ""
+"Зміна ієрархії або слага змінює URL категорії та може вплинути на навігацію "
+"нащадків."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Changing or resetting a password does not reveal the previous password."
+msgstr "Зміна або скидання пароля не розкриває попередній пароль."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Changing the primary Site can affect authentication and generated absolute "
+"links immediately."
+msgstr ""
+"Зміна основного сайту може негайно вплинути на автентифікацію та створені "
+"абсолютні посилання."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Changing type or slug can invalidate existing assignments and template "
+"references."
+msgstr ""
+"Зміна типу або slug може деактивувати існуючі призначення і посилання на "
+"шаблони."
+
+#: apps/ai_assistant/admin.py apps/ai_assistant/models.py
+msgid "Channel"
+msgstr "Канал"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Chat Message"
+msgstr "Повідомлення чату"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Chat Session"
+msgstr "Чат-сесія"
+
+#: apps/ai_assistant/models.py
+msgid "Chat message"
+msgstr "Повідомлення чату"
+
+#: apps/ai_assistant/models.py
+msgid "Chat messages"
+msgstr "Повідомлення чату"
+
+#: apps/ai_assistant/models.py
+msgid "Chat model"
+msgstr "Модель чату"
+
+#: apps/ai_assistant/models.py
+msgid "Chat session"
+msgstr "Чат-сесія"
+
+#: apps/ai_assistant/models.py
+msgid "Chat sessions"
+msgstr "Чат-сесії"
+
+#: apps/userprofile/templates/account/password_reset_done.html
+#: apps/userprofile/templates/account/verification_sent.html
+msgid "Check your email"
+msgstr "Перевірте вашу електронну пошту"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose a page template, enter a short stable slug and complete both language"
+" tabs."
+msgstr ""
+"Виберіть шаблон сторінки, введіть короткий стабільний slug і заповніть "
+"обидві мовні вкладки."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose all, one random, daily rotation, ordered count or random count as the"
+" display mode."
+msgstr ""
+"Оберіть усі, один випадковий, щоденну ротацію, упорядковану кількість або "
+"випадкову кількість як режим відображення."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose only the categories relevant to the block and decide whether their "
+"children are included."
+msgstr ""
+"Оберіть лише релевантні категорії для блоку і вирішіть, чи включати їх "
+"дочірні."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose the category and template before completing extra fields, then write "
+"both language versions."
+msgstr ""
+"Спершу оберіть категорію та шаблон, потім заповніть додаткові поля й "
+"напишіть обидві мовні версії."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose the correct template type before assigning it to pages, categories or"
+" articles."
+msgstr ""
+"Оберіть правильний тип шаблону перед призначенням його сторінкам, категоріям"
+" або статтям."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose the source and count, then select an ordering that matches the design"
+" goal."
+msgstr ""
+"Оберіть джерело і кількість, потім виберіть порядок відповідно до цілей "
+"дизайну."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Choose the template type, make the smallest necessary code change and save."
+msgstr ""
+"Оберіть тип шаблону, внесіть мінімально необхідну зміну в код і збережіть."
+
+#: apps/blog_manager/models.py
+msgid ""
+"Choose whether classes are assigned in order, added all together, or "
+"selected randomly one per tag."
+msgstr ""
+"Виберіть, чи класи призначаються послідовно, додаються всі разом, або "
+"випадково по одному на тег."
+
+#: apps/ai_assistant/models.py
+msgid "Chunk"
+msgstr "Фрагмент"
+
+#: apps/blog_manager/models.py
+msgid "Class application"
+msgstr "Застосування класу"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Class modes for sequential, combined or random styling of returned tags."
+msgstr ""
+"Режими класів для послідовного, комбінованого або випадкового стилізування "
+"тегів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Classes are emitted into template output; use trusted CSS class names only."
+msgstr "Класи виводяться в шаблон; використовуйте лише довірені CSS-класи."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Clear Public to hide questionable content while it is reviewed; use Removed "
+"for content that should remain recorded but not displayed."
+msgstr ""
+"Зніміть публічність, щоб приховати сумнівний вміст під час перевірки; "
+"використовуйте видалений стан для записаного, але невідображеного вмісту."
+
+#: apps/userprofile/templates/account/email_confirm.html
+msgid "Click below to confirm your email address:"
+msgstr "Натисніть нижче, щоб підтвердити вашу електронну адресу:"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Client secrets are sensitive; never copy them into templates, screenshots or"
+" public repositories."
+msgstr ""
+"Секрети клієнта є конфіденційними; ніколи не копіюйте їх у шаблони, "
+"скріншоти або публічні репозиторії."
+
+#: apps/ai_assistant/templates/includes/ai_chat_widget.html
+#: apps/core_manager/templates/admin/help/dialog.html
+#: apps/core_manager/templates/admin/shared/tree_sortable.html
+msgid "Close"
+msgstr "Закрити"
+
+#: apps/core_manager/templates/admin/help/dialog.html
+msgid "Close guide"
+msgstr "Закрити інструкцію"
+
+#: apps/ai_assistant/models.py
+msgid "Closed"
+msgstr "Закрито"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Closing a session is an operational state and does not necessarily delete "
+"its data."
+msgstr ""
+"Закриття сесії — це операційний стан, який не обов’язково видаляє її дані."
+
+#: apps/theme_manager/models.py
+msgid "Code"
+msgstr "Код"
+
+#: apps/theme_manager/models.py
+msgid "Code hash"
+msgstr "Хеш коду"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/admin.py
+msgid "Comma-separated keywords."
+msgstr "Ключові слова, розділені комами."
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid ""
+"Only the page parameter is supported. Page 1 is omitted from canonical URLs."
+msgstr ""
+"Підтримується лише параметр page. Page 1 не додається до канонічних URL."
+
+#: apps/comments_manager/models.py apps/core_manager/admin_help.py
+#: config/settings.py
+msgid "Comment appearance"
+msgstr "Вигляд коментаря"
+
+#: apps/comments_manager/admin.py
+msgid "Comment appearance was reset to defaults."
+msgstr "Вигляд коментаря скинуто до стандартних налаштувань."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Comment count, list and form for django-contrib-comments using object, "
+"article, or page context."
+msgstr ""
+"Кількість коментарів, список і форма для django-contrib-comments з "
+"використанням контексту об’єкта, статті або сторінки."
+
+#: apps/comments_manager/models.py
+msgid "Comment form"
+msgstr "Форма коментаря"
+
+#: apps/comments_manager/models.py
+msgid "Comment label"
+msgstr "Підпис коментаря"
+
+#: apps/comments_manager/models.py
+msgid "Comment list"
+msgstr "Список коментарів"
+
+#: apps/comments_manager/models.py
+msgid "Comment placeholder"
+msgstr "Плейсхолдер коментаря"
+
+#: apps/comments_manager/models.py
+msgid "Comment template"
+msgstr "Шаблон коментаря"
+
+#: apps/comments_manager/admin.py
+msgid "Comment template was reset to defaults."
+msgstr "Шаблон коментаря скинуто до стандартних налаштувань."
+
+#: apps/comments_manager/models.py apps/core_manager/admin_help.py
+#: config/settings.py
+msgid "Comment templates"
+msgstr "Шаблони коментарів"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Comments"
+msgstr "Коментарі"
+
+#: apps/comments_manager/apps.py config/settings.py
+msgid "Comments manager"
+msgstr "Менеджер коментарів"
+
+#: apps/comments_manager/models.py
+msgid "Comments stylesheet"
+msgstr "CSS стилі коментарів"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Compare assistant output with Retrieved Chunks and Event Logs when "
+"investigating quality."
+msgstr ""
+"Порівнюйте вихідні дані асистента з отриманими фрагментами та журналами "
+"подій при вивченні якості."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Compare scores and source content, then improve the knowledge chunk or "
+"profile threshold rather than editing audit rows."
+msgstr ""
+"Порівнюйте оцінки і вихідний вміст, потім покращуйте фрагмент знань або "
+"поріг профілю замість редагування рядків аудиту."
+
+#: apps/userprofile/models.py
+msgid "Complete Django template code rendered for this account page."
+msgstr ""
+"Повний код Django-шаблону, що відображається для цієї сторінки кабінету."
+
+#: apps/core_manager/admin_help.py
+msgid "Complete both language tabs and keep instructions short and welcoming."
+msgstr ""
+"Заповніть обидві мовні вкладки, підтримуйте короткі й дружні інструкції."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Complete both language tabs, choose compatible templates and set the article"
+" count for pagination."
+msgstr ""
+"Заповніть обидві мовні вкладки, оберіть сумісні шаблони та встановіть "
+"кількість статей для пагінації."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Complete global SEO and organization data before using page-level overrides."
+msgstr ""
+"Завершіть глобальні SEO та дані організації перед використанням рівневих "
+"перекриттів сторінок."
+
+#: apps/userprofile/templates/socialaccount/signup.html
+msgid "Complete signup"
+msgstr "Завершити реєстрацію"
+
+#: apps/userprofile/templates/socialaccount/signup.html
+msgid "Complete the form to continue with %(provider_name)s."
+msgstr "Заповніть форму, щоб продовжити з %(provider_name)s."
+
+#: apps/ai_assistant/models.py
+msgid "Completion tokens"
+msgstr "Токени відповіді"
+
+#: apps/theme_manager/admin.py
+msgid "Component code"
+msgstr "Код компонента"
+
+#: apps/theme_manager/models.py
+msgid "Component name"
+msgstr "Назва компонента"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Component name, category, icon, description, insertion code, AI conversion "
+"prompt, status and sort order."
+msgstr ""
+"Назва компонента, категорія, іконка, опис, код вставки, підказка AI, статус "
+"і порядок сортування."
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Components"
+msgstr "Компоненти"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Configure individual theme templates, their content type and editor-specific"
+" schema."
+msgstr "Налаштуйте окремі шаблони теми, їх тип вмісту та схему для редактора."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Configure reusable tag clouds or tag lists, including selection, ordering "
+"and CSS-class assignment."
+msgstr ""
+"Налаштуйте повторно використовувані «хмари» або списки тегів, включаючи "
+"вибір, порядок і призначення CSS-класів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Configure the AI provider, models, system instructions and retrieval "
+"thresholds used by the chat assistant."
+msgstr ""
+"Налаштуйте провайдера ШІ, моделі, системні інструкції та пороги пошуку, які "
+"використовує чат-асистент."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Configure the logo and shared authentication CSS in the Appearance section."
+msgstr "Налаштуйте логотип і спільні CSS автентифікації в розділі Вигляд."
+
+#: apps/userprofile/templates/account/email_confirm.html
+#: apps/userprofile/templates/account/reauthenticate.html
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+#: apps/userprofile/templates/account/signup.html
+msgid "Confirm password"
+msgstr "Підтвердити пароль"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Confirm the local user and provider identity before changing or removing a "
+"connection."
+msgstr ""
+"Підтвердіть локального користувача та ідентифікацію провайдера перед зміною "
+"або видаленням зв’язку."
+
+#: apps/userprofile/templates/account/reauthenticate.html
+msgid "Confirm your identity"
+msgstr "Підтвердіть свою особу"
+
+#: apps/userprofile/templates/socialaccount/login.html
+msgid "Connect %(provider)s"
+msgstr "Підключити %(provider)s"
+
+#: apps/core_manager/admin_help.py
+msgid "Connect OAuth providers such as Google to this website."
+msgstr "Підключайте OAuth-провайдери, такі як Google, до цього сайту."
+
+#: apps/userprofile/templates/socialaccount/connections.html
+msgid "Connect an account"
+msgstr "Підключити обліковий запис"
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Connect or disconnect social accounts used to sign in."
+msgstr "Підключайте або відключайте соціальні облікові записи для входу."
+
+#: apps/userprofile/defaults/personal_account.py
+#: apps/userprofile/templates/socialaccount/connections.html
+msgid "Connected accounts"
+msgstr "Підключені облікові записи"
+
+#: apps/core_manager/models.py
+msgid "Contact email"
+msgstr "Контактна електронна пошта"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Contact form"
+msgstr "Контактна форма"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Contact form layout with name, email, subject, message, CSRF and template-"
+"friendly states."
+msgstr ""
+"Макет контактної форми з полями ім’я, email, тема, повідомлення, CSRF і "
+"статусами, дружніми до шаблонів."
+
+#: apps/core_manager/models.py
+msgid "Contact phone"
+msgstr "Контактний телефон"
+
+#: apps/ai_assistant/models.py
+msgid "Contacted"
+msgstr "Поставлено в контакт"
+
+#: apps/ai_assistant/admin.py apps/ai_assistant/models.py
+#: apps/theme_manager/defaults/template_components.py
+msgid "Content"
+msgstr "Вміст"
+
+#: apps/userprofile/templates/socialaccount/login.html
+#: apps/userprofile/templates/socialaccount/login_redirect.html
+msgid "Continue"
+msgstr "Продовжити"
+
+#: apps/userprofile/templates/socialaccount/login.html
+msgid "Continue authentication using your %(provider)s account."
+msgstr "Продовжити автентифікацію через обліковий запис %(provider)s."
+
+#: apps/userprofile/templates/account/login.html
+msgid "Continue with Google"
+msgstr "Продовжити з Google"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Control the site's global identity, homepage, SEO defaults, integrations and"
+" maintenance behavior."
+msgstr ""
+"Керуйте глобальною ідентифікацією сайту, головною сторінкою, SEO за "
+"замовчуванням, інтеграціями та режимом обслуговування."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Conversation and contact fields may contain personal or sensitive "
+"information."
+msgstr "Поля розмови і контактів можуть містити персональні або чутливі дані."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Converts selected list markup into blog category links."
+msgstr "Конвертує вибрану розмітку списку у посилання на категорії блогу."
+
+#: config/settings.py
+msgid "Core manager"
+msgstr "Основний менеджер"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create a clearly named component and provide valid Django-template code."
+msgstr ""
+"Створіть чітко названий компонент і надайте дійсний код шаблону Django."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create a role named after the work it permits, such as Blog editors or "
+"Comment moderators."
+msgstr ""
+"Створіть роль із назвою відповідно до дозволеної роботи, наприклад, "
+"Редактори блогу або Модератори коментарів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create a theme with a stable slug, upload or place its files, then refresh "
+"templates."
+msgstr ""
+"Створіть тему зі стабільним slug, завантажте або розмістіть її файли, потім "
+"оновіть шаблони."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create a user, enter a unique username and set a temporary strong password."
+msgstr ""
+"Створіть користувача, введіть унікальне ім’я користувача та встановіть "
+"тимчасовий надійний пароль."
+
+#: apps/userprofile/templates/socialaccount/signup.html
+msgid "Create account"
+msgstr "Створити акаунт"
+
+#: apps/userprofile/templates/account/login.html
+msgid "Create an account"
+msgstr "Створити обліковий запис"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create and save the module, upload images, then add accurate alt text and "
+"arrange their order."
+msgstr ""
+"Створіть і збережіть модуль, завантажте зображення, додайте точний alt-текст"
+" і упорядкуйте їх."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create credentials in the provider console using the callback URL required "
+"by django-allauth."
+msgstr ""
+"Створіть облікові дані в консолі провайдера, використовуючи URL зворотного "
+"виклику, необхідний django-allauth."
+
+#: apps/core_manager/templates/admin/core_manager/sitesettings/change_form.html
+msgid "Create demo data"
+msgstr "Створити демонстраційні дані"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create multilingual standalone pages and assign their layout and SEO "
+"metadata."
+msgstr ""
+"Створюйте багатомовні окремі сторінки й призначайте їхній макет та SEO "
+"метадані."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create parent categories first, then add children and arrange them with the "
+"tree controls."
+msgstr ""
+"Спершу створіть батьківські категорії, потім додавайте дочірні та "
+"впорядковуйте їх інструментами дерева."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create reusable article selections that templates can insert as latest-"
+"content blocks."
+msgstr ""
+"Створюйте повторно використовувані добірки статей, які шаблони можуть "
+"вставляти як блоки останнього контенту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create reusable code snippets and control which configured modules can be "
+"inserted by the template editor."
+msgstr ""
+"Створюйте багаторазові фрагменти коду та контролюйте, які модулі можна "
+"вставляти редактором шаблонів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Create staff and website accounts, control access, and review account "
+"status."
+msgstr ""
+"Створюйте облікові записи співробітників і сайту, контролюйте доступ та "
+"переглядайте стан облікового запису."
+
+#: apps/blog_manager/models.py
+msgid "Created"
+msgstr "Створено"
+
+#: apps/ai_assistant/models.py apps/blog_manager/models.py
+#: apps/core_manager/models.py apps/theme_manager/models.py
+msgid "Created at"
+msgstr "Дата створення"
+
+#: apps/theme_manager/models.py
+msgid "Created by"
+msgstr "Створено"
+
+#: apps/core_manager/admin_help.py
+msgid "Credentials for providers belong in Social Apps, not in this section."
+msgstr ""
+"Облікові дані для провайдерів мають зберігатися у Social Apps, а не в цьому "
+"розділі."
+
+#: apps/blog_manager/models.py
+msgid "Cropped image"
+msgstr "Обрізане зображення"
+
+#: apps/blog_manager/models.py
+msgid "Current article tags"
+msgstr "Теги поточної статті"
+
+#: apps/blog_manager/models.py
+msgid "Current category tags"
+msgstr "Теги поточної категорії"
+
+#: apps/ai_assistant/models.py
+msgid "Custom API"
+msgstr "Користувацький API"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Custom CSS can affect layout and accessibility across all comment forms."
+msgstr ""
+"Користувацький CSS може впливати на макет та доступність усіх форм "
+"коментарів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Customize multilingual comment-form wording and the stylesheet used by "
+"comment interfaces."
+msgstr ""
+"Налаштовуйте багатомовний текст у формі коментаря та стильову таблицю, яку "
+"використовують інтерфейси коментарів."
+
+#: apps/ai_assistant/models.py
+msgid "Data"
+msgstr "Дані"
+
+#: apps/ai_assistant/admin.py
+msgid "Dates"
+msgstr "Дати"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Deactivate an address when consent is withdrawn while retaining only data "
+"required by your policy."
+msgstr ""
+"Деактивуйте адресу, коли відмінено згоду, зберігаючи лише дані, потрібні у "
+"вашій політиці конфіденційності."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Deactivate an unused theme only after pages, categories and articles have "
+"been moved to another active theme."
+msgstr ""
+"Деактивуйте невикористовувану тему лише після переміщення сторінок, "
+"категорій і статей в іншу активну тему."
+
+#: apps/core_manager/models.py
+msgid "Default OG type"
+msgstr "Тип OG за замовчуванням"
+
+#: apps/core_manager/admin_help.py
+msgid "Default Schema.org graphs for categories and articles."
+msgstr "Стандартні Schema.org графи для категорій і статей."
+
+#: apps/blog_manager/models.py
+msgid "Default article schema graph"
+msgstr "Стандартна схема статті"
+
+#: apps/blog_manager/models.py
+msgid "Default article template"
+msgstr "Стандартний шаблон статті"
+
+#: apps/blog_manager/models.py
+msgid "Default category schema graph"
+msgstr "Стандартна схема категорії"
+
+#: apps/userprofile/admin.py
+msgid "Default email template was not found."
+msgstr "Шаблон електронної пошти за замовчуванням не знайдено."
+
+#: apps/blog_manager/models.py
+msgid "Default first category page template"
+msgstr "Стандартний шаблон першої сторінки категорії"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Default first-page category template, paginated category template and "
+"article template."
+msgstr ""
+"Стандартний шаблон для першої сторінки категорії, шаблон пагінованої "
+"категорії та шаблон статті."
+
+#: apps/core_manager/models.py
+msgid "Default image alt"
+msgstr "Альт за замовчуванням для зображення"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Default metadata, preview images, favicons, social profiles, Schema.org "
+"organization/person data and robots.txt."
+msgstr ""
+"Метадані за замовчуванням, зображення прев’ю, фавіконки, соціальні профілі, "
+"дані Schema.org для організацій/осіб та robots.txt."
+
+#: apps/blog_manager/models.py
+msgid "Default paginated category template"
+msgstr "Стандартний шаблон нумерованої сторінки категорії"
+
+#: apps/core_manager/models.py
+msgid "Default preview image"
+msgstr "Зображення попереднього перегляду за замовчуванням"
+
+#: apps/core_manager/models.py
+msgid "Default schema graph"
+msgstr "Граф схеми за замовчуванням"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Define extra article fields as a valid schema, then use those field names in"
+" the template."
+msgstr ""
+"Визначте додаткові поля статті у вигляді дійсної схеми, потім використовуйте"
+" їхні назви в шаблоні."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Define the canonical domain and display name used by Django's Sites "
+"framework."
+msgstr ""
+"Визначте канонічний домен та відображуване ім’я, які використовує фреймворк "
+"Sites у Django."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Delete permission can permanently remove content and should be granted "
+"sparingly."
+msgstr ""
+"Дозвіл на видалення може назавжди вилучити контент і має надаватися "
+"обережно."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Deleting a comment is permanent; moderation flags preserve context and are "
+"often preferable."
+msgstr ""
+"Видалення коментаря є остаточним; модераторські позначки зберігають контекст"
+" і часто є кращим варіантом."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Deleting a connection does not delete the provider account, but may prevent "
+"social sign-in."
+msgstr ""
+"Видалення підключення не видаляє обліковий запис провайдера, але може "
+"унеможливити вхід через соцмережі."
+
+#: apps/core_manager/admin_help.py
+msgid "Deleting a tag removes its relationships from content and modules."
+msgstr "Видалення тега знищує його зв’язки з контентом і модулями."
+
+#: apps/blog_manager/models.py
+msgid "Describe the image for accessibility and search engines."
+msgstr "Опишіть зображення для доступності та пошукових систем."
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/models.py
+msgid "Description"
+msgstr "Опис"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Description, keywords, preview image, Open Graph, Schema.org, canonical "
+"parameters and noindex."
+msgstr ""
+"Опис, ключові слова, зображення прев’ю, Open Graph, Schema.org, канонічні "
+"параметри та noindex."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Diagnostic data can contain user content or provider details; restrict "
+"access accordingly."
+msgstr ""
+"Діагностичні дані можуть містити вміст користувача або деталі провайдера; "
+"обмежуйте доступ відповідно."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Display count, order and CSS behavior are configured in Modules — Tags."
+msgstr ""
+"Параметри кількості, порядку та поведінки CSS налаштовуються в Модулях — "
+"Теги."
+
+#: apps/blog_manager/models.py
+msgid "Display mode"
+msgstr "Режим відображення"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Django comments"
+msgstr "Коментарі Django"
+
+#: apps/userprofile/models.py
+msgid ""
+"Django template code used for the authenticated user's personal account "
+"page."
+msgstr ""
+"Код Django-шаблону для сторінки персонального кабінету аутентифікованого "
+"користувача."
+
+#: apps/userprofile/models.py
+msgid ""
+"Django template variables are supported, for example {{ activate_url }}."
+msgstr "Підтримуються змінні шаблонів Django, наприклад {{ activate_url }}."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Do not create duplicate active configurations for the same provider and "
+"site."
+msgstr ""
+"Не створюйте дублікатів активних конфігурацій для одного провайдера і сайту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Do not edit history merely to improve appearance; logs should remain "
+"reliable for diagnosis."
+msgstr ""
+"Не редагуйте історію лише для покращення вигляду; журнали повинні залишатись"
+" надійними для діагностики."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Do not follow suspicious links or copy untrusted content into executable "
+"templates."
+msgstr ""
+"Не переходьте за підозрілими посиланнями й не копіюйте недовірений вміст у "
+"виконувані шаблони."
+
+#: apps/core_manager/admin_help.py
+msgid "Do not paste scripts or template code from untrusted sources."
+msgstr "Не вставляйте скрипти або шаблонний код з ненадійних джерел."
+
+#: apps/core_manager/admin_help.py
+msgid "Do not reactivate a user who has opted out without renewed consent."
+msgstr "Не реактивуйте користувача, який відмовився без поновленої згоди."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Do not share accounts. Separate accounts keep history and audit information "
+"meaningful."
+msgstr ""
+"Не діліться обліковими записами. Окремі облікові записи зберігають історію й"
+" аудиторські дані достовірними."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Do not store payment, medical or other highly sensitive data in free-text "
+"fields."
+msgstr ""
+"Не зберігайте платіжні, медичні чи інші надто чутливі дані у текстових "
+"полях."
+
+#: apps/userprofile/templates/account/email.html
+msgid "Do you really want to remove the selected email address?"
+msgstr "Ви дійсно хочете видалити вибрану електронну адресу?"
+
+#: apps/core_manager/admin_help.py
+msgid "Domain, public URL, contact details, homepage and 404 template."
+msgstr ""
+"Домен, публічна URL-адреса, контактні дані, головна сторінка та шаблон 404."
+
+#: apps/core_manager/templates/admin/shared/tree_sortable_nodes.html
+msgid "Drag item"
+msgstr "Перетягніть елемент"
+
+#: apps/core_manager/templates/admin/shared/tree_sortable.html
+msgid "Drag items to reorder them or move them under another parent."
+msgstr ""
+"Перетягуйте елементи для зміни порядку або переміщення під інший "
+"батьківський елемент."
+
+#: apps/core_manager/templates/admin/shared/tree_sortable.html
+#: apps/core_manager/templates/admin/shared/tree_sortable_button.html
+msgid "Drag-and-drop ordering"
+msgstr "Сортування перетягуванням"
+
+#: apps/ai_assistant/admin.py
+msgid "Each chunk must contain title and content fields"
+msgstr "Кожен фрагмент повинен містити поля title і content"
+
+#: apps/theme_manager/admin.py
+msgid "Each field key must be a valid variable slug, for example name_value."
+msgstr ""
+"Кожен ключ поля має бути допустимим ідентифікатором змінної, наприклад "
+"name_value."
+
+#: apps/core_manager/admin_help.py
+msgid "Each result exposes url, crop_url, crop_mob_url, alt and name."
+msgstr "Кожен результат містить url, crop_url, crop_mob_url, alt та name."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Edit the Django-template fragments used to render a comment, the form and "
+"the comment list."
+msgstr ""
+"Редагуйте фрагменти шаблонів Django, що використовуються для відображення "
+"коментаря, форми та списку коментарів."
+
+#: apps/core_manager/admin_help.py
+msgid "Edit the HTML and Django template tags in the code editor."
+msgstr "Редагуйте HTML і теги Django-шаблонів у редакторі коду."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Edit the complete Django HTML templates used by account and social-"
+"authentication pages."
+msgstr ""
+"Редагуйте повні Django HTML-шаблони, які використовуються сторінками "
+"облікових записів і соціальної автентифікації."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Editing content makes its previous embedding stale and requires "
+"regeneration."
+msgstr ""
+"Редагування контенту робить попередній ембеддінг застарілим і потребує "
+"відновлення."
+
+#: apps/ai_assistant/models.py apps/core_manager/models.py
+msgid "Email"
+msgstr "Електронна пошта"
+
+#: apps/userprofile/templates/account/email.html
+#: apps/userprofile/templates/account/signup.html
+msgid "Email address"
+msgstr "Електронна адреса"
+
+#: apps/userprofile/defaults/personal_account.py
+#: apps/userprofile/templates/account/email.html
+msgid "Email addresses"
+msgstr "Електронні адреси"
+
+#: apps/userprofile/models.py
+msgid "Email changed"
+msgstr "Email змінено"
+
+#: apps/userprofile/models.py
+#: apps/userprofile/templates/account/email_confirm.html
+msgid "Email confirmation"
+msgstr "Підтвердження електронної пошти"
+
+#: apps/userprofile/models.py
+msgid "Email confirmed"
+msgstr "Електронну пошту підтверджено"
+
+#: apps/userprofile/templates/account/login.html
+msgid "Email or username"
+msgstr "Електронна пошта або ім’я користувача"
+
+#: apps/userprofile/models.py
+msgid "Email removed"
+msgstr "Email видалено"
+
+#: apps/core_manager/admin_help.py
+msgid "Email, IP address and user agent are personal data."
+msgstr "Email, IP-адреса і User Agent є персональними даними."
+
+#: apps/ai_assistant/admin.py apps/ai_assistant/models.py
+msgid "Embedding"
+msgstr "Ембеддинг"
+
+#: apps/ai_assistant/admin.py
+msgid "Embedding failed for %(title)s: %(error)s"
+msgstr "Створення вектора не вдалося для %(title)s: %(error)s"
+
+#: apps/ai_assistant/admin.py
+msgid "Embedding failures: %(failed)s"
+msgstr "Помилки створення векторів: %(failed)s"
+
+#: apps/ai_assistant/models.py
+msgid "Embedding model"
+msgstr "Модель ембеддингу"
+
+#: apps/ai_assistant/models.py
+msgid "Embedding updated at"
+msgstr "Ембеддинг оновлено"
+
+#: apps/ai_assistant/admin.py
+msgid "Embeddings rebuilt: %(processed)s"
+msgstr "Векторні представлення відновлено: %(processed)s"
+
+#: apps/comments_manager/models.py
+msgid "Empty comments text"
+msgstr "Текст відсутності коментарів"
+
+#: config/settings.py
+msgid "English"
+msgstr "Англійська"
+
+#: apps/core_manager/admin_help.py
+msgid "English and Ukrainian subject lines and message bodies."
+msgstr "Теми та тексти листів англійською та українською мовами."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"English and Ukrainian title and description, slug, template and publication "
+"status."
+msgstr ""
+"Назва і опис англійською та українською, slug, шаблон і статус публікації."
+
+#: apps/core_manager/admin_help.py
+msgid "English and Ukrainian versions of all visitor-facing text."
+msgstr "Англійська та українська версії всього тексту, що бачить відвідувач."
+
+#: apps/blog_manager/models.py
+msgid ""
+"Enter CSS classes separated by commas, for example: badge-dark, badge-info, "
+"badge-success. Each item may contain several classes. Leave empty to add no "
+"classes."
+msgstr ""
+"Введіть CSS-класи через кому, наприклад: badge-dark, badge-info, badge-"
+"success. Кожен елемент може містити кілька класів. Залиште порожнім, щоб не "
+"додавати класи."
+
+#: apps/core_manager/admin_help.py
+msgid "Enter a descriptive title and verify the full destination URL."
+msgstr "Введіть описову назву та перевірте повний URL призначення."
+
+#: apps/core_manager/admin_help.py
+msgid "Enter only the host and optional port here, without a path."
+msgstr "Вводьте тут лише хост і необов’язковий порт без шляху."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Enter only theme-supported class names separated by commas and choose how "
+"they are applied."
+msgstr ""
+"Вводьте лише підтримувані темою назви класів через кому і оберіть спосіб їх "
+"застосування."
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid ""
+"Enter the email address associated with your account. We will send you "
+"instructions to reset your password."
+msgstr ""
+"Введіть електронну адресу, пов’язану з вашим обліковим записом. Ми надішлемо"
+" інструкції для скидання пароля."
+
+#: apps/userprofile/templates/account/reauthenticate.html
+msgid "Enter your password to continue."
+msgstr "Введіть пароль, щоб продовжити."
+
+#: apps/ai_assistant/models.py
+msgid "Error"
+msgstr "Помилка"
+
+#: apps/theme_manager/models.py
+msgid "Error Page"
+msgstr "Сторінка помилки"
+
+#: apps/ai_assistant/models.py
+msgid "Event type"
+msgstr "Тип події"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Events for low confidence, fallback behavior, API failures and other runtime"
+" conditions."
+msgstr ""
+"Події низької впевненості, резервна поведінка, збої API та інші умови часу "
+"виконання."
+
+#: apps/core_manager/admin_help.py
+msgid "Evidence for diagnosing irrelevant, missing or poorly ordered context."
+msgstr ""
+"Докази для діагностики нерелевантного, відсутнього або неправильно "
+"впорядкованого контексту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Existing connections created when a visitor signs in through a social "
+"provider."
+msgstr ""
+"Існуючі зв’язки, створені під час входу відвідувача через соціального "
+"провайдера."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Export or integrate records only through an approved consent-aware mailing "
+"workflow."
+msgstr ""
+"Експортуйте або інтегруйте записи лише через затверджений процес розсилки, "
+"що враховує згоду."
+
+#: apps/core_manager/models.py
+msgid "External reviews cache lifetime in seconds."
+msgstr "Час кешування зовнішніх відгуків у секундах."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "External reviews carousel"
+msgstr "Карусель зовнішніх відгуків"
+
+#: apps/core_manager/models.py
+msgid "Facebook URL"
+msgstr "URL Facebook"
+
+#: apps/ai_assistant/admin.py apps/ai_assistant/models.py
+msgid "Fallback"
+msgstr "Резервний варіант"
+
+#: apps/ai_assistant/models.py
+msgid "Fallback message"
+msgstr "Повідомлення за замовчуванням"
+
+#: apps/userprofile/admin.py apps/userprofile/models.py
+msgid "Falls back to the organization logo from Site settings."
+msgstr ""
+"За замовчуванням використовується логотип організації з налаштувань сайту."
+
+#: apps/core_manager/models.py
+msgid "Favicon ICO"
+msgstr "Іконка favicon ICO"
+
+#: apps/core_manager/models.py
+msgid "Favicon PNG"
+msgstr "Іконка favicon PNG"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Featured image"
+msgstr "Обране зображення"
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' %(key)s must be a string."
+msgstr "Значення '%(key)s' поля '%(field)s' має бути рядком."
+
+#: apps/theme_manager/admin.py
+msgid ""
+"Field '%(field)s' can use choices only with select, multiselect, radio, or "
+"checkbox."
+msgstr ""
+"Поле '%(field)s' може використовувати варіанти лише з select, multiselect, "
+"radio або checkbox."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' choices must be a non-empty list."
+msgstr "Варіанти поля '%(field)s' мають бути непорожнім списком."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' choices must be non-empty strings."
+msgstr "Варіанти поля '%(field)s' мають бути непорожніми рядками."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' has invalid type '%(type)s'."
+msgstr "Поле '%(field)s' має недопустимий тип '%(type)s'."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' must contain a JSON object."
+msgstr "Поле '%(field)s' має містити JSON-об'єкт."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' must define a non-empty choices list."
+msgstr "Поле '%(field)s' має визначати непорожній список варіантів."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' must have a non-empty label."
+msgstr "Поле '%(field)s' повинно містити непорожню назву."
+
+#: apps/theme_manager/admin.py
+msgid "Field '%(field)s' required must be true or false."
+msgstr "Значення «required» поля '%(field)s' має бути true або false."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Filter by event type and time, then open the related session and messages "
+"for context."
+msgstr ""
+"Фільтруйте за типом і часом події, потім відкривайте пов’язану сесію і "
+"повідомлення для контексту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Filter by recent activity, channel, lead or closed state and open a session "
+"to review its full sequence."
+msgstr ""
+"Фільтруйте за останньою активністю, каналом, статусом ліда або закриття і "
+"відкривайте сесію для перегляду повної послідовності."
+
+#: apps/blog_manager/models.py
+msgid "First page template"
+msgstr "Шаблон першої сторінки"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"For a module component, attach only the module records that should be "
+"selectable in the editor modal."
+msgstr ""
+"Для компонента модуля додайте лише ті записи модуля, які мають бути "
+"доступними для вибору у модальному редакторі."
+
+#: apps/userprofile/templates/account/login.html
+#: apps/userprofile/templates/account/password_change.html
+msgid "Forgot password?"
+msgstr "Забули пароль?"
+
+#: apps/core_manager/admin_help.py
+msgid "Form labels and styling are configured in Comment appearance."
+msgstr ""
+"Підписи й оформлення форми налаштовуються в розділі «Вигляд коментарів»."
+
+#: apps/comments_manager/models.py
+msgid "Form title"
+msgstr "Заголовок форми"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Form title, label, placeholder, submit button, empty-state text and CSS."
+msgstr ""
+"Назва форми, підпис, підказка, кнопка відправки, текст порожнього стану та "
+"CSS."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Forms"
+msgstr "Форми"
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Full name"
+msgstr "Повне імʼя"
+
+#: apps/theme_manager/admin.py
+msgid "GET required"
+msgstr "Вимагається GET"
+
+#: apps/ai_assistant/models.py
+msgid "Gemini"
+msgstr "Gemini"
+
+#: apps/ai_assistant/admin.py apps/theme_manager/admin.py
+msgid "General"
+msgstr "Загальне"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Generated main AVIF plus 600×400 desktop and 380×253 mobile crops; originals"
+" are not retained."
+msgstr ""
+"Генеруються основний AVIF плюс обрізки 600×400 для десктопу і 380×253 для "
+"мобільних; оригінали не зберігаються."
+
+#: apps/core_manager/models.py
+msgid "GitHub API timeout in seconds."
+msgstr "Таймаут GitHub API у секундах."
+
+#: apps/core_manager/models.py
+msgid "GitHub reviews enabled"
+msgstr "Відгуки GitHub увімкнено"
+
+#: apps/core_manager/models.py
+msgid "GitHub reviews issue number"
+msgstr "Номер issue відгуків GitHub"
+
+#: apps/core_manager/models.py
+msgid "GitHub reviews repository"
+msgstr "Репозиторій відгуків GitHub"
+
+#: apps/core_manager/models.py
+msgid "GitHub reviews timeout"
+msgstr "Тайм-аут відгуків GitHub"
+
+#: apps/blog_manager/models.py
+msgid "Global tag cloud"
+msgstr "Глобальна хмара тегів"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Go to comments: "
+msgstr "Перейти до коментарів: "
+
+#: apps/core_manager/models.py
+msgid "Google Analytics ID"
+msgstr "ID Google Analytics"
+
+#: apps/core_manager/models.py
+msgid "Google Tag Manager ID"
+msgstr "ID Google Tag Manager"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Grant staff status only when admin access is required, then assign the "
+"smallest suitable group."
+msgstr ""
+"Надавайте статус співробітника лише за потреби адміністративного доступу, а "
+"потім призначайте найменшу підходящу групу."
+
+#: apps/core_manager/admin_help.py
+msgid "Group changes affect every member immediately."
+msgstr "Зміни групи застосовуються одразу до всіх учасників."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Group membership and individual permissions for precise access control."
+msgstr ""
+"Членство в групах і індивідуальні дозволи для точного контролю доступу."
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Groups"
+msgstr "Групи"
+
+#: apps/theme_manager/admin.py
+msgid "HTML files"
+msgstr "HTML-файли"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"HTML template uploads and refresh actions that discover templates in the "
+"theme folder."
+msgstr ""
+"Завантаження HTML-шаблонів і дії оновлення для виявлення шаблонів у папці "
+"теми."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Handle follow-up in an approved communication system and retain only "
+"necessary data."
+msgstr ""
+"Обробляйте супровід у затвердженій системі комунікації та зберігайте лише "
+"необхідні дані."
+
+#: apps/ai_assistant/admin.py
+msgid "Has embedding"
+msgstr "Має векторне представлення"
+
+#: apps/blog_manager/models.py
+msgid "Height"
+msgstr "Висота"
+
+#: apps/ai_assistant/templates/includes/ai_chat_widget.html
+msgid "Hello. How can I help?"
+msgstr "Привіт. Чим можу допомогти?"
+
+#: apps/comments_manager/admin.py
+msgid "Hidden %(count)s comment(s)."
+msgstr "Приховано %(count)s коментар(і/ів)."
+
+#: apps/comments_manager/admin.py
+msgid "Hide selected comments"
+msgstr "Приховати вибрані коментарі"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Higher temperature increases variation; lower similarity thresholds can "
+"introduce irrelevant context."
+msgstr ""
+"Вища температура збільшує варіації; нижчі пороги схожості можуть додавати "
+"нерелевантний контекст."
+
+#: apps/core_manager/models.py
+msgid "Home page"
+msgstr "Головна сторінка"
+
+#: apps/userprofile/templates/account/signup.html
+msgid "I agree with"
+msgstr "Я погоджуюся з"
+
+#: apps/ai_assistant/models.py
+msgid ""
+"I do not have enough information to answer precisely. Please leave your "
+"contact details and I will pass the question to a specialist."
+msgstr ""
+"У мене недостатньо інформації, щоб точно відповісти. Будь ласка, залиште "
+"свої контактні дані, і я передам запитання фахівцю."
+
+#: apps/ai_assistant/models.py apps/core_manager/models.py
+msgid "IP address"
+msgstr "IP-адреса"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/models.py
+msgid "Icon"
+msgstr "Іконка"
+
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "If you already have an account"
+msgstr "Якщо у вас вже є обліковий запис"
+
+#: apps/userprofile/templates/account/password_reset_done.html
+msgid "If you do not see the email, please check your spam folder."
+msgstr "Якщо листа немає, перевірте папку спаму."
+
+#: apps/userprofile/templates/account/signup.html
+msgid "If you have already registered"
+msgstr "Якщо ви вже зареєстровані"
+
+#: apps/blog_manager/models.py
+msgid "Image"
+msgstr "Зображення"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Images"
+msgstr "Зображення"
+
+#: apps/blog_manager/models.py
+msgid "Images count"
+msgstr "Кількість зображень"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Images, tags, first-page and paginated templates, default article template "
+"and articles per page."
+msgstr ""
+"Зображення, теги, шаблони першої і пагінованої сторінок, стандартний шаблон "
+"статті та кількість статей на сторінку."
+
+#: apps/ai_assistant/templates/admin/ai_assistant/knowledgechunk/import_json.html
+msgid "Import"
+msgstr "Імпорт"
+
+#: apps/ai_assistant/templates/admin/ai_assistant/knowledgechunk/change_list.html
+msgid "Import JSON chunks"
+msgstr "Імпорт фрагментів JSON"
+
+#: apps/ai_assistant/admin.py
+msgid "Import chunks from JSON"
+msgstr "Імпорт фрагментів із JSON"
+
+#: apps/ai_assistant/admin.py
+msgid "Import completed. Created: %(created)s, updated: %(updated)s"
+msgstr "Імпорт завершено. Створено: %(created)s, оновлено: %(updated)s"
+
+#: apps/ai_assistant/admin.py
+msgid "Import error: %(error)s"
+msgstr "Помилка імпорту: %(error)s"
+
+#: apps/core_manager/admin_help.py
+msgid "Important notes"
+msgstr "Важливі нотатки"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Imported or pasted text is untrusted data; review it for instructions, "
+"secrets and licensing constraints."
+msgstr ""
+"Імпортований або вставлений текст — недовірені дані; перевірте їх на "
+"інструкції, секрети та ліцензійні обмеження."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Inactive images are never returned; responsive templates should prefer "
+"crop_mob_url and crop_url with url as fallback."
+msgstr ""
+"Неактивні зображення ніколи не відображаються; адаптивні шаблони мають "
+"використовувати crop_mob_url і crop_url з url як запасний варіант."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Inactive links should not be rendered but remain available for later reuse."
+msgstr ""
+"Неактивні посилання не слід відображати, але вони мають залишатися "
+"доступними для повторного використання."
+
+#: apps/core_manager/admin_help.py
+msgid "Inactive or unpublished articles are excluded by the rendering logic."
+msgstr "Неактивні або неопубліковані статті виключаються логікою відтворення."
+
+#: apps/blog_manager/models.py
+msgid "Include descendant categories"
+msgstr "Включати дочірні категорії"
+
+#: apps/ai_assistant/models.py
+#: apps/core_manager/templates/admin/help/button.html
+msgid "Info"
+msgstr "Інформація"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Inspect individual user and assistant messages together with model and token"
+" metadata."
+msgstr ""
+"Переглядайте окремі повідомлення користувача та асистента разом із "
+"метаданими моделі та токенів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Inspect operational events, warnings, fallbacks and provider errors emitted "
+"by the assistant."
+msgstr ""
+"Переглядайте операційні події, попередження, переходи на резервні варіанти "
+"та помилки провайдера, які генерує асистент."
+
+#: apps/core_manager/models.py
+msgid "Instagram URL"
+msgstr "URL Instagram"
+
+#: apps/blog_manager/models.py
+msgid "Intro"
+msgstr "Вступ"
+
+#: apps/core_manager/admin_help.py
+msgid "Invalid Django template syntax is rejected when saving."
+msgstr "Неправильний синтаксис шаблону Django відхиляється при збереженні."
+
+#: apps/userprofile/admin.py
+msgid "Invalid Django template syntax: %(error)s"
+msgstr "Неправильний синтаксис шаблону Django: %(error)s"
+
+#: apps/theme_manager/admin.py
+msgid "Invalid ZIP archive."
+msgstr "Неправильний ZIP-архів."
+
+#: apps/blog_manager/image_module_forms.py
+msgid "Invalid image manifest."
+msgstr "Некоректний маніфест зображень."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Invalid structured data can affect all inheriting pages, so validate it "
+"before deployment."
+msgstr ""
+"Помилкові структуровані дані можуть впливати на всі спадкові сторінки, тому "
+"перевіряйте їх перед запуском."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Invalid template syntax automatically falls back to the default account "
+"template on the public site."
+msgstr ""
+"Неправильний синтаксис шаблону автоматично повертає до стандартного шаблону "
+"облікового запису на публічному сайті."
+
+#: apps/core_manager/admin_help.py
+msgid "Invalid template syntax can break every page that renders comments."
+msgstr ""
+"Неправильний синтаксис шаблону може зламати всі сторінки з коментарями."
+
+#: apps/theme_manager/admin.py
+msgid "Invalid theme folder name."
+msgstr "Неправильна назва теки теми."
+
+#: apps/ai_assistant/models.py
+msgid "Is lead"
+msgstr "Лід"
+
+#: apps/core_manager/models.py
+msgid "Issue number whose comments are used as reviews."
+msgstr "Номер issue, коментарі якого використовуються як відгуки."
+
+#: apps/ai_assistant/admin.py
+msgid "JSON file with chunks"
+msgstr "JSON-файл з фрагментами"
+
+#: apps/core_manager/admin_help.py
+msgid "JSON import and bulk generation of missing embeddings."
+msgstr "Імпорт JSON і масова генерація відсутніх ембеддінгів."
+
+#: apps/theme_manager/admin.py apps/theme_manager/models.py
+msgid ""
+"JSON schema for extra article fields used by categories with this article "
+"template."
+msgstr ""
+"JSON-схема для додаткових полів статті, які використовуються категоріями з "
+"цим шаблоном статті."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Keep required form fields, CSRF tokens, URL names and template variables "
+"intact."
+msgstr ""
+"Не змінюйте потрібні поля форми, CSRF токени, URL-імена та змінні шаблону."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Keep slugs stable because editor behavior may identify components by slug."
+msgstr ""
+"Зберігайте slug стабільним, оскільки поведінка редактора може ідентифікувати"
+" компоненти за slug."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Keep the Site ID referenced by settings and attach it to each Social App."
+msgstr ""
+"Зберігайте ідентифікатор сайту, на який посилаються налаштування, та "
+"прив’язуйте його до кожного Social App."
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Keep your account secure by updating or setting a password."
+msgstr ""
+"Забезпечте безпеку облікового запису, оновивши або встановивши пароль."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Keep {% extends \"account/_auth_layout.html\" %}, account URL names and the "
+"main block unless you intentionally replace the shared authentication "
+"layout."
+msgstr ""
+"Залиште {% extends \"account/_auth_layout.html\" %}, URL-імена облікового "
+"запису та основний блок, якщо ви не замінюєте спільне автентифікаційне "
+"оформлення навмисно."
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid "Keywords"
+msgstr "Ключові слова"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Knowledge Chunk"
+msgstr "Знання (Chunk)"
+
+#: apps/ai_assistant/models.py
+msgid "Knowledge chunk"
+msgstr "Фрагмент знань"
+
+#: apps/ai_assistant/models.py
+msgid "Knowledge chunks"
+msgstr "Фрагменти знань"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Labels used by article metadata, search links and configured tag modules."
+msgstr ""
+"Мітки використовуються в метаданих статті, пошукових посиланнях і "
+"налаштованих модулях тегів."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Language links generated automatically from settings.LANGUAGES."
+msgstr ""
+"Посилання мов генеруються автоматично з налаштувань settings.LANGUAGES."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Language switcher"
+msgstr "Перемикач мови"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Large counts increase page weight and reduce the meaning of a latest-content"
+" block."
+msgstr ""
+"Великі ліміти збільшують вагу сторінки і зменшують значимість блоку "
+"останнього контенту."
+
+#: apps/ai_assistant/models.py
+msgid "Last message at"
+msgstr "Останнє повідомлення о"
+
+#: apps/core_manager/models.py
+msgid "Latest articles count"
+msgstr "Кількість останніх статей"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Latest blog articles"
+msgstr "Останні статті блогу"
+
+#: apps/ai_assistant/models.py apps/core_manager/admin_help.py
+#: config/settings.py
+msgid "Lead"
+msgstr "Лід"
+
+#: apps/ai_assistant/models.py
+msgid "Leads"
+msgstr "Ліди"
+
+#: apps/core_manager/admin_help.py
+msgid "Limits are 25 MB per upload and 500 MB of generated files per module."
+msgstr ""
+"Обмеження: 25 МБ за завантаження та 500 МБ згенерованих файлів на модуль."
+
+#: apps/comments_manager/models.py
+msgid "Limits comments per user and IP address during this period."
+msgstr "Обмежує кількість коментарів на користувача та IP за цей період."
+
+#: apps/theme_manager/models.py
+msgid "Line count"
+msgstr "Кількість рядків"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Link title, destination URL, new-tab and nofollow options, CSS class, icon "
+"and Active status."
+msgstr ""
+"Назва посилання, URL призначення, опції відкриття у новій вкладці та "
+"nofollow, CSS-клас, іконка та активний статус."
+
+#: apps/core_manager/models.py
+msgid "LinkedIn URL"
+msgstr "URL LinkedIn"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Links to Latest articles, Tags and Images module configurations available to"
+" module-aware components."
+msgstr ""
+"Посилання на налаштування модулів Останні статті, Теги та Зображення, "
+"доступні для компонентів з підтримкою модулів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Load the image_modules template-tag library and request the module by slug."
+msgstr ""
+"Завантажте бібліотеку шаблонних тегів image_modules і запросіть модуль за "
+"slug."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Local user, provider, provider user ID, connection dates and provider "
+"metadata."
+msgstr ""
+"Локальний користувач, провайдер, ідентифікатор користувача провайдера, дати "
+"підключення та метадані провайдера."
+
+#: apps/userprofile/templates/socialaccount/login_cancelled.html
+msgid "Login cancelled"
+msgstr "Вхід скасовано"
+
+#: apps/ai_assistant/models.py
+msgid "Lost"
+msgstr "Втрачено"
+
+#: apps/ai_assistant/models.py
+msgid "Low Confidence"
+msgstr "Низька впевненість"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Main and cropped images, tags, template override and template-defined extra "
+"fields."
+msgstr ""
+"Основні і обрізані зображення, теги, перебивання шаблону та додаткові поля, "
+"визначені шаблоном."
+
+#: apps/core_manager/admin_help.py
+msgid "Maintain reusable links with consistent behavior and styling."
+msgstr ""
+"Підтримуйте повторно використовувані посилання з послідовною поведінкою та "
+"оформленням."
+
+#: apps/core_manager/admin_help.py
+msgid "Maintain reusable topic labels linked to articles and categories."
+msgstr ""
+"Підтримуйте повторно використовувані тематичні мітки, пов’язані зі статтями "
+"та категоріями."
+
+#: apps/core_manager/models.py
+msgid "Maintenance message"
+msgstr "Повідомлення про технічне обслуговування"
+
+#: apps/core_manager/models.py
+msgid "Maintenance mode"
+msgstr "Режим технічного обслуговування"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Maintenance mode affects public availability; verify the message before "
+"enabling it."
+msgstr ""
+"Режим обслуговування впливає на доступність сайту; перевірте повідомлення "
+"перед увімкненням."
+
+#: apps/userprofile/templates/account/email.html
+msgid "Make primary"
+msgstr "Зробити основною"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Manage authentication appearance and the system page shown to authenticated "
+"users in one place."
+msgstr ""
+"Керуйте виглядом автентифікації та системною сторінкою для автентифікованих "
+"користувачів в одному місці."
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Manage connected accounts"
+msgstr "Керувати підключеними обліковими записами"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Manage contact requests identified or submitted during assistant "
+"conversations."
+msgstr ""
+"Керуйте запитами на контакт, виявленими або поданими під час розмов з "
+"асистентом."
+
+#: apps/userprofile/defaults/personal_account.py
+#: apps/userprofile/templates/account/verified_email_required.html
+msgid "Manage email addresses"
+msgstr "Керування електронними адресами"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Manage source passages that the assistant retrieves as factual context."
+msgstr ""
+"Керуйте джерельними уривками, які асистент використовує як фактичний "
+"контекст."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Manage the subject and body of account-related emails in every supported "
+"language."
+msgstr ""
+"Керуйте темою та тілом листів, пов’язаних із обліковими записами, кожною "
+"підтримуваною мовою."
+
+#: apps/userprofile/defaults/personal_account.py
+msgid ""
+"Manage your personal information, email addresses, password, and connected "
+"accounts."
+msgstr ""
+"Керуйте особистою інформацією, електронними адресами, паролем та "
+"підключеними обліковими записами."
+
+#: apps/blog_manager/models.py
+msgid "Manifest"
+msgstr "Маніфест"
+
+#: apps/core_manager/admin_help.py
+msgid "Manual edits damage transcript integrity and should be avoided."
+msgstr "Ручні правки шкодять цілісності транскрипта і мають уникатися."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Mark a session closed when no further handling is required and use Lead "
+"records for follow-up workflow."
+msgstr ""
+"Позначайте сесію як закриту, коли подальша обробка не потрібна, і "
+"використовуйте записи лідів для подальшого опрацювання."
+
+#: apps/comments_manager/admin.py
+msgid "Mark selected comments as removed"
+msgstr "Позначити вибрані коментарі як видалені"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Markup and Django template tags controlling the final comment interface."
+msgstr ""
+"Розмітка і теги Django-шаблонів, що керують остаточним інтерфейсом "
+"коментаря."
+
+#: apps/comments_manager/models.py
+msgid "Maximum comments"
+msgstr "Максимальна кількість коментарів"
+
+#: apps/ai_assistant/models.py
+msgid "Maximum context chunks"
+msgstr "Максимальна кількість фрагментів контексту"
+
+#: apps/core_manager/models.py
+msgid "Maximum number of external reviews shown on the site."
+msgstr "Максимальна кількість зовнішніх відгуків, що відображаються на сайті."
+
+#: apps/blog_manager/models.py
+msgid "Maximum number of tags displayed by this module."
+msgstr "Максимальна кількість тегів, що відображаються у цьому модулі."
+
+#: apps/ai_assistant/admin.py apps/ai_assistant/models.py
+#: apps/core_manager/models.py
+msgid "Message"
+msgstr "Повідомлення"
+
+#: apps/userprofile/models.py
+msgid "Message template"
+msgstr "Шаблон повідомлення"
+
+#: apps/core_manager/admin_help.py apps/core_manager/models.py
+#: config/settings.py
+msgid "Messages"
+msgstr "Повідомлення"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Messages and technical metadata may contain personal or sensitive "
+"information."
+msgstr ""
+"Повідомлення та технічні метадані можуть містити персональні або "
+"конфіденційні дані."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Messages can contain personal data, secrets or malicious instructions; treat"
+" them as untrusted content."
+msgstr ""
+"Повідомлення можуть містити персональні дані, секрети або шкідливі "
+"інструкції — ставтеся до них як до ненадійного вмісту."
+
+#: apps/ai_assistant/models.py
+msgid "Minimum similarity score"
+msgstr "Мінімальний коефіцієнт подібності"
+
+#: apps/blog_manager/models.py
+msgid "Mobile cropped image"
+msgstr "Обрізане зображення для мобільних пристроїв"
+
+#: apps/ai_assistant/models.py
+msgid "Model"
+msgstr "Модель"
+
+#: apps/ai_assistant/admin.py
+msgid "Model behavior"
+msgstr "Поведінка моделі"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Model output is not automatically verified even when retrieval context was "
+"used."
+msgstr ""
+"Вихідні дані моделі не перевіряються автоматично, навіть якщо "
+"використовувався контекст вилучення."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Moderate comments attached to articles and other comment-enabled objects."
+msgstr ""
+"Модеруйте коментарі, прикріплені до статей та інших об’єктів із коментарями."
+
+#: apps/blog_manager/models.py
+msgid "Module name"
+msgstr "Назва модуля"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Module name and slug, source categories, descendant inclusion, article "
+"limit, ordering and Active status."
+msgstr ""
+"Назва модуля і slug, вихідні категорії, включення нащадків, ліміт статей, "
+"упорядкування і статус Активності."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Module name, stable slug, display mode, returned image count, Active status "
+"and isolated storage folder."
+msgstr ""
+"Назва модуля, стабільний slug, режим відображення, кількість зображень, "
+"статус Активності і ізольована папка зберігання."
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: apps/theme_manager/models.py config/settings.py
+msgid "Modules — Images"
+msgstr "Модулі — Зображення"
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: apps/theme_manager/models.py config/settings.py
+msgid "Modules — Latest articles"
+msgstr "Модулі — Останні статті"
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: apps/theme_manager/models.py config/settings.py
+msgid "Modules — Tags"
+msgstr "Модулі — Теги"
+
+#: apps/blog_manager/models.py
+msgid "Most used first"
+msgstr "Спочатку найчастіше вживані"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Multilingual title, introduction and body, category, author, slug, status "
+"and publication date."
+msgstr ""
+"Багатомовна назва, вступ і основний текст, категорія, автор, слаг, статус та"
+" дата публікації."
+
+#: apps/ai_assistant/models.py apps/core_manager/models.py
+#: apps/theme_manager/admin.py apps/theme_manager/models.py
+msgid "Name"
+msgstr "Назва"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Name, email, phone and message are personal data and require appropriate "
+"access and retention controls."
+msgstr ""
+"Ім’я, електронна пошта, телефон і повідомлення є персональними даними і "
+"потребують відповідного контролю доступу й збереження."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Navigation"
+msgstr "Навігація"
+
+#: apps/core_manager/admin_help.py
+msgid "Near-duplicate tags fragment navigation and SEO signals."
+msgstr "Схожі теги розпорошують навігацію та SEO-сигнали."
+
+#: apps/core_manager/admin_help.py
+msgid "Never log API keys, passwords or authorization headers."
+msgstr "Ніколи не реєструйте API-ключі, паролі чи авторизаційні заголовки."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Never place passwords, API keys or private admin information in email "
+"templates."
+msgstr ""
+"Ніколи не розміщуйте паролі, API-ключі або приватну адміністративну "
+"інформацію в шаблонах листів."
+
+#: apps/ai_assistant/models.py
+msgid "New"
+msgstr "Новий"
+
+#: apps/comments_manager/models.py
+msgid "New comments"
+msgstr "Нові коментарі"
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+msgid "New password"
+msgstr "Новий пароль"
+
+#: apps/blog_manager/models.py
+msgid "Newest first"
+msgstr "Спочатку новіші"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Newsletter block with CSRF token and message states ready for backend "
+"wiring."
+msgstr ""
+"Блок розсилки з CSRF токеном і станами повідомлень, готовий для бекенд-"
+"інтеграції."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Next article"
+msgstr "Наступна стаття"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Next template"
+msgstr "Наступний шаблон"
+
+#: apps/ai_assistant/admin.py
+msgid "No AssistantProfile found"
+msgstr "Профіль Асистента не знайдено"
+
+#: apps/ai_assistant/admin.py
+msgid "No missing embeddings found"
+msgstr "Відсутні пропущені векторні представлення"
+
+#: apps/core_manager/models.py
+msgid "Nofollow"
+msgstr "Nofollow"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid "Noindex"
+msgstr "Noindex"
+
+#: apps/core_manager/admin_help.py
+msgid "Noindex and canonical settings directly affect search-engine indexing."
+msgstr ""
+"Налаштування noindex і канонічних посилань безпосередньо впливають на "
+"індексацію пошуковими системами."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Noindex, metadata, preview image, canonical parameters and Schema.org "
+"overrides."
+msgstr ""
+"Noindex, метадані, прев’ю-зображення, канонічні параметри та перевизначення "
+"Schema.org."
+
+#: apps/blog_manager/models.py
+msgid "Number of articles displayed on each category page."
+msgstr "Кількість статей, що відображаються на кожній сторінці категорії."
+
+#: apps/core_manager/models.py
+msgid "Number of latest articles shown on regular site pages."
+msgstr ""
+"Кількість останніх статей, що показуються на звичайних сторінках сайту."
+
+#: apps/core_manager/models.py
+msgid "OG site name"
+msgstr "Назва сайту для OG"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid "OG type"
+msgstr "Тип OG"
+
+#: apps/blog_manager/models.py
+msgid "Oldest first"
+msgstr "Спочатку старіші"
+
+#: apps/ai_assistant/models.py
+msgid "Ollama"
+msgstr "Ollama"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"One Bootstrap user button that opens sign-in or the configured personal "
+"information page."
+msgstr ""
+"Одна кнопка Bootstrap для користувача, що відкриває вхід або налаштовану "
+"сторінку персональної інформації."
+
+#: apps/blog_manager/models.py
+msgid "One class per tag, in order"
+msgstr "Один клас на тег, за порядком"
+
+#: apps/core_manager/admin_help.py
+msgid "One code record for each supported comment template type."
+msgstr "Один запис коду для кожного типу підтримуваного шаблону коментарів."
+
+#: apps/blog_manager/models.py
+msgid "One image in daily rotation"
+msgstr "Одне зображення в щоденній ротації"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"One protected record for every account, password and social-authentication "
+"template."
+msgstr ""
+"Один захищений запис для кожного шаблону облікового запису, пароля та "
+"соціальної автентифікації."
+
+#: apps/blog_manager/models.py
+msgid "One random class per tag"
+msgstr "Один випадковий клас на тег"
+
+#: apps/blog_manager/models.py
+msgid "One random image"
+msgstr "Одне випадкове зображення"
+
+#: apps/core_manager/models.py
+msgid "One social/profile URL per line for schema.org sameAs."
+msgstr "Одне соціальне/профільне URL на рядок для schema.org sameAs."
+
+#: apps/core_manager/admin_help.py
+msgid "Only active chunks are eligible for retrieval."
+msgstr "Для пошуку підходять лише активні уривки."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Only components assigned to this template should be offered by its code "
+"editor."
+msgstr ""
+"Редактор коду повинен пропонувати лише компоненти, призначені для цього "
+"шаблону."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Only mark trusted editor content safe; pasted HTML can introduce broken "
+"markup or unsafe output."
+msgstr ""
+"Позначайте безпечним лише контент від довірених редакторів; вставлений HTML "
+"може спричинити пошкоджену розмітку або небезпечний вивід."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Open generated file links to verify processing, then attach the module to an"
+" Images Template component."
+msgstr ""
+"Відкривайте посилання на згенеровані файли для перевірки обробки, потім "
+"прикріпіть модуль до компоненту Images Template."
+
+#: apps/theme_manager/templates/theme_manager/template_file_view.html
+msgid "Open in browser"
+msgstr "Відкрити в браузері"
+
+#: apps/core_manager/models.py
+msgid "Open in new tab"
+msgstr "Відкрити в новій вкладці"
+
+#: apps/core_manager/admin_help.py
+msgid "Open messages from their session so surrounding context is understood."
+msgstr ""
+"Відкривайте повідомлення з їхньої сесії, щоб врахувати оточуючий контекст."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Open the required template and edit its HTML and Django tags in the code "
+"editor."
+msgstr ""
+"Відкрийте потрібний шаблон і редагуйте його HTML та теги Django у редакторі "
+"коду."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Open unread messages, verify context and mark them read after they enter "
+"your response workflow."
+msgstr ""
+"Відкривайте непрочитані повідомлення, перевіряйте контекст і позначайте їх "
+"як прочитані після початку процесу відповіді."
+
+#: apps/ai_assistant/models.py
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: apps/blog_manager/models.py
+msgid "Optional JSON-LD graph for this article."
+msgstr "Опційний JSON-LD граф для цієї статті."
+
+#: apps/blog_manager/models.py
+msgid "Optional JSON-LD graph for this category."
+msgstr "Опційний JSON-LD граф для цієї категорії."
+
+#: apps/core_manager/models.py apps/theme_manager/admin.py
+msgid "Optional JSON-LD graph for this page."
+msgstr "Необов’язковий JSON-LD граф для цієї сторінки."
+
+#: apps/core_manager/models.py
+msgid "Optional JSON-LD graph override used when a page has no custom schema."
+msgstr ""
+"Факультативне заміщення JSON-LD графа, яке використовується, якщо сторінка "
+"не має власної схеми."
+
+#: apps/blog_manager/models.py
+msgid "Optional JSON-LD graph used when a blog article has no custom schema."
+msgstr ""
+"Опціональний JSON-LD граф, що використовується, якщо у статті блогу немає "
+"власної схеми."
+
+#: apps/blog_manager/models.py
+msgid "Optional JSON-LD graph used when a blog category has no custom schema."
+msgstr ""
+"Опціональний JSON-LD граф, що використовується, якщо у категорії блогу немає"
+" власної схеми."
+
+#: apps/core_manager/models.py
+msgid "Optional robots.txt content managed from the admin."
+msgstr "Додатковий вміст robots.txt, керований з адмінпанелі."
+
+#: apps/blog_manager/models.py
+msgid "Ordering"
+msgstr "Сортування"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Organisation:"
+msgstr "Організація:"
+
+#: apps/core_manager/models.py
+msgid "Organization logo"
+msgstr "Логотип організації"
+
+#: apps/core_manager/models.py
+msgid "Organization name"
+msgstr "Назва організації"
+
+#: apps/userprofile/templates/account/login.html
+msgid "Other sign-in methods"
+msgstr "Інші способи входу"
+
+#: apps/core_manager/models.py apps/theme_manager/admin.py
+msgid "Page"
+msgstr "Сторінка"
+
+#: apps/theme_manager/admin.py
+msgid "Page OG type"
+msgstr "Тип OG сторінки"
+
+#: apps/theme_manager/admin.py
+msgid "Page description [en]"
+msgstr "Опис сторінки [en]"
+
+#: apps/theme_manager/admin.py
+msgid "Page description [uk]"
+msgstr "Опис сторінки [uk]"
+
+#: apps/theme_manager/admin.py
+msgid "Page keywords"
+msgstr "Ключові слова сторінки"
+
+#: apps/theme_manager/admin.py
+msgid "Page noindex"
+msgstr "Сторінка noindex"
+
+#: apps/core_manager/views.py
+msgid "Page not found"
+msgstr "Сторінку не знайдено"
+
+#: apps/theme_manager/admin.py
+msgid "Page preview image"
+msgstr "Зображення попереднього перегляду сторінки"
+
+#: apps/theme_manager/admin.py
+msgid "Page published"
+msgstr "Сторінка опублікована"
+
+#: apps/theme_manager/admin.py
+msgid "Page schema graph"
+msgstr "Схема графа сторінки"
+
+#: apps/theme_manager/admin.py
+msgid "Page slug"
+msgstr "Слаг сторінки"
+
+#: apps/theme_manager/admin.py
+msgid "Page title [en]"
+msgstr "Заголовок сторінки [en]"
+
+#: apps/theme_manager/admin.py
+msgid "Page title [uk]"
+msgstr "Заголовок сторінки [uk]"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Page-level SEO values override global defaults; leave fields empty when "
+"inheritance is preferred."
+msgstr ""
+"Значення SEO на рівні сторінки перевизначають глобальні налаштування; "
+"залишайте поля порожніми для наслідування."
+
+#: apps/core_manager/admin_help.py apps/core_manager/models.py
+#: config/settings.py
+msgid "Pages"
+msgstr "Сторінки"
+
+#: apps/blog_manager/models.py
+msgid "Paginated pages template"
+msgstr "Шаблон сторінок із пагінацією"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Pagination"
+msgstr "Пагінація"
+
+#: apps/blog_manager/models.py
+msgid "Parent category"
+msgstr "Батьківська категорія"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Parent relationship, multilingual title, description and introduction, slug,"
+" icon and sort order."
+msgstr ""
+"Батьківська категорія, багатомовна назва, опис і вступ, слаг, іконка та "
+"порядок сортування."
+
+#: apps/userprofile/templates/account/login.html
+#: apps/userprofile/templates/account/password_reset_from_key.html
+#: apps/userprofile/templates/account/signup.html
+msgid "Password"
+msgstr "Пароль"
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Password and security"
+msgstr "Пароль та безпека"
+
+#: apps/userprofile/models.py
+msgid "Password changed"
+msgstr "Пароль змінено"
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+msgid "Password confirmation"
+msgstr "Підтвердження пароля"
+
+#: apps/userprofile/models.py
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "Password reset"
+msgstr "Скидання пароля"
+
+#: apps/userprofile/models.py
+msgid "Password reset complete"
+msgstr "Скидання пароля завершено"
+
+#: apps/userprofile/templates/account/password_reset_done.html
+msgid "Password reset instructions have been sent"
+msgstr "Інструкції зі скидання пароля надіслані"
+
+#: apps/userprofile/models.py
+msgid "Password set"
+msgstr "Пароль встановлено"
+
+#: apps/core_manager/admin_help.py
+msgid "Per-category and per-article assignments can override these defaults."
+msgstr ""
+"Призначення за категоріями та статтями може перевизначати ці налаштування за"
+" замовчуванням."
+
+#: apps/theme_manager/admin.py
+msgid "Permission denied"
+msgstr "Доступ заборонено"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Permissions to view, add, change or delete records for individual models."
+msgstr ""
+"Дозволи на перегляд, додавання, зміну або видалення записів для окремих "
+"моделей."
+
+#: apps/core_manager/models.py
+msgid "Person image"
+msgstr "Зображення особи"
+
+#: apps/core_manager/models.py
+msgid "Person job title"
+msgstr "Посада особи"
+
+#: apps/core_manager/models.py
+msgid "Person name"
+msgstr "Ім’я особи"
+
+#: apps/core_manager/admin_help.py apps/userprofile/admin.py
+#: apps/userprofile/models.py config/settings.py
+msgid "Personal account template"
+msgstr "Шаблон персонального кабінету"
+
+#: apps/userprofile/admin.py
+msgid "Personal account template was reset to its default."
+msgstr "Шаблон персонального кабінету скинуто до стандартного."
+
+#: apps/theme_manager/defaults/template_components.py
+#: apps/userprofile/defaults/personal_account.py
+msgid "Personal information"
+msgstr "Особисті дані"
+
+#: apps/ai_assistant/models.py
+msgid "Phone"
+msgstr "Телефон"
+
+#: apps/userprofile/templates/socialaccount/login_redirect.html
+msgid "Please wait while we redirect you to the authentication provider."
+msgstr ""
+"Зачекайте, будь ласка, триває перенаправлення до провайдера автентифікації."
+
+#: apps/comments_manager/admin.py
+msgid "Posting and moderation"
+msgstr "Публікація та модерація"
+
+#: apps/theme_manager/admin.py
+msgid "Preview"
+msgstr "Перегляд"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/models.py
+msgid "Preview image"
+msgstr "Зображення для прев’ю"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Preview image, keywords, Open Graph type, Schema.org graph, noindex and "
+"other SEO overrides."
+msgstr ""
+"Зображення для прев’ю, ключові слова, тип Open Graph, граф Schema.org, "
+"noindex та інші SEO-перевизначення."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Previous article"
+msgstr "Попередня стаття"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Previous template"
+msgstr "Попередній шаблон"
+
+#: apps/userprofile/templates/account/email.html
+msgid "Primary"
+msgstr "Основна"
+
+#: apps/ai_assistant/models.py apps/blog_manager/models.py
+msgid "Priority"
+msgstr "Пріоритет"
+
+#: apps/core_manager/admin_help.py
+msgid "Process inquiries submitted through public contact forms."
+msgstr "Обробляйте запити, надіслані через публічні контактні форми."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Profile details and links to email, password, connected-account and sign-out"
+" actions."
+msgstr ""
+"Деталі профілю та посилання на дії: електронна пошта, пароль, підключені "
+"облікові записи та вихід."
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Profile picture"
+msgstr "Зображення профілю"
+
+#: apps/ai_assistant/admin.py apps/userprofile/models.py
+msgid "Prompt"
+msgstr "Промпт"
+
+#: apps/ai_assistant/models.py
+msgid "Prompt text"
+msgstr "Текст промпту"
+
+#: apps/ai_assistant/models.py
+msgid "Prompt tokens"
+msgstr "Токени запиту"
+
+#: apps/core_manager/admin_help.py
+msgid "Protocol and security behavior are configured elsewhere."
+msgstr "Протокол і параметри безпеки налаштовуються в іншому місці."
+
+#: apps/ai_assistant/admin.py
+msgid "Provider"
+msgstr "Провайдер"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Provider metadata can contain personal information and should be handled "
+"carefully."
+msgstr ""
+"Метадані провайдера можуть містити особисту інформацію і повинні оброблятися"
+" обережно."
+
+#: apps/ai_assistant/models.py
+msgid "Provider type"
+msgstr "Тип провайдера"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Provider type, chat and embedding models, prompt, temperature, context chunk"
+" limit, similarity threshold and fallback text."
+msgstr ""
+"Тип провайдера, моделі чату й ембеддінгів, підказка, температура, ліміт "
+"контекстних частин, поріг схожості та запасний текст."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Provider, application name, client ID, secret, optional key and provider-"
+"specific settings."
+msgstr ""
+"Провайдер, назва додатка, ідентифікатор клієнта, секрет, необов’язковий ключ"
+" та специфічні налаштування провайдера."
+
+#: apps/core_manager/models.py
+msgid "Public URL with protocol, for example: https://example.com."
+msgstr "Публічна URL з протоколом, наприклад: https://example.com."
+
+#: apps/core_manager/admin_help.py
+msgid "Public and removed states that control whether a comment is displayed."
+msgstr "Публічний і видалений стани, що керують відображенням коментаря."
+
+#: apps/core_manager/models.py
+msgid "Public domain without protocol, for example: example.com."
+msgstr "Публічна доменна адреса без протоколу, наприклад: example.com."
+
+#: apps/blog_manager/models.py
+msgid "Publish date"
+msgstr "Дата публікації"
+
+#: apps/comments_manager/models.py
+msgid "Publish immediately"
+msgstr "Опублікувати одразу"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Publish only after checking content, metadata, preview image and canonical "
+"behavior."
+msgstr ""
+"Публікуйте лише після перевірки контенту, метаданих, зображення попереднього"
+" перегляду і канонічної поведінки."
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid "Published"
+msgstr "Опубліковано"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Published state, workflow status and publication date all influence "
+"visibility."
+msgstr ""
+"Опублікований стан, статус робочого процесу та дата публікації впливають на "
+"видимість."
+
+#: apps/ai_assistant/models.py
+msgid "Qualified"
+msgstr "Кваліфіковано"
+
+#: apps/core_manager/admin_help.py
+msgid "Random mode may produce a different visual result on each render."
+msgstr ""
+"Випадковий режим може створювати різний візуальний результат при кожному "
+"відтворенні."
+
+#: apps/ai_assistant/models.py
+msgid "Rank"
+msgstr "Ранг"
+
+#: apps/userprofile/templates/account/email.html
+msgid "Re-send verification"
+msgstr "Надіслати підтвердження повторно"
+
+#: apps/core_manager/models.py
+msgid "Read"
+msgstr "Прочитано"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Read more"
+msgstr "Читати далі"
+
+#: apps/core_manager/templates/admin/shared/tree_sortable.html
+msgid "Ready"
+msgstr "Готово"
+
+#: apps/core_manager/admin_help.py
+msgid "Recommended workflow"
+msgstr "Рекомендований робочий процес"
+
+#: apps/userprofile/templates/socialaccount/login_redirect.html
+msgid "Redirecting"
+msgstr "Перенаправлення"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Refresh synchronizes discovery; it does not replace editorial assignments "
+"automatically."
+msgstr ""
+"Оновлення синхронізує виявлення шаблонів; воно не замінює редакторські "
+"призначення автоматично."
+
+#: apps/theme_manager/templates/admin/theme_manager/theme/change_list.html
+msgid "Refresh templates"
+msgstr "Оновити шаблони"
+
+#: apps/userprofile/templates/account/signup.html
+msgid "Register"
+msgstr "Зареєструватися"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Register theme packages and synchronize the Django templates available "
+"inside each theme."
+msgstr ""
+"Зареєструйте пакети тем та синхронізуйте шаблони Django, доступні в кожній "
+"темі."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Related chat session, contact details, message, service interest, status and"
+" timestamps."
+msgstr ""
+"Пов’язана сесія чату, контактні дані, повідомлення, сфера зацікавленості, "
+"статус і часові мітки."
+
+#: apps/theme_manager/admin.py
+msgid "Related image modules"
+msgstr "Пов’язані модулі зображень"
+
+#: apps/theme_manager/admin.py
+msgid "Related latest articles modules"
+msgstr "Пов’язані модулі останніх статей"
+
+#: apps/core_manager/admin_help.py
+msgid "Related messages and operational context for one conversation."
+msgstr "Пов’язані повідомлення і операційний контекст для однієї розмови."
+
+#: apps/theme_manager/admin.py
+msgid "Related tag modules"
+msgstr "Пов’язані модулі тегів"
+
+#: apps/userprofile/templates/account/login.html
+msgid "Remember me"
+msgstr "Запам’ятати мене"
+
+#: apps/userprofile/templates/account/email.html
+msgid "Remove"
+msgstr "Видалити"
+
+#: apps/core_manager/admin_help.py
+msgid "Remove or archive messages according to the site's retention policy."
+msgstr ""
+"Видаляйте або архівуйте повідомлення відповідно до політики зберігання "
+"сайту."
+
+#: apps/userprofile/templates/socialaccount/connections.html
+msgid "Remove selected account"
+msgstr "Видалити вибраний обліковий запис"
+
+#: apps/comments_manager/admin.py
+msgid "Removed %(count)s comment(s)."
+msgstr "Видалено %(count)s коментар(ів)."
+
+#: apps/core_manager/admin_help.py
+msgid "Removing a template variable can break links or personalized values."
+msgstr ""
+"Видалення змінної шаблону може порушити посилання або персоналізовані "
+"значення."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Removing an image or module deletes all generated AVIF variants after save."
+msgstr ""
+"Видалення зображення або модуля знищує всі згенеровані AVIF-варіанти після "
+"збереження."
+
+#: apps/core_manager/models.py
+msgid "Rendered at /search/ for article search results."
+msgstr "Відображається за адресою /search/ для результатів пошуку статей."
+
+#: apps/core_manager/models.py
+msgid "Rendered at the site root URL."
+msgstr "Відображається за кореневою URL-адресою сайту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Replies are sent outside this section unless a dedicated integration is "
+"added."
+msgstr ""
+"Відповіді надсилаються поза цим розділом, якщо не додано спеціальну "
+"інтеграцію."
+
+#: apps/core_manager/models.py
+msgid "Repository in owner/name format."
+msgstr "Репозиторій у форматі owner/name."
+
+#: apps/comments_manager/templates/admin/comments_manager/commentsettings/change_form.html
+msgid "Reset all comment texts and styles to their initial values?"
+msgstr "Скинути всі тексти та стилі коментарів до початкових значень?"
+
+#: apps/userprofile/templates/admin/userprofile/authenticationemailtemplate/change_form.html
+msgid ""
+"Reset the English and Ukrainian subject and message to their initial values?"
+msgstr ""
+"Відновити англійські та українські теми та повідомлення до початкових "
+"значень?"
+
+#: apps/userprofile/templates/admin/userprofile/personalaccounttemplate/change_form.html
+msgid "Reset the personal account template to its initial code?"
+msgstr "Відновити шаблон особистого кабінету до початкового коду?"
+
+#: apps/userprofile/templates/admin/userprofile/authenticationtemplate/change_form.html
+msgid "Reset this authentication template to its initial code?"
+msgstr "Відновити цей шаблон автентифікації до початкового коду?"
+
+#: apps/comments_manager/templates/admin/comments_manager/commenttemplate/change_form.html
+msgid "Reset this comment template to its initial code?"
+msgstr "Скинути цей шаблон коментаря до початкового коду?"
+
+#: apps/comments_manager/templates/admin/comments_manager/commentsettings/change_form.html
+#: apps/comments_manager/templates/admin/comments_manager/commenttemplate/change_form.html
+#: apps/userprofile/templates/admin/userprofile/authenticationemailtemplate/change_form.html
+#: apps/userprofile/templates/admin/userprofile/authenticationtemplate/change_form.html
+#: apps/userprofile/templates/admin/userprofile/personalaccounttemplate/change_form.html
+msgid "Reset to defaults"
+msgstr "Скинути до налаштувань за замовчуванням"
+
+#: apps/core_manager/admin_help.py
+msgid "Reset to defaults replaces all custom code in this field."
+msgstr "Скидання за замовчуванням замінює весь власний код у цьому полі."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Reset to defaults replaces all customized code for the selected template."
+msgstr ""
+"Скинути за замовчуванням замінює весь налаштований код для обраного шаблону."
+
+#: apps/core_manager/admin_help.py
+msgid "Reset to defaults replaces all customized text and styles."
+msgstr "Скидання до стандартних замінює весь налаштований текст і стилі."
+
+#: apps/core_manager/admin_help.py
+msgid "Reset to defaults replaces customized text for both languages."
+msgstr "Скинути за замовчуванням замінює налаштований текст для обох мов."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Resolve the root cause before clearing or archiving operational records."
+msgstr ""
+"Вирішіть основну проблему перед очищенням або архівуванням операційних "
+"записів."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Retest the same question after rebuilding embeddings or changing retrieval "
+"settings."
+msgstr ""
+"Повторно тестуйте те саме питання після перебудови ембеддингів або зміни "
+"налаштувань вилучення."
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Retrieved Chunk"
+msgstr "Отриманий фрагмент"
+
+#: apps/ai_assistant/models.py
+msgid "Retrieved chunk"
+msgstr "Отриманий фрагмент"
+
+#: apps/ai_assistant/models.py
+msgid "Retrieved chunks"
+msgstr "Отримані фрагменти"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Reusable carousel for external reviews from GitHub and future providers."
+msgstr ""
+"Повторно використовувана карусель для зовнішніх відгуків з GitHub та "
+"майбутніх провайдерів."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Reusable image block configured by an Images module."
+msgstr ""
+"Повторно використовуваний блок зображень, налаштований модулем Зображень."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid ""
+"Reusable latest blog articles block using latest_blog_articles context."
+msgstr ""
+"Повторно використовуваний блок останніх статей блогу з контекстом "
+"latest_blog_articles."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Reusable navigation or call-to-action destinations consumed by templates."
+msgstr ""
+"Повторно використовувані цілі навігації або заклики до дії, які споживають "
+"шаблони."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Reusable pagination for Django Page objects named page_obj."
+msgstr ""
+"Повторно використовувана пагінація для об’єктів Django Page з ім’ям "
+"page_obj."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Reusable tags block configured by a Blog manager tag module."
+msgstr ""
+"Повторно використовуваний блок тегів, налаштований модулем тегів менеджера "
+"блогу."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review and maintain email addresses submitted through newsletter forms."
+msgstr ""
+"Переглядайте й підтримуйте електронні адреси, отримані через форми підписки "
+"на розсилку."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review complete assistant conversations and their visitor, channel and lead "
+"status."
+msgstr ""
+"Переглядайте повні розмови асистента та статуси відвідувача, каналу і ліда."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review integrations, analytics IDs, canonical URL parameters and maintenance"
+" mode."
+msgstr ""
+"Переглядайте інтеграції, аналітичні ідентифікатори, параметри канонічних URL"
+" і режим обслуговування."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review links between local users and accounts held by external login "
+"providers."
+msgstr ""
+"Переглядайте зв’язки між локальними користувачами та обліковими записами "
+"зовнішніх провайдерів входу."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review recent or reported comments and confirm their target article before "
+"moderating."
+msgstr ""
+"Переглядайте нещодавні або повідомлені коментарі й підтверджуйте їх цільову "
+"статтю перед модерацією."
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Review the basic information associated with your account."
+msgstr "Перегляньте основну інформацію, пов’язану з вашим обліковим записом."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review the discovered template map and preview before activating the theme."
+msgstr ""
+"Перегляньте знайдену карту шаблонів і попередній перегляд перед активацією "
+"теми."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Review the linked session before contacting the person so their request is "
+"understood."
+msgstr ""
+"Перегляньте пов’язану сесію перед контактом з особою, щоб зрозуміти її "
+"запит."
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Reviews"
+msgstr "Відгуки"
+
+#: apps/core_manager/models.py
+msgid "Reviews cache timeout"
+msgstr "Час кешування відгуків"
+
+#: apps/core_manager/models.py
+msgid "Reviews enabled"
+msgstr "Відгуки увімкнено"
+
+#: apps/core_manager/models.py
+msgid "Reviews limit"
+msgstr "Ліміт відгуків"
+
+#: apps/core_manager/models.py
+msgid "Robots.txt"
+msgstr "Robots.txt"
+
+#: apps/ai_assistant/models.py
+msgid "Role"
+msgstr "Роль"
+
+#: config/settings.py
+msgid "Rosetta — Translations"
+msgstr "Rosetta — Переклади"
+
+#: apps/core_manager/models.py
+msgid "Same as links"
+msgstr "Як у посиланнях"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Save a working version before major edits and test the rendered public page "
+"at desktop and mobile sizes."
+msgstr ""
+"Збережіть робочу версію перед великими змінами і перевірте відображення "
+"публічної сторінки на десктопі і мобільних."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Save and check /account/ while signed in; use Reset to defaults to restore "
+"the original template."
+msgstr ""
+"Збережіть та перевірте /account/ під час входу; використовуйте Скинути за "
+"замовчуванням, щоб відновити оригінальний шаблон."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Save and test the corresponding account flow; use Reset to defaults when the"
+" original code is needed."
+msgstr ""
+"Збережіть і протестуйте відповідний обліковий сценарій; використовуйте "
+"Скинути за замовчуванням, якщо потрібен оригінальний код."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Save and test the module in a compatible template component across repeated "
+"page loads if random mode is used."
+msgstr ""
+"Збережіть і протестуйте модуль у сумісному компоненті шаблону при повторному"
+" завантаженні сторінки у випадковому режимі."
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+msgid "Save new password"
+msgstr "Зберегти новий пароль"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+msgid "Schema graph"
+msgstr "Схема графа"
+
+#: apps/theme_manager/admin.py
+msgid "Schema must be a JSON object."
+msgstr "Схема має бути JSON-об'єктом."
+
+#: apps/ai_assistant/models.py
+msgid "Score"
+msgstr "Оцінка"
+
+#: apps/core_manager/views.py
+msgid "Search"
+msgstr "Пошук"
+
+#: apps/ai_assistant/admin.py
+msgid "Search and priority"
+msgstr "Пошук і пріоритет"
+
+#: apps/core_manager/admin_help.py
+msgid "Search for an existing synonym before creating a tag."
+msgstr "Перевірте наявність синоніма перед створенням тега."
+
+#: apps/core_manager/views.py
+msgid "Search published articles by text, tag, category, author, or date."
+msgstr ""
+"Пошук опублікованих статей за текстом, тегом, категорією, автором або датою."
+
+#: apps/core_manager/models.py
+msgid "Search template"
+msgstr "Шаблон пошуку"
+
+#: apps/core_manager/admin_help.py
+msgid "Select active templates with the correct category or article type."
+msgstr "Оберіть активні шаблони з правильною категорією чи типом статті."
+
+#: apps/core_manager/admin_help.py
+msgid "Select models supported by the configured provider credentials."
+msgstr "Оберіть моделі, підтримувані обліковими даними провайдера."
+
+#: apps/core_manager/admin_help.py
+msgid "Select only the permissions needed for that role and save the group."
+msgstr "Виберіть лише потрібні дозволи для цієї ролі й збережіть групу."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Select the email event, edit both language versions and preserve required "
+"template variables."
+msgstr ""
+"Виберіть подію електронної пошти, редагуйте обидві мовні версії та "
+"зберігайте необхідні змінні шаблону."
+
+#: apps/blog_manager/image_module_forms.py
+msgid ""
+"Select up to 100 JPEG, PNG, WebP or AVIF files. Maximum 25 MB per file and "
+"500 MB per module."
+msgstr ""
+"Виберіть до 100 файлів JPEG, PNG, WebP або AVIF. Максимум 25 МБ на файл та "
+"500 МБ на модуль."
+
+#: apps/ai_assistant/templates/includes/ai_chat_widget.html
+msgid "Send"
+msgstr "Надіслати"
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+msgid "Send a new request"
+msgstr "Надіслати новий запит"
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "Send instructions"
+msgstr "Надіслати інструкції"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Send or trigger a test email after editing; use Reset to defaults if the "
+"original structure is needed."
+msgstr ""
+"Надішліть або запустіть тестового листа після редагування; використовуйте "
+"Скинути за замовчуванням, якщо потрібна оригінальна структура."
+
+#: apps/comments_manager/models.py
+msgid "Send to moderation"
+msgstr "Надіслати на модерацію"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Sender name and email, subject, message body, source URL, IP address, "
+"browser information and read state."
+msgstr ""
+"Ім'я відправника та електронна пошта, тема, текст повідомлення, URL-адреса "
+"джерела, IP-адреса, інформація про браузер та стан прочитання."
+
+#: apps/ai_assistant/models.py
+msgid "Service interest"
+msgstr "Цікавить послуга"
+
+#: apps/ai_assistant/models.py
+msgid "Session"
+msgstr "Сесія"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Session, event type, human-readable message, structured diagnostic data and "
+"timestamp."
+msgstr ""
+"Сесія, тип події, зрозуміле повідомлення, структуровані діагностичні дані та"
+" позначка часу."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Session, role, full content, model name, prompt/completion/total token "
+"counts and timestamp."
+msgstr ""
+"Сесія, роль, повний вміст, назва моделі, кількість токенів у "
+"запиті/відповіді/загалом і позначка часу."
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+msgid "Set a new password"
+msgstr "Встановити новий пароль"
+
+#: apps/core_manager/admin_help.py
+msgid "Set a sensible article count and order, then activate the module."
+msgstr ""
+"Встановіть розумну кількість статей і порядок, потім активуйте модуль."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Set fallback templates and SEO graphs used when individual blog records do "
+"not override them."
+msgstr ""
+"Встановіть шаблони за замовчуванням і SEO-графи, які використовуються, коли "
+"окремі записи блогу їх не перевизначають."
+
+#: apps/userprofile/defaults/personal_account.py
+#: apps/userprofile/templates/account/password_set.html
+msgid "Set password"
+msgstr "Встановити пароль"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Set priority only when some sources should consistently outrank others, then"
+" save and build missing embeddings."
+msgstr ""
+"Встановіть пріоритет, коли деякі джерела повинні посідати вищий ранг, потім "
+"збережіть і створіть відсутні ембеддінги."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Set sort order for a predictable editor palette, activate it and test "
+"insertion in a compatible template."
+msgstr ""
+"Встановіть порядок сортування для передбачуваної палітри редактора, "
+"активуйте компонент і протестуйте вставку в сумісний шаблон."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Set the correct domain and HTTPS public URL, then select the homepage and "
+"error template."
+msgstr ""
+"Встановіть правильний домен і публічний HTTPS URL, потім оберіть головну "
+"сторінку та шаблон помилки."
+
+#: apps/userprofile/models.py
+msgid "Share token"
+msgstr "Токен для спільного доступу"
+
+#: apps/userprofile/models.py
+msgid "Share token created"
+msgstr "Токен для спільного доступу створено"
+
+#: apps/userprofile/admin.py
+msgid "Sharing"
+msgstr "Спільний доступ"
+
+#: apps/theme_manager/defaults/template_components.py
+#: apps/userprofile/templates/account/login.html
+#: apps/userprofile/templates/account/signup.html
+msgid "Sign in"
+msgstr "Увійти"
+
+#: apps/userprofile/templates/socialaccount/login.html
+msgid "Sign in with %(provider)s"
+msgstr "Увійти через %(provider)s"
+
+#: apps/userprofile/defaults/personal_account.py
+#: apps/userprofile/templates/account/logout.html
+msgid "Sign out"
+msgstr "Вийти"
+
+#: apps/userprofile/templates/account/signup_closed.html
+msgid "Signup closed"
+msgstr "Реєстрація закрита"
+
+#: apps/comments_manager/models.py
+msgid "Single comment"
+msgstr "Один коментар"
+
+#: apps/core_manager/models.py
+msgid "Site URL"
+msgstr "URL сайту"
+
+#: apps/core_manager/models.py
+msgid "Site domain"
+msgstr "Домен сайту"
+
+#: apps/core_manager/models.py
+msgid "Site name"
+msgstr "Назва сайту"
+
+#: apps/core_manager/admin_help.py apps/core_manager/models.py
+#: config/settings.py
+msgid "Site settings"
+msgstr "Налаштування сайту"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Sites"
+msgstr "Сайти"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/models.py
+msgid "Slug"
+msgstr "Slug"
+
+#: config/settings.py
+msgid "Social"
+msgstr "Соціальні мережі"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Social Accounts"
+msgstr "Соціальні облікові записи"
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Social Apps"
+msgstr "Соціальні застосунки"
+
+#: apps/userprofile/templates/socialaccount/login_cancelled.html
+msgid "Social account login was cancelled."
+msgstr "Вхід через соціальний акаунт було скасовано."
+
+#: apps/userprofile/templates/socialaccount/authentication_error.html
+msgid "Social login failed"
+msgstr "Помилка соціального входу"
+
+#: apps/blog_manager/models.py apps/theme_manager/models.py
+msgid "Sort order"
+msgstr "Порядок сортування"
+
+#: apps/theme_manager/models.py
+msgid "Source"
+msgstr "Джерело"
+
+#: apps/ai_assistant/models.py apps/core_manager/models.py
+msgid "Source URL"
+msgstr "Джерело URL"
+
+#: apps/blog_manager/models.py
+msgid "Specified number at random"
+msgstr "Вказана кількість випадкових"
+
+#: apps/blog_manager/models.py
+msgid "Specified number in order"
+msgstr "Вказана кількість за порядком"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Split knowledge into focused self-contained passages with descriptive titles"
+" and source URLs."
+msgstr ""
+"Розділяйте знання на сфокусовані, автономні уривки з описовими назвами та "
+"джерельними URL."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Staff, active and superuser flags that determine whether a person can sign "
+"in and administer the site."
+msgstr ""
+"Позначки співробітника, активності та суперкористувача, які визначають, чи "
+"може людина увійти та адмініструвати сайт."
+
+#: apps/blog_manager/models.py
+msgid "Standard"
+msgstr "Стандартний"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Start from a questionable assistant message and review its retrieved chunks "
+"in rank order."
+msgstr ""
+"Починайте з проблемного повідомлення асистента та переглядайте отримані "
+"фрагменти в порядку рангу."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Start with conservative temperature and retrieval limits, then test known "
+"questions and fallback cases."
+msgstr ""
+"Починайте з консервативної температури і лімітів пошуку, потім тестуйте "
+"відомі питання і запасні випадки."
+
+#: apps/theme_manager/admin.py
+msgid "Static themes directory not found."
+msgstr "Каталог статичних тем не знайдено."
+
+#: apps/ai_assistant/models.py apps/blog_manager/models.py
+msgid "Status"
+msgstr "Статус"
+
+#: apps/blog_manager/models.py
+msgid "Storage key"
+msgstr "Ключ сховища"
+
+#: apps/comments_manager/admin.py
+msgid "Styles"
+msgstr "Стилі"
+
+#: apps/core_manager/models.py apps/userprofile/models.py
+msgid "Subject"
+msgstr "Тема"
+
+#: apps/comments_manager/models.py
+msgid "Submit button text"
+msgstr "Текст кнопки надсилання"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Subscriber email, active status, source page, IP address, browser "
+"information and timestamps."
+msgstr ""
+"Email підписника, статус активності, сторінка джерела, IP-адреса, інформація"
+" про браузер і часові позначки."
+
+#: apps/core_manager/models.py
+msgid "Subscription"
+msgstr "Підписка"
+
+#: apps/theme_manager/defaults/template_components.py
+msgid "Subscription form"
+msgstr "Форма підписки"
+
+#: apps/core_manager/admin_help.py apps/core_manager/models.py
+#: config/settings.py
+msgid "Subscriptions"
+msgstr "Підписки"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Superusers have unrestricted access; reserve this flag for trusted "
+"administrators."
+msgstr ""
+"Суперкористувачі мають необмежений доступ; цей прапорець призначайте "
+"довіреним адміністраторам."
+
+#: apps/ai_assistant/models.py apps/comments_manager/admin.py
+#: apps/theme_manager/admin.py apps/userprofile/admin.py config/settings.py
+msgid "System"
+msgstr "Система"
+
+#: apps/blog_manager/models.py
+msgid "Tag"
+msgstr "Тег"
+
+#: apps/blog_manager/models.py
+msgid "Tag source"
+msgstr "Джерело тегів"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Tag source, maximum count, ordering, comma-separated classes, class mode and"
+" Active status."
+msgstr ""
+"Джерело тегів, максимальна кількість, порядок, класи через кому, режим "
+"класів і статус активності."
+
+#: apps/blog_manager/models.py apps/core_manager/admin_help.py
+#: apps/theme_manager/defaults/template_components.py config/settings.py
+msgid "Tags"
+msgstr "Теги"
+
+#: apps/blog_manager/models.py
+msgid "Tags count"
+msgstr "Кількість тегів"
+
+#: apps/ai_assistant/models.py
+msgid "Telegram"
+msgstr "Telegram"
+
+#: apps/core_manager/models.py
+msgid "Telegram URL"
+msgstr "URL Telegram"
+
+#: apps/ai_assistant/models.py
+msgid "Temperature"
+msgstr "Температура"
+
+#: apps/blog_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/models.py
+msgid "Template"
+msgstr "Шаблон"
+
+#: apps/theme_manager/admin.py
+msgid "Template HTML code"
+msgstr "HTML-код шаблону"
+
+#: apps/comments_manager/models.py apps/userprofile/models.py
+msgid "Template code"
+msgstr "Код шаблону"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Template code can break page rendering; retain version history and avoid "
+"pasting untrusted code."
+msgstr ""
+"Код шаблону може зламати відображення сторінки; зберігайте історію версій і "
+"уникайте вставки недовіреного коду."
+
+#: apps/theme_manager/models.py
+msgid "Template component"
+msgstr "Компонент шаблону"
+
+#: apps/theme_manager/models.py
+msgid "Template components"
+msgstr "Компоненти шаблону"
+
+#: apps/theme_manager/admin.py
+msgid "Template editor"
+msgstr "Редактор шаблонів"
+
+#: apps/theme_manager/admin.py
+msgid ""
+"Template slug was changed, but the target HTML file already exists. The old "
+"file was kept to avoid overwriting it."
+msgstr ""
+"Ідентифікатор шаблону було змінено, але цільовий HTML-файл уже існує. Старий"
+" файл збережено, щоб уникнути його перезапису."
+
+#: apps/theme_manager/models.py
+msgid "Template type"
+msgstr "Тип шаблону"
+
+#: apps/core_manager/admin_help.py
+msgid "Template usage"
+msgstr "Використання в шаблоні"
+
+#: apps/theme_manager/models.py
+msgid "Template version"
+msgstr "Версія шаблону"
+
+#: apps/theme_manager/models.py
+msgid "Template versions"
+msgstr "Версії шаблону"
+
+#: apps/core_manager/admin_help.py apps/theme_manager/models.py
+#: config/settings.py
+msgid "Templates"
+msgstr "Шаблони"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Templates are system-managed: new records cannot be added and existing "
+"records cannot be deleted."
+msgstr ""
+"Шаблонами керує система: не можна додавати нові записи чи видаляти існуючі."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Templates for verification, password reset, account notifications and other "
+"authentication events."
+msgstr ""
+"Шаблони для підтвердження, скидання пароля, сповіщень облікового запису та "
+"інших подій автентифікації."
+
+#: apps/theme_manager/models.py
+msgid "Templates map"
+msgstr "Мапа шаблонів"
+
+#: apps/theme_manager/admin.py
+msgid ""
+"Templates refreshed. Created themes: %(created_themes)s. Updated themes: "
+"%(updated_themes)s. Created templates: %(created_templates)s. Updated "
+"templates: %(updated_templates)s."
+msgstr ""
+"Шаблони оновлено. Створено тем: %(created_themes)s. Оновлено тем: "
+"%(updated_themes)s. Створено шаблонів: %(created_templates)s. Оновлено "
+"шаблонів: %(updated_templates)s."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Test a category and article without explicit template overrides to confirm "
+"fallback behavior."
+msgstr ""
+"Перевірте категорію і статтю без явного перебивання шаблонів, щоб "
+"підтвердити роботу запасного сценарію."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Test anonymous and authenticated states, validation errors and nested "
+"content on a real article."
+msgstr ""
+"Перевірте анонімний та автентифікований стани, помилки валідації та "
+"вкладений вміст на реальній статті."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Test retrieval with representative questions and update outdated chunks at "
+"their source."
+msgstr ""
+"Тестуйте пошук за репрезентативними питаннями і оновлюйте застарілі уривки в"
+" їхніх джерелах."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Test sign-in in a private browser window before announcing the option to "
+"users."
+msgstr ""
+"Перевірте вхід у приватному вікні браузера перед оголошенням опції "
+"користувачам."
+
+#: apps/theme_manager/admin.py
+msgid "Text"
+msgstr "Текст"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Text and CSS belong in Comment appearance when no structural change is "
+"required."
+msgstr ""
+"Текст і CSS належать до оформлення коментарів, якщо не потрібні структурні "
+"зміни."
+
+#: apps/comments_manager/admin.py
+msgid "Texts"
+msgstr "Тексти"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The HTML code editor and the components that may be inserted into that "
+"template."
+msgstr "HTML-редактор коду та компоненти, які можна вставляти у цей шаблон."
+
+#: apps/core_manager/admin_help.py
+msgid "The Sites on which the provider configuration is active."
+msgstr "Сайти, для яких активна конфігурація провайдера."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The assistant message, selected knowledge chunk, similarity score, rank and "
+"retrieval timestamp."
+msgstr ""
+"Повідомлення асистента, вибраний фрагмент знань, оцінка схожості, ранг і час"
+" вилучення."
+
+#: apps/core_manager/admin_help.py
+msgid "The authentication logo shared by account pages."
+msgstr ""
+"Логотип автентифікації, який використовується на сторінках облікових "
+"записів."
+
+#: apps/core_manager/admin_help.py
+msgid "The behavior shared by assistant sessions using this profile."
+msgstr "Поведінка, спільна для сесій асистента з цим профілем."
+
+#: apps/core_manager/admin_help.py
+msgid "The chronological transcript used for debugging and usage analysis."
+msgstr ""
+"Хронологічний запис, який використовують для налагодження та аналізу "
+"використання."
+
+#: apps/core_manager/admin_help.py
+msgid "The complete Django template code for the personal account page."
+msgstr "Повний код Django-шаблону особистої сторінки облікового запису."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The domain, including an optional development port, and a human-readable "
+"site name."
+msgstr "Домен із необов’язковим портом для розробки та зрозуміле ім’я сайту."
+
+#: apps/userprofile/templates/account/verification_sent.html
+msgid ""
+"The email may appear in your spam folder. If you did not receive it, please "
+"try again."
+msgstr ""
+"Лист може опинитися в папці спам. Якщо ви не отримали його, спробуйте ще "
+"раз."
+
+#: apps/userprofile/templates/account/email.html
+msgid "The following email addresses are associated with your account:"
+msgstr "До вашого облікового запису прив’язані такі електронні адреси:"
+
+#: apps/core_manager/admin_help.py
+msgid "The homepage is selected separately in Site settings."
+msgstr "Головна сторінка вибирається окремо в налаштуваннях Сайту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The module configures presentation and selection; tags themselves are "
+"managed in Tags."
+msgstr "Модуль налаштовує презентацію і відбір; самі теги керуються в Тегах."
+
+#: apps/core_manager/admin_help.py
+msgid "The operational list of people who requested newsletter communication."
+msgstr "Оперативний список осіб, які запросили розсилку новин."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The page is system-managed, login-protected and excluded from search "
+"indexing."
+msgstr ""
+"Сторінка керується системою, захищена входом і виключена з індексації "
+"пошуку."
+
+#: apps/userprofile/templates/account/password_reset_from_key.html
+msgid "The password reset link is invalid or has expired."
+msgstr "Посилання для скидання пароля недійсне або минув термін його дії."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The provider's authorized domain and callback URL must match the active site"
+" domain and protocol."
+msgstr ""
+"Авторизований домен провайдера та URL зворотного виклику мають збігатися з "
+"доменом і протоколом активного сайту."
+
+#: apps/core_manager/views.py
+msgid "The requested page could not be found."
+msgstr "Запитувану сторінку не знайдено."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The shared base authentication layout and complete page-level Django "
+"template code."
+msgstr ""
+"Спільне базове оформлення автентифікації та повний код шаблону сторінки "
+"рівня Django."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The site identity referenced by authentication and social-provider "
+"configuration."
+msgstr ""
+"Ідентифікація сайту, на яку посилаються налаштування автентифікації та "
+"соціальних провайдерів."
+
+#: apps/core_manager/admin_help.py
+msgid "The slug is the stable template identifier and should be unique."
+msgstr "Slug — це стабільний ідентифікатор шаблону і має бути унікальним."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The slug participates in filesystem paths and should not be changed "
+"casually."
+msgstr ""
+"Slug використовується у шляхах файлової системи, тому його не слід змінювати"
+" без потреби."
+
+#: apps/core_manager/admin_help.py
+msgid "The source knowledge is edited in Knowledge Chunk."
+msgstr "Вихідні знання редагуються у Фрагменті знань."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"The stylesheet shared by sign-in, registration and other authentication "
+"pages."
+msgstr ""
+"Таблиця стилів, спільна для сторінок входу, реєстрації та інших сторінок "
+"автентифікації."
+
+#: apps/theme_manager/models.py
+msgid "Theme"
+msgstr "Тема"
+
+#: apps/theme_manager/admin.py
+msgid "Theme '%(theme)s' uploaded successfully. HTML files found: %(count)s."
+msgstr ""
+"Тему «%(theme)s» успішно завантажено. Знайдено HTML-файлів: %(count)s."
+
+#: apps/theme_manager/admin.py
+#: apps/theme_manager/templates/theme_manager/template_file_view.html
+msgid "Theme HTML files"
+msgstr "HTML-файли теми"
+
+#: apps/core_manager/models.py
+msgid "Theme color"
+msgstr "Колір теми"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Theme name, slug, description, preview image, template map and Active "
+"status."
+msgstr ""
+"Назва теми, slug, опис, зображення для попереднього перегляду, мапа шаблонів"
+" та активний статус."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Theme, template type, name, slug, Active state and article extra-fields "
+"schema."
+msgstr ""
+"Тема, тип шаблону, назва, slug, активний стан і схема додаткових полів "
+"статті."
+
+#: apps/core_manager/admin_help.py apps/theme_manager/models.py
+#: config/settings.py
+msgid "Themes"
+msgstr "Теми"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"These records are diagnostic history and normally should remain read-only."
+msgstr ""
+"Ці записи є діагностичною історією і зазвичай мають залишатися доступними "
+"лише для читання."
+
+#: apps/userprofile/templates/account/account_inactive.html
+msgid "This account is inactive."
+msgstr "Цей обліковий запис неактивний."
+
+#: apps/userprofile/templates/account/email_confirm.html
+msgid "This confirmation link has already been used or is invalid."
+msgstr "Це посилання для підтвердження вже використане або недійсне."
+
+#: apps/theme_manager/admin.py
+msgid "This field is required for Parent Page templates."
+msgstr "Це поле обов’язкове для шаблонів Батьківських сторінок."
+
+#: apps/core_manager/admin_help.py
+msgid "This is a singleton configuration for the whole blog."
+msgstr "Це конфігурація-синглтон для всього блогу."
+
+#: apps/core_manager/admin_help.py
+msgid "This is a singleton configuration used by every comment-enabled page."
+msgstr ""
+"Це конфігурація-синглтон, яка використовується на всіх сторінках із "
+"коментарями."
+
+#: apps/core_manager/admin_help.py
+msgid "This is a singleton setting shared by the entire site."
+msgstr "Це одиничне налаштування, спільне для всього сайту."
+
+#: apps/userprofile/templates/account/verified_email_required.html
+msgid ""
+"This part of the site requires a verified email address. Check your inbox "
+"and follow the verification link."
+msgstr ""
+"Для цієї частини сайту потрібна підтверджена електронна адреса. Перевірте "
+"вашу пошту і пройдіть за посиланням підтвердження."
+
+#: apps/theme_manager/admin.py
+msgid "This template is linked to a page and must remain a Parent Page."
+msgstr ""
+"Цей шаблон пов’язаний зі сторінкою і повинен залишатися Батьківською "
+"сторінкою."
+
+#: apps/core_manager/models.py
+msgid "TikTok URL"
+msgstr "URL TikTok"
+
+#: apps/comments_manager/models.py
+msgid "Time window (minutes)"
+msgstr "Часове вікно (хвилини)"
+
+#: apps/ai_assistant/models.py apps/blog_manager/models.py
+#: apps/core_manager/models.py
+msgid "Title"
+msgstr "Заголовок"
+
+#: apps/blog_manager/models.py
+msgid "Title A-Z"
+msgstr "Назва від А до Я"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Title, content, source URL, priority, Active state and generated embedding "
+"metadata."
+msgstr ""
+"Назва, вміст, джерельне URL, пріоритет, стан Активності та метадані "
+"згенерованих ембеддінгів."
+
+#: apps/ai_assistant/models.py
+msgid "Total tokens"
+msgstr "Усього токенів"
+
+#: apps/userprofile/templates/socialaccount/authentication_error.html
+msgid "Try again"
+msgstr "Спробуйте ще раз"
+
+#: apps/core_manager/models.py
+msgid "Twitter handle"
+msgstr "Twitter-нікнейм"
+
+#: apps/core_manager/models.py
+msgid "URL"
+msgstr "URL"
+
+#: apps/core_manager/models.py
+msgid "URL link"
+msgstr "URL-посилання"
+
+#: apps/core_manager/admin_help.py apps/core_manager/models.py
+#: config/settings.py
+msgid "URL links"
+msgstr "URL-посилання"
+
+#: config/settings.py
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: apps/userprofile/models.py
+msgid "Unknown account"
+msgstr "Невідомий обліковий запис"
+
+#: apps/userprofile/templates/account/email.html
+msgid "Unverified"
+msgstr "Не підтверджено"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Up to 100 JPEG, PNG, WebP or AVIF uploads, with alt text, order and per-"
+"image Active state."
+msgstr ""
+"До 100 завантажень JPEG, PNG, WebP або AVIF, з alt-текстом, порядком і "
+"активністю по кожному зображенню."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Update status as the lead is processed and keep service interest concise and"
+" useful."
+msgstr ""
+"Оновлюйте статус у процесі обробки ліда і тримайте сферу зацікавленості "
+"стислою та корисною."
+
+#: apps/blog_manager/models.py
+msgid "Updated"
+msgstr "Оновлено"
+
+#: apps/ai_assistant/models.py apps/blog_manager/models.py
+#: apps/comments_manager/models.py apps/core_manager/models.py
+#: apps/theme_manager/models.py apps/userprofile/models.py
+msgid "Updated at"
+msgstr "Дата оновлення"
+
+#: apps/theme_manager/templates/admin/theme_manager/theme/upload_html_template.html
+msgid "Upload"
+msgstr "Завантажити"
+
+#: apps/theme_manager/templates/admin/theme_manager/theme/change_list.html
+msgid "Upload Django template"
+msgstr "Завантажити шаблон Django"
+
+#: apps/theme_manager/admin.py
+#: apps/theme_manager/templates/admin/theme_manager/theme/change_list.html
+msgid "Upload HTML template"
+msgstr "Завантажити HTML-шаблон"
+
+#: apps/core_manager/image_processing.py
+msgid "Upload a valid image file."
+msgstr "Завантажте дійсний файл зображення."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Upload and verify responsive images, review metadata, then publish or "
+"schedule with the correct date."
+msgstr ""
+"Завантажте та перевірте адаптивні зображення, перегляньте метадані, потім "
+"опублікуйте або заплануйте з правильною датою."
+
+#: apps/theme_manager/admin.py
+msgid "Upload failed: %(error)s"
+msgstr "Помилка завантаження: %(error)s"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Upload generated icon variants, verify social links, and enable integrations"
+" only after credentials are configured."
+msgstr ""
+"Завантажте згенеровані варіанти іконок, перевірте соціальні посилання та "
+"вмикайте інтеграції лише після налаштування облікових даних."
+
+#: apps/blog_manager/image_module_forms.py
+msgid "Upload images"
+msgstr "Завантажити зображення"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Upload meaningful images and alt-related content, assign relevant tags and "
+"preview each category page."
+msgstr ""
+"Завантажте значущі зображення та відповідний опис, призначте релевантні теги"
+" та перегляньте кожну сторінку категорії."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Uploading untrusted template code is unsafe because Django templates execute"
+" server-side template logic."
+msgstr ""
+"Завантаження небезпечного коду шаблонів не рекомендоване, оскільки Django "
+"шаблони виконують логіку на сервері."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use 127.0.0.1:8000 or localhost:8000 for local development and the real "
+"hostname in production."
+msgstr ""
+"Для локальної розробки використовуйте 127.0.0.1:8000 або localhost:8000, у "
+"продуктиві — справжній хостнейм."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use Active to suspend access without deleting the account and its related "
+"content."
+msgstr ""
+"Використовуйте Активний стан, щоб призупинити доступ без видалення "
+"облікового запису та пов’язаного контенту."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use Create demo data only on a new or disposable setup and review what it "
+"creates."
+msgstr ""
+"Використовуйте Створити демо-дані лише на новому або тестовому середовищі і "
+"перевірте, що саме створюється."
+
+#: apps/core_manager/admin_help.py
+msgid "Use Reset to defaults to restore the original code if rendering fails."
+msgstr ""
+"Використовуйте «Скинути до стандартних», щоб відновити початковий код у разі"
+" помилок рендерингу."
+
+#: apps/core_manager/admin_help.py
+msgid "Use Reset to defaults when custom text or styles cause a problem."
+msgstr ""
+"Використовуйте «Скинути до стандартних» при проблемах із кастомним текстом "
+"або стилями."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use a clear subject and explain the requested action, link lifetime and what"
+" to do if the user did not initiate it."
+msgstr ""
+"Використовуйте чітку тему й пояснюйте потрібну дію, термін дії посилання та "
+"кроки, якщо користувач не ініціював запит."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use a short, specific title and let the slug remain stable once published."
+msgstr ""
+"Використовуйте коротку, конкретну назву і залишайте slug стабільним після "
+"публікації."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use a stable slug, concise introduction, properly structured body and 3–5 "
+"relevant tags."
+msgstr ""
+"Використовуйте стабільний слаг, лаконічний вступ, правильно структурований "
+"текст і 3–5 релевантних тегів."
+
+#: apps/core_manager/admin_help.py
+msgid "Use event logs and retrieved chunks when diagnosing an answer."
+msgstr ""
+"Використовуйте журнали подій і знайдені уривки при діагностиці відповіді."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use filters to separate active and inactive subscriptions and inspect the "
+"source when diagnosing spam."
+msgstr ""
+"Використовуйте фільтри для розділення активних і неактивних підписок і "
+"перевіряйте джерело при діагностиці спаму."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use new-tab behavior for external resources only when it improves "
+"navigation, and add nofollow when editorial policy requires it."
+msgstr ""
+"Використовуйте відкриття у новій вкладці для зовнішніх ресурсів лише за умов"
+" покращення навігації, додайте nofollow за потреби редакційної політики."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use noindex for utility or temporary pages that should not appear in search "
+"results."
+msgstr ""
+"Використовуйте noindex для службових або тимчасових сторінок, які не повинні"
+" з’являтися в пошуку."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use plain, focused introductory content; templates decide how it is "
+"rendered."
+msgstr ""
+"Використовуйте простий і сфокусований вступ; шаблони вирішують, як його "
+"відображати."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use repeated patterns to adjust provider configuration, retrieval data or "
+"error handling."
+msgstr ""
+"Використовуйте повторювані шаблони для налаштування конфігурації провайдера,"
+" даних вилучення або обробки помилок."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use search and filters to locate a connection when diagnosing sign-in "
+"issues."
+msgstr ""
+"Використовуйте пошук і фільтри для знаходження підключення під час "
+"діагностики проблем із входом."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use source and technical fields to investigate abuse, not as a basis for "
+"unrelated profiling."
+msgstr ""
+"Використовуйте поля джерела та технічні поля для розслідування зловживань, а"
+" не як основу для стороннього профілювання."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Use token counts to identify unusually expensive requests without exposing "
+"message data unnecessarily."
+msgstr ""
+"Використовуйте підрахунок токенів, щоб виявляти надмірно дорогі запити без "
+"зайвого розкриття даних повідомлень."
+
+#: apps/blog_manager/models.py
+msgid ""
+"Used by articles in this category when the article has no custom template."
+msgstr ""
+"Використовується статтями цієї категорії, якщо стаття не має власного "
+"шаблону."
+
+#: apps/blog_manager/models.py
+msgid "Used by modes that display a specified number of images."
+msgstr ""
+"Використовується режимами, які відображають задану кількість зображень."
+
+#: apps/theme_manager/admin.py
+msgid ""
+"Used by the Images component to offer configured image folders in the "
+"template editor."
+msgstr ""
+"Використовується компонентом Зображення для пропозиції вибраних папок "
+"зображень у редакторі шаблонів."
+
+#: apps/theme_manager/admin.py
+msgid ""
+"Used by the Latest blog articles component to offer configured article "
+"selections in the template editor."
+msgstr ""
+"Використовується компонентом Останні статті блогу для пропозиції вибраних "
+"статей у редакторі шаблонів."
+
+#: apps/theme_manager/admin.py
+msgid ""
+"Used by the Tags component to offer configured tag selections in the "
+"template editor."
+msgstr ""
+"Використовується компонентом Теги для пропозиції вибраних тегів у редакторі "
+"шаблонів."
+
+#: apps/blog_manager/models.py
+msgid ""
+"Used for category pages 2, 3, and later. If empty, first page template is "
+"used."
+msgstr ""
+"Використовується для сторінок категорії 2, 3 та наступних. Якщо порожньо, "
+"використовується шаблон першої сторінки."
+
+#: apps/ai_assistant/models.py apps/userprofile/models.py
+msgid "User"
+msgstr "Користувач"
+
+#: apps/ai_assistant/models.py apps/core_manager/models.py
+msgid "User agent"
+msgstr "User agent"
+
+#: apps/ai_assistant/models.py
+msgid "User email"
+msgstr "Електронна пошта користувача"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"User email and IP address are personal data and are not shown publicly by "
+"default."
+msgstr ""
+"Електронна пошта користувача та IP-адреса є персональними даними і за "
+"замовчуванням не відображаються публічно."
+
+#: apps/ai_assistant/models.py
+msgid "User name"
+msgstr "Ім'я користувача"
+
+#: apps/ai_assistant/models.py
+msgid "User phone"
+msgstr "Телефон користувача"
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Username"
+msgstr "Імʼя користувача"
+
+#: apps/core_manager/admin_help.py
+msgid "Username, name, email address, password state and last login."
+msgstr ""
+"Імʼя користувача, імʼя, електронна адреса, стан пароля та останній вхід."
+
+#: apps/core_manager/admin_help.py config/settings.py
+msgid "Users"
+msgstr "Користувачі"
+
+#: apps/blog_manager/models.py
+msgid "Values for extra fields defined by the category article template."
+msgstr "Значення для додаткових полів, визначених шаблоном статті категорії."
+
+#: apps/userprofile/templates/account/email.html
+msgid "Verified"
+msgstr "Підтверджено"
+
+#: apps/userprofile/templates/account/verified_email_required.html
+msgid "Verify your email address"
+msgstr "Підтвердьте вашу електронну адресу"
+
+#: apps/core_manager/admin_help.py
+msgid "Version history used to review or restore earlier template code."
+msgstr ""
+"Історія версій для перегляду чи відновлення попереднього коду шаблону."
+
+#: apps/ai_assistant/models.py
+msgid "Warning"
+msgstr "Попередження"
+
+#: apps/userprofile/templates/account/signup_closed.html
+msgid "We are sorry, but signup is currently closed."
+msgstr "Вибачте, але реєстрація наразі закрита."
+
+#: apps/userprofile/templates/account/verification_sent.html
+msgid ""
+"We have sent a confirmation email to your email address. Please check your "
+"inbox and follow the link to activate your account."
+msgstr ""
+"Ми надіслали листа з підтвердженням на вашу електронну адресу. Будь ласка, "
+"перевірте пошту і перейдіть за посиланням для активації облікового запису."
+
+#: apps/userprofile/templates/account/password_reset_done.html
+msgid ""
+"We have sent you password recovery instructions if an account with this "
+"email address exists in our system."
+msgstr ""
+"Ми надіслали інструкції для відновлення пароля, якщо в нашій системі існує "
+"обліковий запис з цією електронною адресою."
+
+#: apps/ai_assistant/models.py
+msgid "Web Chat"
+msgstr "Веб-чат"
+
+#: apps/userprofile/templates/account/login.html
+msgid "Website sign in"
+msgstr "Вхід на сайт"
+
+#: apps/core_manager/admin_help.py
+msgid "What can be managed here"
+msgstr "Що тут можна налаштувати"
+
+#: apps/core_manager/models.py
+msgid "WhatsApp URL"
+msgstr "URL WhatsApp"
+
+#: apps/comments_manager/models.py
+msgid "When disabled, only signed-in users can submit comments."
+msgstr ""
+"Якщо вимкнено, коментарі можуть залишати лише авторизовані користувачі."
+
+#: apps/blog_manager/models.py
+msgid "Width"
+msgstr "Ширина"
+
+#: apps/ai_assistant/models.py
+msgid "Won"
+msgstr "Виграно"
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Write a clear prompt defining role, scope, tone, prohibited behavior and "
+"escalation rules."
+msgstr ""
+"Напишіть чіткий промпт, визначивши роль, сферу, тон, заборонену поведінку та"
+" правила ескалації."
+
+#: apps/ai_assistant/templates/includes/ai_chat_widget.html
+msgid "Write a message..."
+msgstr "Напишіть повідомлення..."
+
+#: apps/core_manager/admin_help.py
+msgid ""
+"Write, translate, schedule and publish blog content with images, tags, "
+"templates and SEO data."
+msgstr ""
+"Пишіть, перекладайте, плануйте та публікуйте контент блогу з зображеннями, "
+"тегами, шаблонами та SEO-даними."
+
+#: apps/core_manager/models.py
+msgid "X URL"
+msgstr "URL X"
+
+#: apps/userprofile/templates/socialaccount/login.html
+msgid "You are about to connect an account from %(provider)s."
+msgstr "Ви збираєтеся підключити обліковий запис від %(provider)s."
+
+#: apps/userprofile/templates/account/password_reset_from_key_done.html
+msgid "You can now sign in with your new password."
+msgstr "Тепер ви можете увійти з новим паролем."
+
+#: apps/userprofile/templates/socialaccount/connections.html
+msgid "You currently have no connected social accounts."
+msgstr "Наразі у вас немає підключених соціальних облікових записів."
+
+#: apps/core_manager/models.py
+msgid "YouTube URL"
+msgstr "URL YouTube"
+
+#: apps/userprofile/defaults/personal_account.py
+msgid "Your account"
+msgstr "Ваш обліковий запис"
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "Your email"
+msgstr "Ваша електронна пошта"
+
+#: apps/userprofile/templates/account/password_reset_from_key_done.html
+msgid "Your password has been successfully changed"
+msgstr "Ваш пароль було успішно змінено"
+
+#: apps/theme_manager/forms/theme_html_upload.py
+msgid "ZIP archive"
+msgstr "ZIP архів"
+
+#: apps/theme_manager/admin.py
+msgid "ZIP archive must contain exactly one root folder."
+msgstr "ZIP архів має містити лише одну кореневу папку."
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "email"
+msgstr "електронна пошта"
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+#: apps/userprofile/templates/account/signup.html
+msgid "example@company.com"
+msgstr "example@company.com"
+
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "facebook button"
+msgstr "кнопка Facebook"
+
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "github button"
+msgstr "кнопка GitHub"
+
+#: apps/userprofile/templates/account/password_reset.html
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "or"
+msgstr "або"
+
+#: apps/userprofile/templates/account/signup.html
+msgid "registration terms"
+msgstr "умовами реєстрації"
+
+#: apps/userprofile/templates/account/password_reset_form.html
+msgid "twitter button"
+msgstr "кнопка Twitter"
+
+msgid "Enable sitemap"
+msgstr "Увімкнути sitemap"
+
+msgid "Include homepage"
+msgstr "Додати головну сторінку"
+
+msgid "Include pages"
+msgstr "Додати сторінки"
+
+msgid "Include blog categories"
+msgstr "Додати категорії блогу"
+
+msgid "Include articles"
+msgstr "Додати статті"
+
+msgid "Include translated versions"
+msgstr "Додати перекладені версії"
+
+msgid "Include only language versions that contain translated content."
+msgstr "Додавати лише мовні версії, які містять перекладений контент."
+
+msgid "Include alternate language links"
+msgstr "Додати альтернативні мовні посилання"
+
+msgid "Add hreflang and x-default links to sitemap entries."
+msgstr "Додавати посилання hreflang і x-default до записів sitemap."
+
+msgid "Homepage priority"
+msgstr "Пріоритет головної сторінки"
+
+msgid "Pages priority"
+msgstr "Пріоритет сторінок"
+
+msgid "Categories priority"
+msgstr "Пріоритет категорій"
+
+msgid "Articles priority"
+msgstr "Пріоритет статей"
+
+msgid "Cache lifetime (seconds)"
+msgstr "Термін зберігання кешу (секунди)"
+
+msgid "Use 0 to disable sitemap response caching."
+msgstr "Вкажіть 0, щоб вимкнути кешування відповідей sitemap."
+
+msgid "Sitemap settings"
+msgstr "Налаштування sitemap"
+
+msgid "Priorities"
+msgstr "Пріоритети"
+
+msgid "Cache"
+msgstr "Кеш"
+
+msgid "Sitemap cache was cleared."
+msgstr "Кеш sitemap очищено."
+
+msgid "Open sitemap"
+msgstr "Відкрити sitemap"
+
+msgid "Clear sitemap cache"
+msgstr "Очистити кеш sitemap"
+
+msgid ""
+"Control which public content appears in XML sitemaps and how multilingual "
+"URLs are described to search engines."
+msgstr ""
+"Керуйте тим, який публічний контент потрапляє до XML sitemap і як "
+"багатомовні URL описуються для пошукових систем."
+
+msgid "Homepage, standalone pages, blog categories and published articles."
+msgstr ""
+"Головна сторінка, окремі сторінки, категорії блогу й опубліковані статті."
+
+msgid ""
+"Language versions, hreflang alternatives, priorities and response cache "
+"lifetime."
+msgstr ""
+"Мовні версії, альтернативи hreflang, пріоритети й термін зберігання кешу "
+"відповідей."
+
+msgid ""
+"The generated sitemap index and section files linked automatically from "
+"robots.txt."
+msgstr ""
+"Згенерований індекс sitemap і файли розділів, посилання на які автоматично "
+"додається до robots.txt."
+
+msgid ""
+"Keep the sitemap enabled and include only content types that have useful "
+"public pages."
+msgstr ""
+"Залишайте sitemap увімкненим і додавайте лише типи контенту, які мають "
+"корисні публічні сторінки."
+
+msgid ""
+"Include translated versions after completing their localized content, then "
+"open the sitemap and inspect its URLs."
+msgstr ""
+"Додавайте перекладені версії після завершення локалізованого контенту, потім"
+" відкрийте sitemap і перевірте його URL."
+
+msgid ""
+"Clear the sitemap cache after an unusual bulk database update that bypasses "
+"normal model saving."
+msgstr ""
+"Очищуйте кеш sitemap після нетипового масового оновлення бази, яке обходить "
+"звичайне збереження моделей."
+
+msgid "Draft, scheduled-future and noindex content is excluded automatically."
+msgstr ""
+"Чернетки, запланований на майбутнє та noindex-контент виключаються "
+"автоматично."
+
+msgid ""
+"Only templates represented by published Page records are included; technical"
+" theme templates never appear."
+msgstr ""
+"Додаються лише шаблони, представлені опублікованими записами «Сторінка»; "
+"технічні шаблони теми ніколи не потрапляють до sitemap."
+
+msgid ""
+"Priorities are hints rather than guarantees and do not replace strong "
+"internal linking or content quality."
+msgstr ""
+"Пріоритети є підказками, а не гарантіями, і не замінюють якісну внутрішню "
+"перелінковку та контент."
+
+msgid "Introducing Wulver"
+msgstr "Представляємо Wulver"
+
+msgid ""
+"I'm launching a new product called Wulver. This time, I want to share not "
+"only the result, but the entire journey from the first idea to the first "
+"public release."
+msgstr ""
+"Я запускаю новий продукт під назвою Wulver. Цього разу я хочу показати не "
+"лише результат, а й увесь шлях — від першої ідеї до першого публічного "
+"релізу."
+
+msgid "Project / Wulver"
+msgstr "Проєкт / Wulver"
+
+msgid "In Development"
+msgstr "У розробці"
+
+msgid "About Wulver"
+msgstr "Про Wulver"
+
+msgid "Introducing"
+msgstr "Знайомство"
+
+msgid "Behind"
+msgstr "За лаштунками"
+
+msgid "Follow"
+msgstr "Стежити"
+
+msgid "Explore"
+msgstr "Дізнатися більше"
+
+msgid "01 / Introducing Wulver"
+msgstr "01 / Знайомство з Wulver"
+
+msgid "Something new is coming."
+msgstr "Наближається щось нове."
+
+msgid ""
+"I'm launching a brand new project called Wulver — a product I'm building "
+"from the ground up, from the first architectural decisions to the first "
+"public release."
+msgstr ""
+"Я запускаю абсолютно новий проєкт під назвою Wulver — продукт, який створюю "
+"з нуля: від перших архітектурних рішень до першого публічного релізу."
+
+msgid ""
+"Instead of showing only the finished result, I want to share the journey "
+"behind it: the ideas, the experiments, the technical choices and the "
+"milestones that shape the product over time."
+msgstr ""
+"Замість того щоб показувати лише готовий результат, я хочу поділитися шляхом"
+" його створення: ідеями, експериментами, технічними рішеннями та ключовими "
+"етапами, які поступово формують продукт."
+
+msgid "Current Status"
+msgstr "Поточний стан"
+
+msgid "Project vision defined"
+msgstr "Концепцію проєкту визначено"
+
+msgid "Core architecture started"
+msgstr "Розробку основної архітектури розпочато"
+
+msgid "Preparing the first release"
+msgstr "Підготовка першого релізу"
+
+msgid "Release roadmap"
+msgstr "Дорожня карта релізу"
+
+msgid "02 / Behind Wulver"
+msgstr "02 / За лаштунками Wulver"
+
+msgid "Building a real product, not a showcase."
+msgstr "Створення справжнього продукту, а не показового проєкту."
+
+msgid ""
+"Wulver is where I combine my experience with Python and Django with a modern"
+" AI-assisted development workflow powered by Codex."
+msgstr ""
+"У Wulver я поєдную свій досвід роботи з Python і Django із сучасним процесом"
+" розробки за допомогою AI на базі Codex."
+
+msgid ""
+"AI helps me explore the codebase, implement features and iterate faster, "
+"while I stay responsible for architecture, engineering decisions and the "
+"final quality of the product."
+msgstr ""
+"AI допомагає мені досліджувати кодову базу, реалізовувати функції та швидше "
+"вдосконалювати продукт, водночас відповідальність за архітектуру, інженерні "
+"рішення й кінцеву якість продукту залишається за мною."
+
+msgid "The Development Philosophy"
+msgstr "Філософія розробки"
+
+msgid "Python &amp; Django foundation"
+msgstr "Основа на Python і Django"
+
+msgid "AI as a development partner"
+msgstr "AI як партнер у розробці"
+
+msgid "Human decisions drive the product"
+msgstr "Людські рішення визначають розвиток продукту"
+
+msgid "03 / Follow Wulver"
+msgstr "03 / Стежити за Wulver"
+
+msgid "The story continues here."
+msgstr "Історія продовжується тут."
+
+msgid "Wulver is actively evolving, and this is only the beginning."
+msgstr "Wulver активно розвивається, і це лише початок."
+
+msgid ""
+"I've created a dedicated page where I'll publish development updates, "
+"technical decisions, new features and release milestones as the project "
+"grows."
+msgstr ""
+"Я створив окрему сторінку, де публікуватиму новини про розробку, технічні "
+"рішення, нові функції та ключові етапи випуску в міру розвитку проєкту."
+
+msgid ""
+"If you're interested in seeing how a real software product evolves from an "
+"idea into production, I'd love you to follow the journey."
+msgstr ""
+"Якщо вам цікаво побачити, як справжній програмний продукт проходить шлях від"
+" ідеї до робочої системи, запрошую стежити за його розвитком."
+
+msgid "What you'll find inside Wulver"
+msgstr "Що ви знайдете у Wulver"
+
+msgid "Product vision and roadmap"
+msgstr "Концепція продукту та дорожня карта"
+
+msgid "Development diary and technical decisions"
+msgstr "Щоденник розробки й технічні рішення"
+
+msgid "New features, releases and updates"
+msgstr "Нові функції, релізи та оновлення"
+
+msgid "My Blog"
+msgstr "Мій блог"
+
+msgid "Featured"
+msgstr "Обране"
+
+msgid "Wulver Templates"
+msgstr "Шаблони Wulver"
+
+msgid "All Wulver Templates"
+msgstr "Усі шаблони Wulver"
+
+msgid "01. PROJECT — WULVER"
+msgstr "01. ПРОЄКТ — WULVER"
+
+msgid "Project"
+msgstr "Проєкт"
+
+msgid ""
+"A developer-first ecosystem for adapting templates and building flexible "
+"Django websites."
+msgstr ""
+"Екосистема для розробників, призначена для адаптації шаблонів і створення "
+"гнучких сайтів на Django."
+
+msgid "WULVER Project Overview"
+msgstr "Огляд проєкту WULVER"
+
+msgid "Template Builder: An IDE for Website Templates"
+msgstr "Конструктор шаблонів: IDE для шаблонів сайтів"
+
+msgid "Adapt Any HTML Template to Your Django Project"
+msgstr "Адаптація будь-якого HTML-шаблону до проєкту Django"
+
+msgid "SEO Toolkit for Content-Driven Websites"
+msgstr "SEO-інструменти для контентних сайтів"
+
+msgid "Social Sign-In, Comments & Contact Forms"
+msgstr "Вхід через соціальні мережі, коментарі та контактні форми"
+
+msgid "Developer-First Django Architecture"
+msgstr "Архітектура Django, орієнтована на розробників"
+
+msgid "Menus, Slug Redirects & Content Management"
+msgstr "Меню, перенаправлення адрес і керування контентом"
+
+msgid "WULVER Tutorials & Video Guides"
+msgstr "Навчальні матеріали й відеопосібники WULVER"
+
+msgid "Case study"
+msgstr "Практичний приклад"
+
+msgid "How this site is built, optimized, measured and continuously improved."
+msgstr ""
+"Як цей сайт створюється, оптимізується, вимірюється та постійно "
+"вдосконалюється."
+
+msgid "PageSpeed & Core Web Vitals Case Study"
+msgstr "Практичний аналіз PageSpeed і Core Web Vitals"
+
+msgid "How to Build a Fast Personal Website"
+msgstr "Як створити швидкий персональний сайт"
+
+msgid "03. SERVICE — CUSTOM WEB DEVELOPMENT"
+msgstr "03. ПОСЛУГА — ІНДИВІДУАЛЬНА ВЕБРОЗРОБКА"
+
+msgid "Service"
+msgstr "Послуга"
+
+msgid ""
+"Custom websites and digital systems designed around real business needs."
+msgstr ""
+"Індивідуальні сайти й цифрові системи, створені відповідно до реальних "
+"потреб бізнесу."
+
+msgid "Order a Smart Website in Kyiv in 2026 — from ₴5,000"
+msgstr "Замовити розумний сайт у Києві у 2026 році — від 5 000 ₴"
+
+msgid "Django Website Development"
+msgstr "Розробка сайтів на Django"
+
+msgid "WordPress Website Development"
+msgstr "Розробка сайтів на WordPress"
+
+msgid "Fast, SEO-Ready Website Development"
+msgstr "Розробка швидких сайтів, готових до SEO"
+
+msgid "Website Redesign & Performance Optimization"
+msgstr "Редизайн сайтів та оптимізація швидкодії"
+
+msgid "Website Development for Small Businesses"
+msgstr "Розробка сайтів для малого бізнесу"
+
+msgid "04. SERVICE — AI & AUTOMATION"
+msgstr "04. ПОСЛУГА — AI ТА АВТОМАТИЗАЦІЯ"
+
+msgid "AI workflows and integrations that remove repetitive work."
+msgstr "AI-процеси та інтеграції, які усувають повторювану ручну роботу."
+
+msgid "AI Assistants for Business"
+msgstr "AI-асистенти для бізнесу"
+
+msgid "Custom AI Integrations"
+msgstr "Індивідуальні AI-інтеграції"

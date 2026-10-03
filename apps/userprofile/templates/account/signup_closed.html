@@ -1,0 +1,6 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n authentication_texts %}
+{% block main %}{% authentication_page_text 'signup_closed' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Signup closed" %}{% endif %}</h1>
+<p>{% if authentication_text.description %}{{ authentication_text.description|linebreaksbr }}{% else %}{% trans "We are sorry, but signup is currently closed." %}{% endif %}</p>
+<a class="btn btn-primary btn-block" href="{% url 'account_login' %}">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Back to sign in" %}{% endif %}</a></section>
+{% endblock %}

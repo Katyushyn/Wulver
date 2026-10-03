@@ -1,0 +1,64 @@
+.article-extra-fields-form {
+    display: grid;
+    gap: 12px;
+    max-width: 720px;
+}
+
+.article-extra-fields-form.is-empty {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.article-extra-field {
+    display: grid;
+    gap: 6px;
+}
+
+.article-extra-field label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.article-extra-field input:not([type="checkbox"]):not([type="radio"]),
+.article-extra-field select,
+.article-extra-field textarea {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    max-width: 100%;
+    padding: 8px 10px;
+    width: 100%;
+}
+
+.article-extra-field input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+}
+
+.article-extra-checkbox {
+    align-items: center;
+    display: inline-flex;
+    gap: 8px;
+}
+
+.article-extra-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+}
+
+.article-extra-radio-group label {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+    font-weight: 400;
+}
+
+.article-extra-field-help {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.article-extra-field-required {
+    color: #dc2626;
+}

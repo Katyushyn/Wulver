@@ -1,0 +1,21 @@
+{% extends "admin/change_list.html" %}
+{% load static admin_help %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'core_manager/css/admin-help.css' %}">
+{% endblock %}
+{% block extrahead %}
+    {{ block.super }}
+    <script src="{% static 'core_manager/js/admin-help.js' %}" defer></script>
+{% endblock %}
+
+{% block object-tools-items %}
+    {% admin_help_button opts "list" %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    {% admin_help_dialog opts %}
+{% endblock %}

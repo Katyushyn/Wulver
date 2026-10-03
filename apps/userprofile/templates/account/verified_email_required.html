@@ -1,0 +1,6 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n authentication_texts %}
+{% block main %}{% authentication_page_text 'verified_email_required' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Verify your email address" %}{% endif %}</h1>
+{% if authentication_text.description %}<p>{{ authentication_text.description|linebreaksbr }}</p>{% else %}<p>{% trans "This part of the site requires a verified email address. Check your inbox and follow the verification link." %}</p>{% endif %}
+<a class="btn btn-primary btn-block" href="{% url 'account_email' %}">{% if authentication_text.submit_text %}{{ authentication_text.submit_text }}{% else %}{% trans "Manage email addresses" %}{% endif %}</a></section>
+{% endblock %}

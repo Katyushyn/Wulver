@@ -1,0 +1,445 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Wulver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 21:21+0000\n"
+"PO-Revision-Date: 2026-08-29 21:21+0000\n"
+"Last-Translator: Wulver\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Wulver locale builder (djangojs)\n"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "AI text editing URL is not configured."
+msgstr "URL для AI-редагування тексту не налаштовано."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "AI text editing failed."
+msgstr "Не вдалося відредагувати текст за допомогою AI."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "AI transform failed."
+msgstr "Не вдалося виконати AI-перетворення."
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "Active"
+msgstr "Активний"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Align center"
+msgstr "Вирівняти по центру"
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+#: static/blog_manager/js/article-content-images.js
+msgid "Alt text"
+msgstr "Альт-текст"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Article HTML tools"
+msgstr "Інструменти HTML статті"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Article images"
+msgstr "Зображення статті"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Asset browser"
+msgstr "Переглядач ресурсів"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Asset browser is not available."
+msgstr "Переглядач ресурсів недоступний."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Block formatting"
+msgstr "Блокове форматування"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Block quote"
+msgstr "Цитата в блоці"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Blog category tree is not available."
+msgstr "Дерево категорій блогу недоступне."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Bold"
+msgstr "Жирний"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "CMS link browser is not available."
+msgstr "Переглядач посилань CMS недоступний."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Choose an image from your computer."
+msgstr "Оберіть зображення з комп’ютера."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Choose parent blog category"
+msgstr "Оберіть батьківську категорію блогу"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Clear"
+msgstr "Очистити"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Clear formatting"
+msgstr "Очистити форматування"
+
+#: static/blog_manager/js/article-content-images.js
+#: static/theme_manager/js/template-html-code.js
+msgid "Close"
+msgstr "Закрити"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Code"
+msgstr "Код"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Code tools"
+msgstr "Інструменти коду"
+
+#: static/comments_manager/js/comments.js
+msgid "Comment added."
+msgstr "Коментар додано."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Content tools"
+msgstr "Інструменти вмісту"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Converting images to AVIF..."
+msgstr "Конвертація зображень у AVIF..."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Could not load version history."
+msgstr "Не вдалося завантажити історію версій."
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Could not process article images."
+msgstr "Не вдалося обробити зображення статті."
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Delete"
+msgstr "Видалити"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Delete selected"
+msgstr "Видалити вибране"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Delete this image? Existing article markup will not be removed."
+msgstr "Видалити це зображення? Наявну розмітку статті не буде видалено."
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Deleting image..."
+msgstr "Видалення зображення..."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Deleting selected images..."
+msgstr "Видалення вибраних зображень..."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid ""
+"Describe how to change the selected text. Specify language, tone and desired"
+" length if needed."
+msgstr ""
+"Опишіть, як змінити виділений текст. За потреби вкажіть мову, стиль і бажану"
+" довжину."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Edit selected text with AI"
+msgstr "Редагувати виділений текст за допомогою AI"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Enter text to search"
+msgstr "Введіть текст для пошуку"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Enter the link URL:"
+msgstr "Введіть URL посилання:"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Enter the target path and image name."
+msgstr "Вкажіть цільовий шлях і назву зображення."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "File loading failed."
+msgstr "Не вдалося завантажити файл."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Format HTML"
+msgstr "Відформатувати HTML"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "HTML formatter is unavailable."
+msgstr "HTML-форматувач недоступний."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Heading"
+msgstr "Заголовок"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Headings"
+msgstr "Заголовки"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Image deleted."
+msgstr "Зображення видалено."
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Image details saved."
+msgstr "Дані зображення збережено."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Images"
+msgstr "Зображення"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Images uploaded."
+msgstr "Зображення завантажено."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Include extraction failed."
+msgstr "Не вдалося витягти include."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Indent right"
+msgstr "Збільшити відступ"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Inline formatting"
+msgstr "Вбудоване форматування"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Insert"
+msgstr "Вставити"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Italic"
+msgstr "Курсив"
+
+#: static/theme_manager/js/article-extra-fields-schema.js
+msgid "JSON error:"
+msgstr "Помилка JSON:"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Link"
+msgstr "Посилання"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Link text"
+msgstr "Текст посилання"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "List item"
+msgstr "Елемент списку"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Load more"
+msgstr "Завантажити ще"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Loading images..."
+msgstr "Завантаження зображень..."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Loading..."
+msgstr "Завантаження..."
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "Move down"
+msgstr "Перемістити вниз"
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "Move up"
+msgstr "Перемістити вгору"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "New image (enter path and name)"
+msgstr "Нове зображення (вкажіть шлях і ім’я)"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "No <head> tag found."
+msgstr "Тег <head> не знайдено."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "No categories found"
+msgstr "Категорії не знайдено"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "No content images have been uploaded yet."
+msgstr "Контентні зображення ще не завантажено."
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "No images uploaded yet."
+msgstr "Ще не завантажено зображень."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "No items found."
+msgstr "Елементи не знайдено."
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "Open"
+msgstr "Відкрити"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Ordered list"
+msgstr "Нумерований список"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Page block extraction failed."
+msgstr "Вилучення блоку сторінки не вдалося."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Please save the template before using this action."
+msgstr "Будь ласка, збережіть шаблон перед виконанням цієї дії."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Please select the code block you want to extract."
+msgstr "Будь ласка, виберіть блок коду, який хочете вилучити."
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "Remove on save"
+msgstr "Видалити при збереженні"
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "Remove this image when the module is saved?"
+msgstr "Видалити це зображення при збереженні модуля?"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Replace"
+msgstr "Замінити"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Replace all"
+msgstr "Замінити все"
+
+#: static/theme_manager/js/template-html-code.js
+msgid ""
+"Restore this saved version now? The current saved code will be kept in "
+"history."
+msgstr ""
+"Відновити цю збережену версію зараз? Поточний збережений код буде збережено "
+"в історії."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Save and continue editing"
+msgstr "Зберегти та продовжити редагування"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Save the article before uploading content images."
+msgstr "Збережіть статтю перед завантаженням контентних зображень."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Save the template before opening version history."
+msgstr "Збережіть шаблон перед відкриттям історії версій."
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Saving image details..."
+msgstr "Збереження даних зображення..."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select an image path, a static tag, or an img tag."
+msgstr "Виберіть шлях до зображення, тег static або тег img."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select one complete <a> tag first."
+msgstr "Спочатку виберіть повний тег <a>."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select the HTML block you want to convert."
+msgstr "Виберіть HTML-блок, який хочете перетворити."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Select the HTML fragment whose formatting should be removed."
+msgstr "Виберіть HTML-фрагмент, форматування якого слід видалити."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select the HTML or Django template code you want to edit."
+msgstr "Виберіть HTML або код шаблону Django, який хочете редагувати."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select the list or navigation HTML you want to convert."
+msgstr "Виберіть список або HTML-навігацію, яку хочете перетворити."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Select the text you want to edit with AI."
+msgstr "Виділіть текст, який хочете відредагувати за допомогою AI."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select the text you want to replace."
+msgstr "Виберіть текст, який хочете замінити."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Select visible"
+msgstr "Виберіть видиме"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Static path conversion failed."
+msgstr "Перетворення шляху до статичних файлів не вдалося."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Strikethrough"
+msgstr "Закреслення"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Template components"
+msgstr "Компоненти шаблону"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Template editor tools"
+msgstr "Інструменти редактора шаблонів"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Template load check failed."
+msgstr "Перевірка завантаження шаблону не вдалася."
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Template version history"
+msgstr "Історія версій шаблону"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Text"
+msgstr "Текст"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "This version is identical to the current editor."
+msgstr "Ця версія ідентична поточній у редакторі."
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Underline"
+msgstr "Підкреслення"
+
+#: static/blog_manager/js/article-body-editor.js
+msgid "Unordered list"
+msgstr "Маркований список"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Upload image"
+msgstr "Завантажити зображення"
+
+#: static/blog_manager/js/article-content-images.js
+msgid "Upload images"
+msgstr "Завантажити зображення"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "Version restore failed."
+msgstr "Помилка відновлення версії."
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "image files selected"
+msgstr "вибрано файлів зображень"
+
+#: apps/blog_manager/static/blog_manager/js/image-module-admin.js
+msgid "in a new tab"
+msgstr "у новій вкладці"
+
+#: static/theme_manager/js/template-html-code.js
+msgid "{% load static %}"
+msgstr "{% load static %}"

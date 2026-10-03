@@ -1,0 +1,16 @@
+{% extends "admin/help/change_list.html" %}
+{% load i18n %}
+
+{% block object-tools-items %}
+    <div class="flex flex-row items-center">
+        <a href="import-json/" class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 rounded-default shadow-xs text-sm lg:ml-auto md:mt-0">
+            {% trans "Import JSON chunks" %}
+        </a>
+    </div>
+    <div class="flex flex-row items-center">
+        <a href="build-missing-embeddings/" class="bg-white border-base-200 hover:text-primary-600 dark:bg-base-900 dark:border-base-700 dark:hover:text-primary-500 border cursor-pointer flex font-medium gap-2 group items-center px-3 py-2 rounded-default shadow-xs text-sm md:mt-0">
+            {% trans "Build missing embeddings" %}
+        </a>
+    </div>
+    {{ block.super }}
+{% endblock %}

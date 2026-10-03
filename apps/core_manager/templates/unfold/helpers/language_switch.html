@@ -1,0 +1,21 @@
+{% load admin_language i18n %}
+
+{% admin_language_links as admin_languages %}
+{% if admin_languages %}
+    <div class="flex flex-row gap-1 mx-1 px-3 py-2" aria-label="{% translate 'Language' %}">
+        <span class="material-symbols-outlined mr-1 text-base-400" aria-hidden="true">language</span>
+
+        {% for language in admin_languages %}
+            <a href="{{ language.url }}"
+               lang="{{ language.code }}"
+               hreflang="{{ language.code }}"
+               title="{{ language.name }}"
+               class="flex items-center justify-center min-w-9 px-2 py-1 rounded-default text-xs font-semibold uppercase hover:bg-base-100 hover:text-base-700 dark:hover:bg-base-700 dark:hover:text-base-200{% if language.is_active %} bg-primary-50 text-primary-600 dark:bg-primary-500/20 dark:text-primary-500{% endif %}"
+               {% if language.is_active %}aria-current="page"{% endif %}>
+                {{ language.code }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="border-t border-base-200 mt-1 pt-1 dark:border-base-700"></div>
+{% endif %}

@@ -1,0 +1,5 @@
+{% extends 'account/_auth_layout.html' %}{% load i18n authentication_texts %}
+{% block main %}{% authentication_page_text 'account_inactive' as authentication_text %}
+<section><h1>{% if authentication_text.title %}{{ authentication_text.title }}{% else %}{% trans "Account inactive" %}{% endif %}</h1>
+<p>{% if authentication_text.description %}{{ authentication_text.description|linebreaksbr }}{% else %}{% trans "This account is inactive." %}{% endif %}</p></section>
+{% endblock %}
