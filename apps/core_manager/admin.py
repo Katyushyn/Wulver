@@ -13,7 +13,6 @@ from unfold.widgets import UnfoldAdminTextareaWidget
 
 from apps.theme_manager.models import ThemeTemplate, TemplateType
 from apps.core_manager.admin_mixins import SingletonAdminMixin
-from apps.core_manager.demo_data import create_demo_data
 from apps.core_manager.forms import PageAdminForm, SiteSettingsAdminForm
 from apps.core_manager.models import (
     ContactMessage,
@@ -26,6 +25,16 @@ from apps.core_manager.models import (
 )
 @admin.register(ContactMessage)
 class ContactMessageAdmin(ModelAdmin):
+    actions = ('mark_read', 'mark_unread')
+
+    @admin.action(description=_("Mark as read"))
+    def mark_read(self, request, queryset):
+        queryset.update(is_read=True)
+
+    @admin.action(description=_("Mark as unread"))
+    def mark_unread(self, request, queryset):
+        queryset.update(is_read=False)
+
     list_display = (
         "subject",
         "name",
@@ -167,7 +176,7 @@ class URLRedirectAdmin(ModelAdmin):
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(SingletonAdminMixin, ModelAdmin):
     form = SiteSettingsAdminForm
-    change_form_template = "admin/core_manager/sitesettings/change_form.html"
+    change_form_template = "admin/help/change_form.html"
 
     list_display = (
         "site_name",
@@ -190,7 +199,6 @@ class SiteSettingsAdmin(SingletonAdminMixin, ModelAdmin):
                     "site_domain",
                     "site_url",
                     "home_page",
-                    "latest_articles_count",
                 )
             },
         ),
@@ -354,52 +362,6 @@ class SiteSettingsAdmin(SingletonAdminMixin, ModelAdmin):
             **kwargs,
         )
 
-    def get_urls(self):
-        urls = super().get_urls()
-        custom_urls = [
-            path(
-                "<path:object_id>/create-demo-data/",
-                self.admin_site.admin_view(self.create_demo_data_view),
-                name="core_manager_sitesettings_create_demo_data",
-            ),
-        ]
-        return custom_urls + urls
-
-    def create_demo_data_view(self, request, object_id):
-        site_settings = self.get_object(request, object_id)
-        change_url = reverse(
-            "admin:core_manager_sitesettings_change",
-            args=[object_id],
-        )
-
-        if not site_settings or not self.has_change_permission(request, site_settings):
-            messages.error(request, _("You do not have permission to create demo data."))
-            return redirect(change_url)
-
-        if request.method != "POST":
-            messages.error(request, _("Demo data can only be created with a POST request."))
-            return redirect(change_url)
-
-        try:
-            result = create_demo_data(author=request.user)
-        except Exception as error:
-            messages.error(request, _("Demo data creation failed: %(error)s") % {"error": error})
-            return redirect(change_url)
-
-        messages.success(
-            request,
-            _(
-                "Demo data is ready: %(pages)s pages, %(categories)s categories, "
-                "%(articles)s articles."
-            )
-            % {
-                "pages": result["pages"],
-                "categories": result["categories"],
-                "articles": result["articles_total"],
-            },
-        )
-        return redirect(change_url)
-
     def has_add_permission(self, request):
         return not SiteSettings.objects.exists()
 
@@ -541,6 +503,7 @@ class PageAdmin(ModelAdmin, TabbedTranslationAdmin):
                     "description",
                     "keywords",
                     "template",
+                    "seo_title",
                     "is_published",
                 )
             },
@@ -572,7 +535,7 @@ class PageAdmin(ModelAdmin, TabbedTranslationAdmin):
         if db_field.name == "template":
             kwargs["queryset"] = ThemeTemplate.objects.filter(
                 theme__is_active=True,
-                template_type=TemplateType.PARENT_PAGE,
+                template_type=TemplateType.CHILDREN_PAGE,
                 is_active=True,
             )
 

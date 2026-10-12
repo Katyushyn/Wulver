@@ -40,7 +40,7 @@ class TemplateVersionTest(TestCase):
         )
         self.template = ThemeTemplate.objects.create(
             theme=self.theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="Home",
             slug="home",
             is_active=True,

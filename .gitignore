@@ -27,6 +27,11 @@ __pycache__/
 htmlcov/
 build/
 dist/
+private-dist/
+private-demo/
+# Private Story demonstration; redistribution permission is pending.
+static/themes/story/
+templates/story/
 *.egg-info/
 
 # Django/runtime caches
@@ -37,3 +42,6 @@ caches/
 .idea/
 .vscode/
 .DS_Store
+
+# Local automation workflows
+docs/workflows/

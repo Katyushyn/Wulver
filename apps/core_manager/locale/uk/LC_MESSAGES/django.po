@@ -1,0 +1,323 @@
+msgid ""
+msgstr ""
+"Language: uk\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+msgid "Environment configuration"
+msgstr "Налаштування середовища"
+
+msgid "Local development mode"
+msgstr "Режим локальної розробки"
+
+msgid "DEBUG is disabled. Review production settings below."
+msgstr "DEBUG вимкнено. Перевірте нижче налаштування для production."
+
+msgid "These checks describe the running application, not a complete production security audit."
+msgstr "Ці перевірки описують запущений застосунок, але не замінюють повний аудит безпеки production."
+
+msgid "Development setting / review required"
+msgstr "Налаштування для розробки / потрібна перевірка"
+
+msgid "Basic production checks passed. Verify HTTPS, backups and deployment separately."
+msgstr "Базові перевірки production пройдено. Окремо перевірте HTTPS, резервні копії та розгортання."
+
+msgid "Email is printed to the console, not sent. Configure SMTP and EMAIL_BACKEND in .env before sending real email."
+msgstr "Пошта виводиться в консоль, а не надсилається. Для справжнього надсилання налаштуйте SMTP та EMAIL_BACKEND у .env."
+
+msgid "Keys below show configuration presence only. Saved values are never displayed. After editing .env, restart the server; reload this page to check the active settings."
+msgstr "Нижче показано лише наявність налаштувань. Збережені значення не відображаються. Після зміни .env перезапустіть сервер і оновіть сторінку для перевірки активних налаштувань."
+
+msgid "SECRET_KEY cannot be cleared: replacing it invalidates sessions and signed links. Manage rotation deliberately in .env."
+msgstr "SECRET_KEY не можна очистити: його заміна скидає сесії та підписані посилання. Змінюйте цей ключ свідомо у .env."
+
+msgid "Configured"
+msgstr "Налаштовано"
+
+msgid "Missing"
+msgstr "Відсутнє"
+
+msgid "Externally managed"
+msgstr "Керується зовнішнім середовищем"
+
+msgid "Clear"
+msgstr "Очистити"
+
+msgid "Clear this value? Restart is required to apply it."
+msgstr "Очистити значення? Для застосування потрібен перезапуск."
+
+msgid "Django secret key"
+msgstr "Секретний ключ Django"
+
+msgid "SMTP host"
+msgstr "Сервер SMTP"
+
+msgid "Email backend"
+msgstr "Механізм надсилання пошти"
+
+msgid "SMTP TLS"
+msgstr "Шифрування SMTP TLS"
+
+msgid "SMTP port"
+msgstr "Порт SMTP"
+
+msgid "SMTP username"
+msgstr "Ім’я користувача SMTP"
+
+msgid "SMTP password"
+msgstr "Пароль SMTP"
+
+msgid "Sender email address"
+msgstr "Адреса відправника"
+
+msgid "OpenAI API key"
+msgstr "Ключ API OpenAI"
+
+msgid "Google OAuth client ID"
+msgstr "Ідентифікатор клієнта Google OAuth"
+
+msgid "Google OAuth client secret"
+msgstr "Секрет клієнта Google OAuth"
+
+msgid "Article API token"
+msgstr "Токен API статей"
+
+msgid "GitHub token"
+msgstr "Токен GitHub"
+
+msgid "Saved to .env. Restart all application processes to apply changes."
+msgstr "Збережено у .env. Для застосування перезапустіть усі процеси застосунку."
+
+msgid "Cannot write .env. Check file permissions."
+msgstr "Не вдалося записати .env. Перевірте права доступу до файлу."
+
+msgid "Invalid configuration value."
+msgstr "Некоректне значення налаштування."
+
+msgid "SMTP port must be between 1 and 65535."
+msgstr "Порт SMTP має бути від 1 до 65535."
+
+msgid "Use True or False."
+msgstr "Використайте True або False."
+
+msgid "Use a unique secret key with at least 50 characters. It cannot be cleared."
+msgstr "Використайте унікальний секретний ключ завдовжки щонайменше 50 символів. Його не можна очистити."
+
+msgid "Choose the console or SMTP email backend."
+msgstr "Виберіть консольний або SMTP-механізм пошти."
+
+msgid "Editing a symlinked environment file is not supported."
+msgstr "Редагування файлу середовища через символічне посилання не підтримується."
+
+msgid "Unsafe environment lock file."
+msgstr "Небезпечний файл блокування середовища."
+
+msgid "Active settings (before restart)"
+msgstr "Активні налаштування (до перезапуску)"
+
+msgid "Keys below show configuration presence only. Saved values are never displayed. Changes are saved together when you apply them."
+msgstr "Нижче показано лише наявність налаштувань. Збережені значення не відображаються. Усі зміни зберігаються разом після застосування."
+
+msgid "Clear on apply"
+msgstr "Очистити при застосуванні"
+
+msgid "I confirm security changes. HTTPS, trusted proxies and HSTS must match the hosting configuration."
+msgstr "Підтверджую зміни безпеки. HTTPS, довірені проксі та HSTS мають відповідати налаштуванням хостингу."
+
+msgid "Apply changes and reload"
+msgstr "Застосувати зміни та перезапустити"
+
+msgid "Runserver reloads automatically. Passenger requires explicit configuration; other servers require a manual restart."
+msgstr "Runserver перезапускається автоматично. Passenger потрібно явно налаштувати; інші сервери потребують ручного перезапуску."
+
+msgid "Restart mode"
+msgstr "Режим перезапуску"
+
+msgid "Invalid HSTS duration."
+msgstr "Некоректна тривалість HSTS."
+
+msgid "Use http or https."
+msgstr "Використайте http або https."
+
+msgid "Configuration changed in another window. Reload before applying."
+msgstr "Налаштування змінено в іншому вікні. Перед застосуванням оновіть сторінку."
+
+msgid "HTTPS settings cannot be enabled from an HTTP session. Configure HTTPS first."
+msgstr "Не можна ввімкнути HTTPS-налаштування з HTTP-сесії. Спочатку налаштуйте HTTPS."
+
+msgid "Production requires a strong SECRET_KEY."
+msgstr "Для production потрібен надійний SECRET_KEY."
+
+msgid "Collect production static files before disabling DEBUG."
+msgstr "Перед вимкненням DEBUG зберіть production-статику з маніфестом."
+
+msgid "ALLOWED_HOSTS must retain the current hostname."
+msgstr "У ALLOWED_HOSTS потрібно залишити поточне ім’я хоста."
+
+msgid "CSRF origins must contain http:// or https:// and a hostname."
+msgstr "CSRF-адреси повинні містити http:// або https:// та ім’я хоста."
+
+msgid "Confirm security changes before applying."
+msgstr "Перед застосуванням підтвердьте зміни безпеки."
+
+msgid "Reload the configuration page before applying."
+msgstr "Перед застосуванням оновіть сторінку налаштувань."
+
+msgid "Saved, but automatic restart failed. Restart the application manually."
+msgstr "Збережено, але автоматичний перезапуск не вдався. Перезапустіть застосунок вручну."
+
+msgid "Saved. Automatic restart is not configured; restart the application manually."
+msgstr "Збережено. Автоматичний перезапуск не налаштований; перезапустіть застосунок вручну."
+
+msgid "Saved. Application reload requested; wait briefly and refresh this page."
+msgstr "Збережено. Запит на перезапуск надіслано; трохи зачекайте й оновіть сторінку."
+
+msgid "This parameter is managed by the hosting environment. Change it there."
+msgstr "Цей параметр керується середовищем хостингу. Змінюйте його там."
+
+msgid "Production ALLOWED_HOSTS cannot contain a wildcard."
+msgstr "ALLOWED_HOSTS для production не може містити універсальну зірочку."
+
+msgid "Waiting for application reload. This page will refresh shortly."
+msgstr "Очікуємо перезапуск застосунку. Сторінка незабаром оновиться."
+msgid "Console — local development"
+msgstr "Консоль — локальна розробка"
+
+msgid "SMTP — send real email"
+msgstr "SMTP — надсилання справжніх листів"
+
+msgid "Console: displays email in the terminal without sending it. Recommended for local development."
+msgstr "Консоль: показує листи в терміналі без надсилання. Рекомендовано для локальної розробки."
+
+msgid "SMTP: sends real email. Configure the SMTP host, port, TLS, username, password and sender address below."
+msgstr "SMTP: надсилає справжні листи. Нижче налаштуйте SMTP-сервер, порт, TLS, логін, пароль та адресу відправника."
+
+msgid "Applying changes and waiting for the server to restart…"
+msgstr "Застосовуємо зміни та очікуємо перезапуску сервера…"
+
+msgid "The server has not confirmed a restart. Check the application and refresh the page manually."
+msgstr "Сервер не підтвердив перезапуск. Перевірте роботу застосунку та оновіть сторінку вручну."
+
+msgid "Local default"
+msgstr "Локально за замовчуванням"
+
+msgid "Production guidance"
+msgstr "Рекомендація для production"
+
+msgid "Extend HSTS to all subdomains only when every subdomain supports HTTPS."
+msgstr "Поширюйте HSTS на всі піддомени лише коли кожен із них підтримує HTTPS."
+
+msgid "False; True only after checking all subdomains"
+msgstr "False; True лише після перевірки всіх піддоменів"
+
+msgid "Enable only when deliberately preparing the domain for the browser HSTS preload list. This switch does not submit the domain."
+msgstr "Вмикайте лише для свідомої підготовки домену до браузерного списку HSTS preload. Перемикач сам не додає домен до списку."
+
+msgid "False; optional preload configuration"
+msgstr "False; preload налаштовується за потреби"
+
+msgid "Trust the forwarded protocol only when a trusted reverse proxy overwrites this header and direct access cannot bypass it."
+msgstr "Довіряйте переданому протоколу лише коли довірений проксі перезаписує цей заголовок, а прямий доступ в обхід проксі неможливий."
+
+msgid "False; True only behind a trusted HTTPS proxy"
+msgstr "False; True лише за довіреним HTTPS-проксі"
+
+msgid "Trust forwarded client IPs only when a trusted proxy overwrites the header. Otherwise visitors can spoof their IP."
+msgstr "Довіряйте переданій IP-адресі лише коли довірений проксі перезаписує заголовок. Інакше відвідувач може підробити свою IP-адресу."
+
+msgid "False; True only behind a trusted proxy"
+msgstr "False; True лише за довіреним проксі"
+
+msgid "Use forwarded client IPs for the AI assistant under the same trusted-proxy conditions."
+msgstr "Використовуйте передані IP-адреси для AI-асистента за тих самих умов довіри до проксі."
+
+msgid "Enable Content Security Policy. Check that the policy allows the scripts, styles and external resources required by your theme."
+msgstr "Увімкніть Content Security Policy. Перевірте, що політика дозволяє потрібні темі скрипти, стилі та зовнішні ресурси."
+
+msgid "True after checking compatibility with the site"
+msgstr "True після перевірки сумісності із сайтом"
+
+msgid "Report CSP violations without blocking resources. Use this to test a policy before enforcing it; it has no effect when CSP is disabled."
+msgstr "Повідомляйте про порушення CSP без блокування ресурсів. Це режим перевірки перед застосуванням обмежень; якщо CSP вимкнено, він не діє."
+
+msgid "True during CSP testing; False for enforcement"
+msgstr "True під час перевірки CSP; False для блокування порушень"
+
+msgid "Enable STARTTLS when required by your SMTP provider, commonly on port 587. Console email ignores this setting; implicit TLS on port 465 is different."
+msgstr "Увімкніть STARTTLS, якщо цього потребує SMTP-провайдер, зазвичай на порту 587. Консольна пошта ігнорує параметр; неявний TLS на порту 465 — інший режим."
+
+msgid "True (ignored by console email)"
+msgstr "True (консольна пошта ігнорує)"
+
+msgid "Depends on the SMTP provider; usually True for port 587"
+msgstr "Залежить від SMTP-провайдера; зазвичай True для порту 587"
+
+msgid "Contact messages"
+msgstr "Повідомлення з контактної форми"
+
+msgid "Social network users"
+msgstr "Користувачі соціальних мереж"
+
+msgid "Newsletter subscriptions"
+msgstr "Підписки на розсилку"
+
+msgid "No records yet."
+msgstr "Записів поки немає."
+
+msgid "Site overview"
+msgstr "Огляд сайту"
+
+msgid "Recent messages, comments, subscriptions and AI activity, together with site environment settings."
+msgstr "Останні повідомлення, коментарі, підписки й активність AI та налаштування середовища сайту."
+
+msgid "Unread messages"
+msgstr "Непрочитані повідомлення"
+
+msgid "Awaiting moderation"
+msgstr "Очікують модерації"
+
+msgid "New leads"
+msgstr "Нові ліди"
+
+msgid "Open site"
+msgstr "Відкрити сайт"
+
+msgid "Backups"
+msgstr "Резервні копії"
+
+msgid "Latest backup"
+msgstr "Останній бекап"
+
+msgid "Last completed backup"
+msgstr "Останній успішний бекап"
+
+msgid "No backups yet. Create a backup before making important changes."
+msgstr "Резервних копій поки немає. Створіть бекап перед важливими змінами."
+
+msgid "No completed backup is available."
+msgstr "Успішно завершеного бекапа немає."
+
+msgid "Create full backup"
+msgstr "Створити повний бекап"
+
+msgid "Not yet reviewed"
+msgstr "Ще не переглянуто"
+
+msgid "Review tracking is personal. Opening a list does not mark records as reviewed."
+msgstr "Позначка перегляду персональна. Відкриття списку не позначає записи переглянутими."
+
+msgid "Mark current records as reviewed"
+msgstr "Позначити поточні записи переглянутими"
+
+msgid "Mark as read"
+msgstr "Позначити прочитаними"
+
+msgid "Mark as unread"
+msgstr "Позначити непрочитаними"
+
+msgid "OpenAI API key is not configured"
+msgstr "Ключ OpenAI API не налаштовано"
+
+msgid "AI features that use the OpenAI API cannot work without a key. Add OPENAI_API_KEY in Environment configuration."
+msgstr "AI-функції, що використовують OpenAI API, не можуть працювати без ключа. Додайте OPENAI_API_KEY у налаштуваннях середовища."
+

@@ -10,3 +10,5 @@ class CoreManagerConfig(AppConfig):
         from . import sitemap_signals  # noqa: F401
 
         install_admin_help_templates()
+        from .environment_dashboard import install_environment_dashboard
+        install_environment_dashboard()

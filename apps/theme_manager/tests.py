@@ -17,7 +17,11 @@ from apps.blog_manager.models import (
     TagModule,
 )
 from apps.core_manager.models import Page, SiteSettings
-from apps.theme_manager.admin import ThemeTemplateAdmin, ThemeTemplateAdminForm
+from apps.theme_manager.admin import (
+    ThemeTemplateAdmin,
+    ThemeTemplateAdminForm,
+    ensure_page_for_template,
+)
 from apps.theme_manager.models import (
     TemplateComponent,
     Theme,
@@ -211,7 +215,7 @@ class TemplateAdminHelpersTest(TestCase):
         theme = Theme.objects.create(name="CSS save", slug="css-save", is_active=True)
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_ARTICLE,
+            template_type=TemplateType.CHILDREN_ARTICLE,
             name="Article",
             slug="article",
             css_classes=["obsolete"],
@@ -257,7 +261,7 @@ class TemplateAdminHelpersTest(TestCase):
             )
             for template_type, name, slug in (
                 (TemplateType.ERROR_TEMPLATE, "404", "404"),
-                (TemplateType.PARENT_PAGE, "About", "about"),
+                (TemplateType.CHILDREN_PAGE, "About", "about"),
                 (TemplateType.INCLUDE_BLOCK, "Header", "header"),
                 (TemplateType.BASE_TEMPLATE, "Base", "base"),
             )
@@ -272,7 +276,7 @@ class TemplateAdminHelpersTest(TestCase):
             [
                 TemplateType.BASE_TEMPLATE,
                 TemplateType.INCLUDE_BLOCK,
-                TemplateType.PARENT_PAGE,
+                TemplateType.CHILDREN_PAGE,
                 TemplateType.ERROR_TEMPLATE,
             ],
         )
@@ -285,6 +289,19 @@ class TemplateAdminHelpersTest(TestCase):
         self.assertNotIn("messages_template", values)
         self.assertNotIn("email_template", values)
         self.assertNotIn("system_page", values)
+
+    def test_children_template_type_labels_match_admin_terminology(self):
+        labels = dict(TemplateType.choices)
+
+        self.assertEqual(str(labels[TemplateType.CHILDREN_PAGE]), "-- Children Pages")
+        self.assertEqual(
+            str(labels[TemplateType.CHILDREN_BLOG]),
+            "-- Children Blog Categories",
+        )
+        self.assertEqual(
+            str(labels[TemplateType.CHILDREN_ARTICLE]),
+            "-- Children Articles",
+        )
 
     def test_new_template_uses_active_theme_and_disables_theme_field(self):
         Theme.objects.create(name="Old", slug="old", is_active=False)
@@ -349,7 +366,7 @@ class TemplateAdminHelpersTest(TestCase):
     def test_article_extra_fields_schema_uses_article_fieldset(self):
         Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         form = ThemeTemplateAdminForm(data={
-            "template_type": TemplateType.PARENT_ARTICLE,
+            "template_type": TemplateType.CHILDREN_ARTICLE,
             "name": "Article template",
             "slug": "article-template",
             "is_active": "on",
@@ -395,7 +412,7 @@ class TemplateAdminHelpersTest(TestCase):
     def test_article_extra_fields_schema_rejects_invalid_format(self):
         Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         form = ThemeTemplateAdminForm(data={
-            "template_type": TemplateType.PARENT_ARTICLE,
+            "template_type": TemplateType.CHILDREN_ARTICLE,
             "name": "Article template",
             "slug": "article-template",
             "is_active": "on",
@@ -413,7 +430,7 @@ class TemplateAdminHelpersTest(TestCase):
     def test_article_extra_fields_schema_allows_checkbox_choices(self):
         Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         form = ThemeTemplateAdminForm(data={
-            "template_type": TemplateType.PARENT_ARTICLE,
+            "template_type": TemplateType.CHILDREN_ARTICLE,
             "name": "Article template",
             "slug": "article-template",
             "is_active": "on",
@@ -432,7 +449,7 @@ class TemplateAdminHelpersTest(TestCase):
         theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_ARTICLE,
+            template_type=TemplateType.CHILDREN_ARTICLE,
             name="Article template",
             slug="article-template",
             article_extra_fields_schema={
@@ -454,7 +471,7 @@ class TemplateAdminHelpersTest(TestCase):
         theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         form = ThemeTemplateAdminForm(data={
             "theme": str(theme.pk),
-            "template_type": TemplateType.PARENT_PAGE,
+            "template_type": TemplateType.CHILDREN_PAGE,
             "name": "About template",
             "slug": "about-template",
             "is_active": "on",
@@ -480,11 +497,66 @@ class TemplateAdminHelpersTest(TestCase):
         self.assertEqual(page.slug, "about")
         self.assertTrue(page.is_published)
 
+    def test_children_page_extraction_helper_creates_selectable_page_once(self):
+        theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
+        template = ThemeTemplate.objects.create(
+            theme=theme,
+            template_type=TemplateType.CHILDREN_PAGE,
+            name="Home",
+            slug="home",
+        )
+
+        page = ensure_page_for_template(template)
+        same_page = ensure_page_for_template(template)
+
+        self.assertEqual(page, same_page)
+        self.assertEqual(page.title_en, "Home")
+        self.assertEqual(page.slug, "home")
+        self.assertTrue(page.is_published)
+        self.assertEqual(Page.objects.filter(template=template).count(), 1)
+
+    def test_extract_page_block_creates_template_and_page(self):
+        theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
+        base_template = ThemeTemplate.objects.create(
+            theme=theme,
+            template_type=TemplateType.BASE_TEMPLATE,
+            name="Base",
+            slug="base",
+        )
+        request = RequestFactory().post(
+            "/admin/theme_manager/themetemplate/extract-page-block/",
+            data={
+                "selected_code": "<main>Homepage</main>",
+                "name": "Home",
+            },
+        )
+        request.user = User.objects.create_superuser(
+            username="extract-page-admin",
+            email="extract-page@example.com",
+            password="test",
+        )
+
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            with override_settings(BASE_DIR=Path(temporary_directory)):
+                response = ThemeTemplateAdmin(
+                    ThemeTemplate,
+                    AdminSite(),
+                ).template_editor_extract_page_block_view(request, base_template.pk)
+
+        payload = json.loads(response.content)
+        page_template = ThemeTemplate.objects.get(slug="home")
+        page = Page.objects.get(template=page_template)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(page_template.template_type, TemplateType.CHILDREN_PAGE)
+        self.assertEqual(page.title, "Home")
+        self.assertEqual(payload["page_id"], page.pk)
+
     def test_parent_page_form_updates_existing_page(self):
         theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="About template",
             slug="about-template",
         )
@@ -498,7 +570,7 @@ class TemplateAdminHelpersTest(TestCase):
         )
         form = ThemeTemplateAdminForm(instance=template, data={
             "theme": str(theme.pk),
-            "template_type": TemplateType.PARENT_PAGE,
+            "template_type": TemplateType.CHILDREN_PAGE,
             "name": template.name,
             "slug": template.slug,
             "is_active": "on",
@@ -541,7 +613,7 @@ class TemplateAdminHelpersTest(TestCase):
         theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="About template",
             slug="about-template",
         )
@@ -568,13 +640,13 @@ class TemplateAdminHelpersTest(TestCase):
         theme = Theme.objects.create(name="Eterna", slug="eterna", is_active=True)
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="Home",
             slug="home",
         )
         ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="Home copy",
             slug=f"home-{template.pk}",
         )

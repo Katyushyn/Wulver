@@ -7,6 +7,7 @@ from .models import Page, SiteSettings, URLLink
 class PageTranslationOptions(TranslationOptions):
     fields = (
         "title",
+        "seo_title",
         "description",
         "keywords",
     )

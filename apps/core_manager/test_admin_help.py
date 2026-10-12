@@ -23,7 +23,7 @@ class AdminHelpTests(TestCase):
         self.client.force_login(self.user)
 
     def test_every_sidebar_model_has_registered_detailed_help(self):
-        self.assertEqual(len(ADMIN_HELP), 37)
+        self.assertEqual(len(ADMIN_HELP), 38)
 
         for label, guide in ADMIN_HELP.items():
             with self.subTest(label=label):

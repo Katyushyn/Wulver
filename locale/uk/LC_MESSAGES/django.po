@@ -19,16 +19,16 @@ msgid "-- Include block"
 msgstr "-- Включити блок"
 
 #: apps/theme_manager/models.py
-msgid "-- Parent Article"
-msgstr "-- Батьківська стаття"
+msgid "-- Children Articles"
+msgstr "-- Дочірні статті"
 
 #: apps/theme_manager/models.py
-msgid "-- Parent Blog"
-msgstr "-- Батьківський блог"
+msgid "-- Children Blog Categories"
+msgstr "-- Дочірні категорії блогу"
 
 #: apps/theme_manager/models.py
-msgid "-- Parent Page"
-msgstr "-- Батьківська сторінка"
+msgid "-- Children Pages"
+msgstr "-- Дочірні сторінки"
 
 #: apps/theme_manager/models.py
 msgid "-- Search Page"
@@ -1203,10 +1203,6 @@ msgid ""
 msgstr ""
 "Створіть облікові дані в консолі провайдера, використовуючи URL зворотного "
 "виклику, необхідний django-allauth."
-
-#: apps/core_manager/templates/admin/core_manager/sitesettings/change_form.html
-msgid "Create demo data"
-msgstr "Створити демонстраційні дані"
 
 #: apps/core_manager/admin_help.py
 msgid ""
@@ -4313,8 +4309,8 @@ msgid "This confirmation link has already been used or is invalid."
 msgstr "Це посилання для підтвердження вже використане або недійсне."
 
 #: apps/theme_manager/admin.py
-msgid "This field is required for Parent Page templates."
-msgstr "Це поле обов’язкове для шаблонів Батьківських сторінок."
+msgid "This field is required for Children Pages templates."
+msgstr "Це поле обов’язкове для шаблонів дочірніх сторінок."
 
 #: apps/core_manager/admin_help.py
 msgid "This is a singleton configuration for the whole blog."
@@ -4339,10 +4335,8 @@ msgstr ""
 "вашу пошту і пройдіть за посиланням підтвердження."
 
 #: apps/theme_manager/admin.py
-msgid "This template is linked to a page and must remain a Parent Page."
-msgstr ""
-"Цей шаблон пов’язаний зі сторінкою і повинен залишатися Батьківською "
-"сторінкою."
+msgid "This template is linked to a page and must remain a Children Pages template."
+msgstr "Цей шаблон пов’язаний зі сторінкою і має залишатися шаблоном дочірніх сторінок."
 
 #: apps/core_manager/models.py
 msgid "TikTok URL"
@@ -4504,14 +4498,6 @@ msgid ""
 msgstr ""
 "Використовуйте Активний стан, щоб призупинити доступ без видалення "
 "облікового запису та пов’язаного контенту."
-
-#: apps/core_manager/admin_help.py
-msgid ""
-"Use Create demo data only on a new or disposable setup and review what it "
-"creates."
-msgstr ""
-"Використовуйте Створити демо-дані лише на новому або тестовому середовищі і "
-"перевірте, що саме створюється."
 
 #: apps/core_manager/admin_help.py
 msgid "Use Reset to defaults to restore the original code if rendering fails."
@@ -5238,3 +5224,9 @@ msgstr "AI-асистенти для бізнесу"
 
 msgid "Custom AI Integrations"
 msgstr "Індивідуальні AI-інтеграції"
+
+msgid "Your site is ready."
+msgstr "Ваш сайт готовий."
+
+msgid "Administration"
+msgstr "Адміністрування"

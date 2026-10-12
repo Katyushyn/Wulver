@@ -65,6 +65,35 @@ import difflib
 from unidecode import unidecode
 
 
+def ensure_page_for_template(template):
+    """Create the Page record required by a Children Pages template."""
+    if template.template_type != TemplateType.CHILDREN_PAGE:
+        return None
+
+    page = Page.objects.filter(template=template).first()
+    if page:
+        return page
+
+    title = template.name.strip() or _("Untitled page")
+    base_slug = slugify(unidecode(template.slug or title)) or f"page-{template.pk}"
+    page_slug = base_slug
+    suffix = 2
+
+    while Page.objects.filter(slug=page_slug).exists():
+        page_slug = f"{base_slug}-{suffix}"
+        suffix += 1
+
+    return Page.objects.create(
+        title=title,
+        title_en=title,
+        slug=page_slug,
+        description="",
+        description_en="",
+        template=template,
+        is_published=True,
+    )
+
+
 # class ThemeTemplateInline(TabularInline):
 #     model = ThemeTemplate
 #     extra = 0
@@ -459,7 +488,7 @@ class ThemeAdmin(ModelAdmin):
                     slug=template_slug,
                     defaults={
                         "name": template_name,
-                        "template_type": TemplateType.PARENT_PAGE,
+                        "template_type": TemplateType.CHILDREN_PAGE,
                         "is_active": True,
                     },
                 )
@@ -1111,13 +1140,13 @@ class ThemeTemplateAdminForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
 
-        if cleaned_data.get("template_type") != TemplateType.PARENT_PAGE:
+        if cleaned_data.get("template_type") != TemplateType.CHILDREN_PAGE:
             if self.instance and self.instance.pk:
                 if Page.objects.filter(template=self.instance).exists():
                     self.add_error(
                         "template_type",
                         _(
-                            "This template is linked to a page and must remain a Parent Page."
+                            "This template is linked to a page and must remain a Children Pages template."
                         ),
                     )
 
@@ -1131,7 +1160,7 @@ class ThemeTemplateAdminForm(forms.ModelForm):
 
         for field_name in required_fields:
             if not cleaned_data.get(field_name):
-                self.add_error(field_name, _("This field is required for Parent Page templates."))
+                self.add_error(field_name, _("This field is required for Children Pages templates."))
 
         slug = cleaned_data.get("page_slug")
 
@@ -1161,7 +1190,7 @@ class ThemeTemplateAdminForm(forms.ModelForm):
     def save_page(self):
         template = self.instance
 
-        if template.template_type != TemplateType.PARENT_PAGE:
+        if template.template_type != TemplateType.CHILDREN_PAGE:
             return None
 
         page = Page.objects.filter(template=template).first() or Page(template=template)
@@ -1229,9 +1258,9 @@ class ThemeTemplateAdmin(ModelAdmin):
     def structured_name(self, obj):
         child_types = {
             TemplateType.INCLUDE_BLOCK,
-            TemplateType.PARENT_PAGE,
-            TemplateType.PARENT_BLOG,
-            TemplateType.PARENT_ARTICLE,
+            TemplateType.CHILDREN_PAGE,
+            TemplateType.CHILDREN_BLOG,
+            TemplateType.CHILDREN_ARTICLE,
             TemplateType.SEARCH_PAGE,
         }
 
@@ -1265,13 +1294,13 @@ class ThemeTemplateAdmin(ModelAdmin):
             request.GET.get("field_name"),
         )
         template_type_by_source = {
-            ("blog_manager", "blogsettings", "default_category_template"): TemplateType.PARENT_BLOG,
-            ("blog_manager", "blogsettings", "default_paginated_category_template"): TemplateType.PARENT_BLOG,
-            ("blog_manager", "blogsettings", "default_article_template"): TemplateType.PARENT_ARTICLE,
-            ("blog_manager", "category", "theme_template"): TemplateType.PARENT_BLOG,
-            ("blog_manager", "category", "paginated_theme_template"): TemplateType.PARENT_BLOG,
-            ("blog_manager", "category", "article_theme_template"): TemplateType.PARENT_ARTICLE,
-            ("blog_manager", "article", "theme_template"): TemplateType.PARENT_ARTICLE,
+            ("blog_manager", "blogsettings", "default_category_template"): TemplateType.CHILDREN_BLOG,
+            ("blog_manager", "blogsettings", "default_paginated_category_template"): TemplateType.CHILDREN_BLOG,
+            ("blog_manager", "blogsettings", "default_article_template"): TemplateType.CHILDREN_ARTICLE,
+            ("blog_manager", "category", "theme_template"): TemplateType.CHILDREN_BLOG,
+            ("blog_manager", "category", "paginated_theme_template"): TemplateType.CHILDREN_BLOG,
+            ("blog_manager", "category", "article_theme_template"): TemplateType.CHILDREN_ARTICLE,
+            ("blog_manager", "article", "theme_template"): TemplateType.CHILDREN_ARTICLE,
         }
         template_type = template_type_by_source.get(source)
 
@@ -1605,7 +1634,7 @@ class ThemeTemplateAdmin(ModelAdmin):
             source="admin_save",
         )
         css_classes = []
-        if obj.template_type == TemplateType.PARENT_ARTICLE:
+        if obj.template_type == TemplateType.CHILDREN_ARTICLE:
             css_classes = collect_template_css_classes(template_file_path)
         ThemeTemplate.objects.filter(pk=obj.pk).update(css_classes=css_classes)
         obj.css_classes = css_classes
@@ -2024,7 +2053,7 @@ class ThemeTemplateAdmin(ModelAdmin):
 
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=template_type or TemplateType.PARENT_PAGE,
+            template_type=template_type or TemplateType.CHILDREN_PAGE,
             name=name,
             slug=slug,
             is_active=request.POST.get("is_active") == "1",
@@ -2356,11 +2385,12 @@ class ThemeTemplateAdmin(ModelAdmin):
 
         page_template = ThemeTemplate.objects.create(
             theme=template.theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name=name,
             slug=slug,
             is_active=True,
         )
+        page = ensure_page_for_template(page_template)
 
         parent_template_path = f"{template.theme.slug}/{template.slug}.html"
         page_code = (
@@ -2386,6 +2416,7 @@ class ThemeTemplateAdmin(ModelAdmin):
             "block": "{% block main %}{% endblock %}",
             "name": page_template.name,
             "slug": page_template.slug,
+            "page_id": page.pk,
             "file": str(page_file_path),
         })
 

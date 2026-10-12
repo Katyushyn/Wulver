@@ -90,7 +90,7 @@ class ImageGenerationTest(TestCase):
                 theme=theme,
                 name="Home",
                 slug="home",
-                template_type=TemplateType.PARENT_PAGE,
+                template_type=TemplateType.CHILDREN_PAGE,
                 is_active=True,
             )
             ai_response = SimpleNamespace(data=[
@@ -151,7 +151,7 @@ class ImageGenerationTest(TestCase):
                 theme=theme,
                 name="Home",
                 slug="home",
-                template_type=TemplateType.PARENT_PAGE,
+                template_type=TemplateType.CHILDREN_PAGE,
                 is_active=True,
             )
             ai_response = SimpleNamespace(data=[
@@ -228,7 +228,7 @@ class ImageGenerationTest(TestCase):
                 theme=theme,
                 name="About",
                 slug="about",
-                template_type=TemplateType.PARENT_PAGE,
+                template_type=TemplateType.CHILDREN_PAGE,
                 is_active=True,
             )
             ai_response = SimpleNamespace(data=[
@@ -293,7 +293,7 @@ class ImageGenerationTest(TestCase):
                 theme=theme,
                 name="Home",
                 slug="home",
-                template_type=TemplateType.PARENT_PAGE,
+                template_type=TemplateType.CHILDREN_PAGE,
                 is_active=True,
             )
             ai_response = SimpleNamespace(data=[
@@ -349,7 +349,7 @@ class ImageGenerationTest(TestCase):
             theme=theme,
             name="Home",
             slug="home",
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             is_active=True,
         )
 

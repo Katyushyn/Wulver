@@ -199,7 +199,7 @@
         }).then(function (payload) {
             var classes = Array.isArray(payload.classes) ? payload.classes : [];
             if (!classes.length) {
-                window.alert(label("No CSS classes were detected. Save the Article Parent template first."));
+                window.alert(label("No CSS classes were detected. Save the selected Children Articles template first."));
                 return;
             }
 

@@ -4,10 +4,10 @@ from copy import deepcopy
 from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 
 from django.conf import settings
-from django.urls import translate_url
+from django.urls import translate_url, reverse
 from django.utils.html import format_html, format_html_join
 from django.utils.safestring import mark_safe
-from django.utils.translation import get_language, override
+from django.utils.translation import get_language, override, gettext as _
 
 from .models import SiteSettings
 
@@ -416,6 +416,7 @@ def build_seo_context(request, page=None, menu_item=None):
     seo_object = page
 
     title = _first_nonempty(
+        getattr(seo_object, "seo_title", ""),
         getattr(seo_object, "title", ""),
         site_settings.title,
         site_settings.site_name,
@@ -443,6 +444,36 @@ def build_seo_context(request, page=None, menu_item=None):
         description=description,
     )
     canonical_url = get_canonical_url(request, allowed_params)
+    if isinstance(schema_graph, dict) and schema_graph:
+        graph = schema_graph.get("@graph")
+        if not isinstance(graph, list):
+            graph = [{k: v for k, v in schema_graph.items() if k != "@context"}]
+        else:
+            graph = list(graph)
+        for node in graph:
+            if isinstance(node, dict) and node.get("@type") == "WebPage":
+                node["url"] = canonical_url
+                node["@id"] = canonical_url + "#webpage"
+                node["inLanguage"] = get_request_language(request)
+                label = getattr(getattr(seo_object, "_meta", None), "label_lower", "")
+                if label == "blog_manager.category":
+                    node["@type"] = "CollectionPage"
+                elif request.resolver_match and request.resolver_match.url_name == "search":
+                    node["@type"] = "SearchResultsPage"
+                elif getattr(seo_object, "slug", "") == "about":
+                    node["@type"] = "AboutPage"
+                elif getattr(seo_object, "slug", "") == "contacts":
+                    node["@type"] = "ContactPage"
+        home_url = request.build_absolute_uri(reverse("core_manager:home"))
+        crumbs = [{"@type": "ListItem", "position": 1, "name": str(_("Home")), "item": home_url}]
+        category = getattr(seo_object, "category", None)
+        if category:
+            crumbs.append({"@type": "ListItem", "position": 2, "name": category.title, "item": request.build_absolute_uri(reverse("blog:category", kwargs={"category_slug": category.slug}))})
+        if canonical_url != home_url:
+            crumbs.append({"@type": "ListItem", "position": len(crumbs)+1, "name": title, "item": canonical_url})
+        if not any(node.get("@type") == "BreadcrumbList" for node in graph if isinstance(node, dict)):
+            graph.append({"@type": "BreadcrumbList", "@id": canonical_url + "#breadcrumb", "itemListElement": crumbs})
+        schema_graph = {"@context": "https://schema.org", "@graph": graph}
     alternate_urls = get_alternate_urls(
         canonical_url,
         get_request_language(request),

@@ -1,0 +1,362 @@
+msgid ""
+msgstr ""
+"Language: uk\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+msgid "About"
+msgstr "Про нас"
+
+msgid "Search articles"
+msgstr "Пошук статей"
+
+msgid "SEO title"
+msgstr "SEO-заголовок"
+
+msgid "Website"
+msgstr "Вебсайт"
+
+msgid "About Me"
+msgstr "Про автора"
+
+msgid "About Us"
+msgstr "Про нас"
+
+msgid "All rights reserved."
+msgstr "Усі права захищені."
+
+msgid "Areas of Expertise"
+msgstr "Напрями роботи"
+
+msgid "Article topics"
+msgstr "Теми статей"
+
+msgid "Articles"
+msgstr "Статті"
+
+msgid "Artificial Intelligence"
+msgstr "Штучний інтелект"
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Author Profile"
+msgstr "Профіль автора"
+
+msgid "Authors"
+msgstr "Автори"
+
+msgid "Back to Home"
+msgstr "На головну"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Breadcrumbs"
+msgstr "Навігаційний шлях"
+
+msgid "By"
+msgstr "Автор"
+
+msgid "Call Us"
+msgstr "Зателефонуйте нам"
+
+msgid "Categories"
+msgstr "Категорії"
+
+msgid "Category Section"
+msgstr "Статті за категоріями"
+
+msgid "Comments"
+msgstr "Коментарі"
+
+msgid "Consumer Electronics"
+msgstr "Споживча електроніка"
+
+msgid "Contact"
+msgstr "Контакти"
+
+msgid "Contact Information"
+msgstr "Контактна інформація"
+
+msgid "Contact Us"
+msgstr "Зв’яжіться з нами"
+
+msgid "Continue"
+msgstr "Продовжити"
+
+msgid "Continue Reading"
+msgstr "Читати далі"
+
+msgid "Cybersecurity"
+msgstr "Кібербезпека"
+
+msgid "Designed by"
+msgstr "Дизайн"
+
+msgid "Digital Privacy"
+msgstr "Цифрова приватність"
+
+msgid "Discover creative tools"
+msgstr "Знайти творчі інструменти"
+
+msgid "Discover more"
+msgstr "Дізнатися більше"
+
+msgid "Email Address"
+msgstr "Електронна адреса"
+
+msgid "Email Us"
+msgstr "Напишіть нам"
+
+msgid "Email address"
+msgstr "Електронна адреса"
+
+msgid "Enter a search query to find articles."
+msgstr "Введіть пошуковий запит, щоб знайти статті."
+
+msgid "Explore"
+msgstr "Досліджуйте"
+
+msgid "Explore by Topic"
+msgstr "Обирайте за темою"
+
+msgid "Explore destinations"
+msgstr "Обрати напрямок"
+
+msgid "Featured Articles"
+msgstr "Вибрані статті"
+
+msgid "Featured Posts"
+msgstr "Вибрані публікації"
+
+msgid "Follow Us"
+msgstr "Стежте за нами"
+
+msgid "From Our Partners"
+msgstr "Від наших партнерів"
+
+msgid "Full Name"
+msgstr "Повне ім’я"
+
+msgid "Future Tech Trends"
+msgstr "Майбутні технології"
+
+msgid "Home"
+msgstr "Головна"
+
+msgid "Ideas Worth Trying"
+msgstr "Ідеї, які варто спробувати"
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Latest Articles"
+msgstr "Останні статті"
+
+msgid "Latest Comments"
+msgstr "Останні коментарі"
+
+msgid "Latest Posts"
+msgstr "Останні публікації"
+
+msgid "Learn a useful skill at your pace"
+msgstr "Опануйте корисну навичку у власному темпі"
+
+msgid "Loading"
+msgstr "Завантаження"
+
+msgid "Meet our authors."
+msgstr "Познайомтеся з нашими авторами."
+
+msgid "Monday-Saturday: 9AM - 7PM"
+msgstr "Понеділок–субота: 09:00–19:00"
+
+msgid "Next"
+msgstr "Далі"
+
+msgid "No articles found. Try a different search."
+msgstr "Статей не знайдено. Спробуйте інший запит."
+
+msgid "No articles yet."
+msgstr "Статей поки немає."
+
+msgid "No comments yet."
+msgstr "Коментарів поки немає."
+
+msgid "Our Authors"
+msgstr "Наші автори"
+
+msgid "Our Location"
+msgstr "Наша адреса"
+
+msgid "Pagination"
+msgstr "Сторінки"
+
+msgid "Plan your next inspiring journey"
+msgstr "Сплануйте наступну цікаву подорож"
+
+msgid "Plan your next journey"
+msgstr "Сплануйте наступну подорож"
+
+msgid "Previous"
+msgstr "Назад"
+
+msgid "Read Article"
+msgstr "Читати статтю"
+
+msgid "Read More"
+msgstr "Читати далі"
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Search Results"
+msgstr "Результати пошуку"
+
+msgid "Search articles by title"
+msgstr "Пошук статей за назвою"
+
+msgid "Send Message"
+msgstr "Надіслати повідомлення"
+
+msgid "Send Us a Message"
+msgstr "Напишіть нам"
+
+msgid "Sharing practical ideas and fresh perspectives"
+msgstr "Ділимося практичними ідеями та новими поглядами"
+
+msgid "Site Navigation"
+msgstr "Навігація сайтом"
+
+msgid "Sitemap"
+msgstr "Мапа сайту"
+
+msgid "Smart Home Technology"
+msgstr "Технології розумного дому"
+
+msgid "Sponsored"
+msgstr "Реклама"
+
+msgid "Start learning"
+msgstr "Почати навчання"
+
+msgid "Start learning today"
+msgstr "Почніть навчатися сьогодні"
+
+msgid "Stories That Inspire Everyday Discovery"
+msgstr "Історії, що надихають на щоденні відкриття"
+
+msgid "Story Editor"
+msgstr "Редактор Story"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "Subscribe"
+msgstr "Підписатися"
+
+msgid "Tags"
+msgstr "Теги"
+
+msgid "Team"
+msgstr "Команда"
+
+msgid "Tools for better creative work"
+msgstr "Інструменти для творчої роботи"
+
+msgid "Unable to submit. Please try again."
+msgstr "Не вдалося надіслати. Спробуйте ще раз."
+
+msgid "Working Hours"
+msgstr "Години роботи"
+
+msgid "Your Message"
+msgstr "Ваше повідомлення"
+
+msgid "Your message has been sent. Thank you!"
+msgstr "Ваше повідомлення надіслано. Дякуємо!"
+
+msgid "comments"
+msgstr "коментарів"
+
+msgid "4952 Hilltop Dr, Anytown, CA 90210"
+msgstr "4952 Hilltop Dr, Anytown, CA 90210"
+
+msgid "A Wider Perspective"
+msgstr "Ширший погляд"
+
+msgid "Browse the full list of pages and articles on our site."
+msgstr "Перегляньте повний список сторінок і статей нашого сайту."
+
+msgid "Discover recent stories, fresh perspectives, and practical ideas from our authors."
+msgstr "Читайте нові історії, свіжі погляди й практичні ідеї наших авторів."
+
+msgid "Discover stories through the subjects that interest you most."
+msgstr "Знаходьте історії за темами, які вас найбільше цікавлять."
+
+msgid "Explore different places, experiences, and approaches through our authors’ stories."
+msgstr "Відкривайте різні місця, досвід і підходи через історії наших авторів."
+
+msgid "Fresh ideas across six categories, from design to education."
+msgstr "Свіжі ідеї у шести категоріях — від дизайну до освіти."
+
+msgid "Fresh perspectives on creativity, travel, and everyday life."
+msgstr "Нові погляди на творчість, подорожі та повсякденне життя."
+
+msgid "Get in touch with the Story team using our working demo contact form."
+msgstr "Зв’яжіться з командою Story через робочу демонстраційну форму."
+
+msgid "Have a question or an idea for a story? Use the demo contact form to send a message to our team."
+msgstr "Маєте запитання чи ідею для історії? Напишіть нашій команді через демонстраційну форму."
+
+msgid "I write about small discoveries, creative projects, and practical ideas that make everyday life more interesting."
+msgstr "Пишу про маленькі відкриття, творчі проєкти та практичні ідеї, які роблять повсякденне життя цікавішим."
+
+msgid "Innovating the digital landscape with elegant solutions and timeless design."
+msgstr "Створюємо сучасні цифрові рішення з елегантним дизайном, актуальним поза часом."
+
+msgid "Meet the editor and discover their latest stories."
+msgstr "Познайомтеся з редактором і прочитайте його останні історії."
+
+msgid "Meet the team behind Story, a Wulver demo blog about creativity, travel, and everyday life."
+msgstr "Познайомтеся з командою Story — демонстраційного блогу Wulver про творчість, подорожі та повсякденне життя."
+
+msgid "Our authors explore everyday life, travel, design, and learning through thoughtful stories and useful examples."
+msgstr "Наші автори досліджують повсякденне життя, подорожі, дизайн і навчання через цікаві історії та корисні приклади."
+
+msgid "Practical ideas to inspire your next project or adventure."
+msgstr "Практичні ідеї для вашого наступного проєкту чи пригоди."
+
+msgid "Selected services and ideas from partners we recommend."
+msgstr "Добірка сервісів та ідей від партнерів, яких ми рекомендуємо."
+
+msgid "Small, practical steps help turn inspiration into a personal habit or project."
+msgstr "Маленькі практичні кроки допомагають перетворити натхнення на звичку або проєкт."
+
+msgid "Story is a demo publication built with Wulver. Meet our writers and explore ideas for a more creative, curious, and thoughtful life."
+msgstr "Story — демонстраційне видання на Wulver. Познайомтеся з авторами та знайдіть ідеї для творчого, допитливого й усвідомленого життя."
+
+msgid "Tell us what you have in mind. Messages sent through this demo form are saved in the administration panel."
+msgstr "Розкажіть про свою ідею. Повідомлення з цієї демонстраційної форми зберігаються в панелі адміністратора."
+
+msgid "Thoughtful stories written by our demo editorial team."
+msgstr "Цікаві історії від нашої демонстраційної редакції."
+
+msgid "As the editor of this demo publication, I bring together stories about creative work, everyday discoveries, and lifelong learning. Explore the articles below to see how Wulver connects authors with their content."
+msgstr "Як редактор цього демонстраційного видання, я збираю історії про творчість, щоденні відкриття та безперервне навчання. Перегляньте статті нижче, щоб побачити, як Wulver пов’язує авторів із їхніми матеріалами."
+
+msgid "Community Feedback"
+msgstr "Відгуки читачів"
+
+msgid "Sign in to leave a comment."
+msgstr "Увійдіть, щоб залишити коментар."
+
+msgid "Your email address will not be published. Required fields are marked *"
+msgstr "Вашу електронну адресу не буде опубліковано. Обов’язкові поля позначено *"
+
+msgid "We found %(count)s result for your search."
+msgid_plural "We found %(count)s results for your search."
+msgstr[0] "За вашим запитом знайдено %(count)s статтю."
+msgstr[1] "За вашим запитом знайдено %(count)s статті."
+msgstr[2] "За вашим запитом знайдено %(count)s статей."

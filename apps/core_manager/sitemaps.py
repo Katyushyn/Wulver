@@ -67,7 +67,7 @@ class HomepageSitemap(LocalizedSitemap):
             pk=homepage_id,
             is_published=True,
             noindex=False,
-            template__template_type=TemplateType.PARENT_PAGE,
+            template__template_type=TemplateType.CHILDREN_PAGE,
             template__is_active=True,
             template__theme__is_active=True,
         )
@@ -91,7 +91,7 @@ class PageSitemap(LocalizedSitemap):
             .filter(
                 is_published=True,
                 noindex=False,
-                template__template_type=TemplateType.PARENT_PAGE,
+                template__template_type=TemplateType.CHILDREN_PAGE,
                 template__is_active=True,
                 template__theme__is_active=True,
             )

@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
             name='ThemeTemplate',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('template_type', models.CharField(choices=[('base_template', 'Base Template'), ('include_block', '-- Include block'), ('parent_page', '-- Parent Page'), ('parent_blog', '-- Parent Blog'), ('parent_article', '-- Parent Article'), ('search_page', '-- Search Page'), ('error_template', 'Error Page')], max_length=30, verbose_name='Template type')),
+                ('template_type', models.CharField(choices=[('base_template', 'Base Template'), ('include_block', '-- Include block'), ('parent_page', '-- Children Pages'), ('parent_blog', '-- Children Blog Categories'), ('parent_article', '-- Children Articles'), ('search_page', '-- Search Page'), ('error_template', 'Error Page')], max_length=30, verbose_name='Template type')),
                 ('name', models.CharField(max_length=150, verbose_name='Name')),
                 ('slug', models.SlugField(verbose_name='Slug')),
                 ('article_extra_fields_schema', models.JSONField(blank=True, default=dict, help_text='JSON schema for extra article fields used by categories with this article template.', verbose_name='Article extra fields schema')),

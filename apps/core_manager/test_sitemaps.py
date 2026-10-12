@@ -20,7 +20,7 @@ class SitemapTests(TestCase):
         )
         cls.page_template = ThemeTemplate.objects.create(
             theme=cls.theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="Page",
             slug="page",
             is_active=True,
@@ -52,7 +52,7 @@ class SitemapTests(TestCase):
         )
         cls.page_template_2 = ThemeTemplate.objects.create(
             theme=cls.theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="About page",
             slug="about-page",
             is_active=True,
@@ -77,7 +77,7 @@ class SitemapTests(TestCase):
         )
         cls.hidden_page_template = ThemeTemplate.objects.create(
             theme=cls.theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="Hidden page",
             slug="hidden-page",
             is_active=True,

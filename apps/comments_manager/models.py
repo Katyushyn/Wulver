@@ -3,6 +3,25 @@ from django.core.validators import MinValueValidator
 from django.utils.translation import gettext_lazy as _
 
 
+class LatestCommentsModule(models.Model):
+    name = models.CharField(_("Module name"), max_length=150)
+    slug = models.SlugField(_("Slug"), max_length=150, unique=True)
+    categories = models.ManyToManyField("blog_manager.Category", verbose_name=_("Categories"))
+    include_descendants = models.BooleanField(_("Include descendant categories"), default=True)
+    comments_count = models.PositiveIntegerField(_("Comments count"), default=5, validators=[MinValueValidator(1)])
+    per_article_limit = models.PositiveIntegerField(_("Maximum comments per article"), default=1, validators=[MinValueValidator(1)])
+    excerpt_words = models.PositiveIntegerField(_("Comment excerpt words"), default=13, validators=[MinValueValidator(1)], help_text=_("Maximum words in the plain-text comment excerpt."))
+    is_active = models.BooleanField(_("Active"), default=True)
+
+    class Meta:
+        verbose_name = _("Modules — Latest comments")
+        verbose_name_plural = _("Modules — Latest comments")
+        ordering = ("name", "pk")
+
+    def __str__(self):
+        return self.name
+
+
 class CommentSettings(models.Model):
     class PublicationMode(models.TextChoices):
         IMMEDIATE = "immediate", _("Publish immediately")

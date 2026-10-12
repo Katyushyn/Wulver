@@ -193,6 +193,20 @@ class OpenAIProviderTest(TestCase):
 
 
 class AskAssistantPipelineTest(TestCase):
+    def test_demo_mode_returns_response_without_provider_call(self):
+        assistant = AssistantProfile.objects.create(demo_mode=True)
+
+        with patch("apps.ai_assistant.services.chat.get_provider_client") as get_client:
+            result = ask_assistant(
+                question="What can Wulver do?",
+                assistant=assistant,
+            )
+
+        get_client.assert_not_called()
+        self.assertIn("demo mode", result["answer"].lower())
+        self.assertIn("OPENAI_API_KEY", result["answer"])
+        self.assertEqual(result["chunks"], [])
+
     def test_ask_assistant_handles_simple_messages_without_api_call(self):
         assistant = AssistantProfile.objects.create(
             provider_type="openai",

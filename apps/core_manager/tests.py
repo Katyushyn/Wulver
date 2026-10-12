@@ -539,6 +539,20 @@ class SearchViewTests(TestCase):
         self.assertIn("tag=python", context["search_querystring"])
         self.assertNotIn("page=", context["search_querystring"])
 
+    def test_title_filter_matches_partial_title_not_body(self):
+        from .views import search
+
+        Article.objects.filter(pk=self.wrong_tag_article.pk).update(body="Universal Django CMS")
+        for value, expected in (("  VERSAL  ", [self.matching_article]), ("Hidden", []), ("%", [])):
+            with self.subTest(value=value):
+                request = RequestFactory().get("/search/", {"title": value}, HTTP_HOST="localhost")
+                with patch("apps.core_manager.views.render") as mocked_render:
+                    search(request)
+                context = mocked_render.call_args.args[2]
+                self.assertEqual(list(context["articles"]), expected)
+                self.assertEqual(context["search_title"], value.strip())
+                self.assertTrue(context["search_has_filters"])
+
     def test_empty_search_does_not_return_every_article(self):
         request = RequestFactory().get("/search/", HTTP_HOST="localhost")
 

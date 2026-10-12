@@ -235,6 +235,7 @@ def search(request):
         raise Http404("Search template is not configured.")
 
     text_values = _query_values(request.GET, "text", "q", limit=5)
+    title_values = _query_values(request.GET, "title", limit=5)
     tag_values = _query_values(request.GET, "tag")
     category_values = _query_values(request.GET, "category")
     author_values = _query_values(request.GET, "author")
@@ -246,6 +247,7 @@ def search(request):
     has_filters = any(
         (
             text_values,
+            title_values,
             tag_values,
             category_values,
             author_values,
@@ -264,6 +266,9 @@ def search(request):
             category__isnull=False,
         )
     )
+
+    for title_value in title_values:
+        articles = articles.filter(title__icontains=title_value)
 
     for text_value in text_values:
         articles = articles.filter(
@@ -318,7 +323,7 @@ def search(request):
     preserved_query = request.GET.copy()
     preserved_query.pop("page", None)
 
-    title = _("Search")
+    title = _("Search articles")
     description = _("Search published articles by text, tag, category, author, or date.")
     context = build_seo_context(request)
     context.update(
@@ -334,6 +339,7 @@ def search(request):
             "results_count": paginator.count,
             "search_has_filters": has_filters,
             "search_text": " ".join(text_values),
+            "search_title": " ".join(title_values),
             "search_tags": tag_values,
             "search_categories": category_values,
             "search_authors": author_values,

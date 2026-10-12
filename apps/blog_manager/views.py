@@ -4,8 +4,6 @@ from django.utils import timezone
 from django.views.generic import DetailView, ListView
 
 from apps.core_manager.seo import build_seo_context
-from apps.core_manager.models import SiteSettings
-from .context_processors import get_latest_blog_articles
 from .models import Article as ArticleModel, BlogSettings, Category
 
 
@@ -76,16 +74,11 @@ def _article_navigation(article):
 
 
 def _sidebar_context():
-    site_settings = SiteSettings.get_solo()
-
     return {
         "categories": Category.objects.order_by(
             "parent_id",
             "sort_order",
             "title",
-        ),
-        "latest_blog_articles": get_latest_blog_articles(
-            site_settings.latest_articles_count
         ),
     }
 
@@ -103,7 +96,7 @@ def get_article_context(request, article):
             "article": article,
             "tegs_article": article.tags.order_by("title"),
             "category": article.category,
-            "title": article.title,
+            "title": article.seo_title or article.title,
         }
     )
     context.update(_article_navigation(article))

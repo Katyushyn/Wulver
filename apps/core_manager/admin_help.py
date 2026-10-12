@@ -291,7 +291,6 @@ ADMIN_HELP = {
             "Set the correct domain and HTTPS public URL, then select the homepage and error template.",
             "Complete global SEO and organization data before using page-level overrides.",
             "Upload generated icon variants, verify social links, and enable integrations only after credentials are configured.",
-            "Use Create demo data only on a new or disposable setup and review what it creates.",
         ),
         (
             "This is a singleton setting shared by the entire site.",
@@ -425,6 +424,30 @@ ADMIN_HELP = {
             "User email and IP address are personal data and are not shown publicly by default.",
             "Deleting a comment is permanent; moderation flags preserve context and are often preferable.",
             "Form labels and styling are configured in Comment appearance.",
+        ),
+    ),
+    "comments_manager.latestcommentsmodule": _guide(
+        "Modules — Latest comments",
+        "Create reusable lists of recent public comments on published articles.",
+        (
+            "Module name identifies the configuration in the admin. The unique slug connects it to a template.",
+            "Categories select the source articles. Include descendant categories also includes articles from every nested child category.",
+            "Comments count limits the entire block. Maximum comments per article limits how many entries can come from the same article.",
+            "Comment excerpt words limits each plain-text excerpt. Active enables or disables the module without deleting it.",
+        ),
+        (
+            "Create a module, enter its name and slug, and select at least one source category.",
+            "For five comments from different articles, set Comments count to 5 and Maximum comments per article to 1.",
+            "Set Comment excerpt words to 13 for a compact sidebar, choose whether to include descendants, and save the active module.",
+            "In a template, load comment_modules, then use {% latest_comments_module 'your-module-slug' as recent_comments %} and loop over recent_comments.",
+            "Each item provides item.article and item.excerpt. Use item.article.get_absolute_url for the article link and check item.article.img before using its URL.",
+        ),
+        (
+            "Comments are sorted newest first. Only public, non-removed comments on published, non-future articles from the current site are included.",
+            "The per-article limit is applied before the overall count. Fewer results are normal when there are not enough eligible comments or articles.",
+            "An inactive module, an unknown slug or an empty category selection returns an empty list.",
+            "Excerpt shortening removes HTML and does not change the original comment. Images, headings and layout remain controlled by the template.",
+            "If you change the slug, update every template that references it. Deleting this module does not delete comments or articles.",
         ),
     ),
     "comments_manager.commentsettings": _guide(

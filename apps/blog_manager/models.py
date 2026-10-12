@@ -97,6 +97,18 @@ class LatestArticlesModule(models.Model):
         related_name="latest_articles_modules",
         verbose_name=_("Categories"),
     )
+    tags = models.ManyToManyField(
+        "blog_manager.Tag",
+        blank=True,
+        related_name="latest_articles_modules",
+        verbose_name=_("Tags"),
+        help_text=_("If selected, only articles with at least one of these tags are shown."),
+    )
+    authors = models.ManyToManyField(
+        "auth.User", blank=True, verbose_name=_("Authors"),
+        related_name="latest_articles_modules",
+        help_text=_("If selected, show articles only by these authors. Leave empty for all authors."),
+    )
     include_descendants = models.BooleanField(
         _("Include descendant categories"),
         default=True,
@@ -262,6 +274,7 @@ class ImageModule(models.Model):
 
 
 class Category(models.Model, ImageProcessingMixin):
+    seo_title = models.CharField(_("SEO title"), max_length=250, blank=True)
     parent = models.ForeignKey(
         "self",
         on_delete=models.SET_NULL,
@@ -424,6 +437,7 @@ class Category(models.Model, ImageProcessingMixin):
 
 
 class Article(models.Model, ImageProcessingMixin):
+    seo_title = models.CharField(_("SEO title"), max_length=250, blank=True)
     STATUS_CHOICES = (
         ("standard", _("Standard")),
         ("top", _("Priority")),

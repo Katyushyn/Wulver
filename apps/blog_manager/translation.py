@@ -7,6 +7,7 @@ from .models import Article, ArticleImage, Category, Tag
 class CategoryTranslationOptions(TranslationOptions):
     fields = (
         "title",
+        "seo_title",
         "description",
         "intro",
         "keywords",
@@ -17,6 +18,7 @@ class CategoryTranslationOptions(TranslationOptions):
 class ArticleTranslationOptions(TranslationOptions):
     fields = (
         "title",
+        "seo_title",
         "description",
         "intro",
         "body",

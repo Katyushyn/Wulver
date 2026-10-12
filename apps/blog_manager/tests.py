@@ -18,7 +18,7 @@ from apps.core_manager.seo import build_schema_graph
 from apps.theme_manager.admin import ThemeTemplateAdmin
 from apps.theme_manager.models import TemplateType, Theme, ThemeTemplate
 
-from .context_processors import blog_context, get_latest_blog_articles, get_tag_cloud
+from .context_processors import blog_context, get_tag_cloud
 from .admin import ArticleAdmin, ArticleAdminForm
 from .article_preview import render_article_body_preview
 from .models import (
@@ -43,25 +43,25 @@ class BlogSettingsTemplateTests(TestCase):
         theme = Theme.objects.create(name="Test", slug="test", is_active=True)
         cls.category_template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_BLOG,
+            template_type=TemplateType.CHILDREN_BLOG,
             name="Category",
             slug="category",
         )
         cls.paginated_template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_BLOG,
+            template_type=TemplateType.CHILDREN_BLOG,
             name="Category paginated",
             slug="category-paginated",
         )
         cls.article_template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_ARTICLE,
+            template_type=TemplateType.CHILDREN_ARTICLE,
             name="Article",
             slug="article",
         )
         cls.page_template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_PAGE,
+            template_type=TemplateType.CHILDREN_PAGE,
             name="Page",
             slug="page",
         )
@@ -123,11 +123,11 @@ class BlogSettingsTemplateTests(TestCase):
 
         self.assertSetEqual(
             set(category_queryset.values_list("template_type", flat=True)),
-            {TemplateType.PARENT_BLOG},
+            {TemplateType.CHILDREN_BLOG},
         )
         self.assertSetEqual(
             set(article_queryset.values_list("template_type", flat=True)),
-            {TemplateType.PARENT_ARTICLE},
+            {TemplateType.CHILDREN_ARTICLE},
         )
 
 
@@ -251,6 +251,15 @@ class ArticleImageProcessingTests(TestCase):
 
 
 class LatestArticlesModuleTests(TestCase):
+    def test_reading_time_uses_article_intro_and_body(self):
+        article = Article(intro=" ".join(["word"] * 50), body="<p>" + " ".join(["word"] * 351) + "</p>")
+
+        rendered = Template(
+            "{% load blog_modules %}{{ article|reading_time }}"
+        ).render(Context({"article": article}))
+
+        self.assertEqual(rendered, "3")
+
     def test_template_tag_filters_categories_includes_descendants_and_limits_results(self):
         now = timezone.now()
         parent = Category.objects.create(
@@ -325,6 +334,45 @@ class LatestArticlesModuleTests(TestCase):
         ).render(Context())
 
         self.assertEqual(rendered, "0")
+
+    def test_template_tag_filters_articles_by_selected_tags(self):
+        category = Category.objects.create(
+            title="Stories",
+            slug="module-tag-stories",
+            description="Stories",
+        )
+        featured = Tag.objects.create(title="Featured", slug="module-featured")
+        selected = Article.objects.create(
+            title="Selected",
+            slug="module-tag-selected",
+            description="Selected",
+            intro="Selected",
+            body="Selected",
+            category=category,
+        )
+        selected.tags.add(featured)
+        Article.objects.create(
+            title="Not selected",
+            slug="module-tag-not-selected",
+            description="Not selected",
+            intro="Not selected",
+            body="Not selected",
+            category=category,
+        )
+        module = LatestArticlesModule.objects.create(
+            name="Featured stories",
+            slug="featured-stories",
+        )
+        module.categories.add(category)
+        module.tags.add(featured)
+
+        rendered = Template(
+            "{% load blog_modules %}"
+            "{% latest_articles_module 'featured-stories' as module_articles %}"
+            "{% for article in module_articles %}{{ article.pk }},{% endfor %}"
+        ).render(Context())
+
+        self.assertEqual(rendered, f"{selected.pk},")
 
 
 class TagModuleTests(TestCase):
@@ -436,7 +484,7 @@ class ArticleExtraFieldsAdminTests(TestCase):
         self.theme = Theme.objects.create(name="Test", slug="test", is_active=True)
         self.article_template = ThemeTemplate.objects.create(
             theme=self.theme,
-            template_type=TemplateType.PARENT_ARTICLE,
+            template_type=TemplateType.CHILDREN_ARTICLE,
             name="Article",
             slug="article",
             article_extra_fields_schema={
@@ -642,7 +690,7 @@ class ArticleBodyEditorAdminTests(TestCase):
         theme = Theme.objects.create(name="CSS theme", slug="css-theme", is_active=True)
         template = ThemeTemplate.objects.create(
             theme=theme,
-            template_type=TemplateType.PARENT_ARTICLE,
+            template_type=TemplateType.CHILDREN_ARTICLE,
             name="CSS article",
             slug="css-article",
             css_classes=["card", "card-body", "lead"],
@@ -979,62 +1027,6 @@ class BlogSettingsSchemaTests(TestCase):
 
 
 class BlogContextProcessorTests(TestCase):
-    def test_latest_blog_articles_uses_limit_and_ignores_future_or_unpublished_articles(self):
-        now = timezone.now()
-        category = Category.objects.create(
-            title="News",
-            slug="news",
-            description="News category",
-            intro="News intro",
-        )
-        old_article = Article.objects.create(
-            title="Old article",
-            slug="old-article",
-            description="Old description",
-            intro="Old intro",
-            body="Old body",
-            category=category,
-            publish=now - timezone.timedelta(days=2),
-        )
-        fresh_article = Article.objects.create(
-            title="Fresh article",
-            slug="fresh-article",
-            description="Fresh description",
-            intro="Fresh intro",
-            body="Fresh body",
-            category=category,
-            publish=now - timezone.timedelta(days=1),
-        )
-        Article.objects.create(
-            title="Future article",
-            slug="future-article",
-            description="Future description",
-            intro="Future intro",
-            body="Future body",
-            category=category,
-            publish=now + timezone.timedelta(days=1),
-        )
-        Article.objects.create(
-            title="Unpublished article",
-            slug="unpublished-article",
-            description="Unpublished description",
-            intro="Unpublished intro",
-            body="Unpublished body",
-            category=category,
-            is_published=False,
-            publish=now,
-        )
-
-        articles = list(get_latest_blog_articles(2))
-
-        self.assertEqual(articles, [fresh_article, old_article])
-
-    def test_context_processor_uses_distinct_latest_blog_articles_name(self):
-        context = blog_context(RequestFactory().get("/"))
-
-        self.assertIn("latest_blog_articles", context)
-        self.assertNotIn("articles", context)
-
     def test_tag_cloud_contains_used_tags_with_article_counts(self):
         category = Category.objects.create(
             title="News",

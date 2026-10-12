@@ -1,13 +1,47 @@
 import random
+import math
 
 from django import template
+from django.contrib.auth import get_user_model
 from django.db.models import Count
+from django.db.models import Q
 from django.utils import timezone
+from django.utils.html import strip_tags
 
 from apps.blog_manager.models import Article, Category, LatestArticlesModule, Tag, TagModule
 
 
 register = template.Library()
+
+
+@register.simple_tag
+def blog_authors():
+    """Active public article authors, excluding administrator accounts."""
+    author_ids = Article.objects.filter(
+        is_published=True, publish__lte=timezone.now(),
+    ).values("author_id")
+    return (
+        get_user_model().objects.filter(is_active=True, is_superuser=False, pk__in=author_ids)
+        .select_related("userprofile")
+        .order_by("first_name", "last_name", "pk")
+    )
+
+
+@register.filter
+def reading_time(article):
+    text = " ".join((getattr(article, "intro", ""), getattr(article, "body", "")))
+    words = len(strip_tags(text).split())
+    return max(1, math.ceil(words / 200))
+
+
+@register.simple_tag
+def module_author(module_slug):
+    module = LatestArticlesModule.objects.filter(slug=module_slug, is_active=True).first()
+    if module is None:
+        return None
+    return module.authors.filter(is_active=True).annotate(
+        published_count=Count("article", filter=Q(article__is_published=True, article__publish__lte=timezone.now()))
+    ).first()
 
 
 def _category_ids_with_descendants(category_ids):
@@ -29,7 +63,7 @@ def _category_ids_with_descendants(category_ids):
 def latest_articles_module(module_slug):
     module = (
         LatestArticlesModule.objects
-        .prefetch_related("categories")
+        .prefetch_related("categories", "tags", "authors")
         .filter(slug=module_slug, is_active=True)
         .first()
     )
@@ -49,7 +83,7 @@ def latest_articles_module(module_slug):
         LatestArticlesModule.Ordering.TITLE: ("title", "pk"),
     }[module.ordering]
 
-    return (
+    articles = (
         Article.objects
         .select_related("category")
         .prefetch_related("tags")
@@ -58,8 +92,15 @@ def latest_articles_module(module_slug):
             is_published=True,
             publish__lte=timezone.now(),
         )
-        .order_by(*ordering)[:module.articles_count]
     )
+    tag_ids = module.tags.values_list("pk", flat=True)
+    author_ids = module.authors.values_list("pk", flat=True)
+    if author_ids:
+        articles = articles.filter(author_id__in=author_ids)
+    if tag_ids:
+        articles = articles.filter(tags__in=tag_ids).distinct()
+
+    return articles.order_by(*ordering)[:module.articles_count]
 
 
 def _tag_module_queryset(context, module):

@@ -78,6 +78,19 @@
         padding: 12px 14px;
     }
 
+    .ai-chat-widget__demo {
+        margin-right: auto;
+        margin-left: 9px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: #fff3cd;
+        color: #664d03;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
     .ai-chat-widget__close {
         background: transparent;
         color: inherit;
@@ -162,11 +175,16 @@
     <div class="ai-chat-widget__panel" hidden>
         <div class="ai-chat-widget__header">
             <strong>{% trans "AI assistant" %}</strong>
+            {% if ai_profile.demo_mode %}<span class="ai-chat-widget__demo">{% trans "Demo" %}</span>{% endif %}
             <button class="ai-chat-widget__close" type="button" aria-label="{% trans 'Close' %}">&times;</button>
         </div>
         <div class="ai-chat-widget__messages" data-ai-chat-messages>
             <div class="ai-chat-widget__message ai-chat-widget__message--assistant">
-                {% trans "Hello. How can I help?" %}
+                {% if ai_profile.demo_mode %}
+                    {% trans "Hello. I am running in demo mode. Ask me about Wulver." %}
+                {% else %}
+                    {% trans "Hello. How can I help?" %}
+                {% endif %}
             </div>
         </div>
         <form class="ai-chat-widget__form" data-ai-chat-form>

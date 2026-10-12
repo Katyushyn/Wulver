@@ -1,0 +1,9 @@
+include packaging-requirements.txt
+include .env.example
+recursive-include config *.py
+recursive-include static *.css *.js *.svg *.png *.jpg *.jpeg *.avif *.gif *.webp *.ico *.woff *.woff2 *.ttf *.map
+prune static/themes
+recursive-include locale *.po *.mo
+recursive-include templates *.xml *.xsl
+prune templates/story
+global-exclude .DS_Store *.pyc

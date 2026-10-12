@@ -208,12 +208,12 @@ class BlogSettingsAdmin(SingletonAdminMixin, ModelAdmin):
             "default_paginated_category_template",
         ):
             kwargs["queryset"] = queryset.filter(
-                template_type=TemplateType.PARENT_BLOG,
+                template_type=TemplateType.CHILDREN_BLOG,
             )
 
         if db_field.name == "default_article_template":
             kwargs["queryset"] = queryset.filter(
-                template_type=TemplateType.PARENT_ARTICLE,
+                template_type=TemplateType.CHILDREN_ARTICLE,
             )
 
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
@@ -253,9 +253,9 @@ class LatestArticlesModuleAdmin(ModelAdmin):
         "updated_at",
     )
     list_filter = ("is_active", "ordering", "include_descendants")
-    search_fields = ("name", "slug", "categories__title")
+    search_fields = ("name", "slug", "categories__title", "tags__title")
     prepopulated_fields = {"slug": ("name",)}
-    filter_horizontal = ("categories",)
+    filter_horizontal = ("categories", "tags", "authors")
     readonly_fields = ("created_at", "updated_at")
     fieldsets = (
         (
@@ -265,6 +265,8 @@ class LatestArticlesModuleAdmin(ModelAdmin):
                     "name",
                     "slug",
                     "categories",
+                    "tags",
+                    "authors",
                     "include_descendants",
                     "articles_count",
                     "ordering",
@@ -754,6 +756,7 @@ class CategoryAdmin(ImagePreviewMixin, ModelAdmin, TabbedTranslationAdmin):
             {
                 "fields": (
                     "preview_image",
+                    "seo_title",
                     "og_type",
                     "schema_graph",
                     "canonical_allowed_params",
@@ -961,12 +964,12 @@ class CategoryAdmin(ImagePreviewMixin, ModelAdmin, TabbedTranslationAdmin):
                 "paginated_theme_template",
             ):
                 kwargs["queryset"] = kwargs["queryset"].filter(
-                    template_type=TemplateType.PARENT_BLOG,
+                    template_type=TemplateType.CHILDREN_BLOG,
                 )
 
             if db_field.name == "article_theme_template":
                 kwargs["queryset"] = kwargs["queryset"].filter(
-                    template_type=TemplateType.PARENT_ARTICLE,
+                    template_type=TemplateType.CHILDREN_ARTICLE,
                 )
 
         return super().formfield_for_foreignkey(
@@ -1122,6 +1125,7 @@ class ArticleAdmin(ImagePreviewMixin, ModelAdmin, TabbedTranslationAdmin):
             {
                 "classes": ("collapse",),
                 "fields": (
+                    "seo_title",
                     "preview_image",
                     "og_type",
                     "schema_graph",
@@ -1198,7 +1202,7 @@ class ArticleAdmin(ImagePreviewMixin, ModelAdmin, TabbedTranslationAdmin):
         if template_id:
             template = ThemeTemplate.objects.filter(
                 pk=template_id,
-                template_type=TemplateType.PARENT_ARTICLE,
+                template_type=TemplateType.CHILDREN_ARTICLE,
                 is_active=True,
             ).first()
             if not template:
@@ -1277,7 +1281,7 @@ class ArticleAdmin(ImagePreviewMixin, ModelAdmin, TabbedTranslationAdmin):
                 .select_related("theme")
                 .filter(
                     pk=template_id,
-                    template_type=TemplateType.PARENT_ARTICLE,
+                    template_type=TemplateType.CHILDREN_ARTICLE,
                     is_active=True,
                 )
                 .first()
@@ -1544,7 +1548,7 @@ Rules:
         if db_field.name == "theme_template":
             kwargs["queryset"] = ThemeTemplate.objects.filter(
                 theme__is_active=True,
-                template_type=TemplateType.PARENT_ARTICLE,
+                template_type=TemplateType.CHILDREN_ARTICLE,
                 is_active=True,
             )
 

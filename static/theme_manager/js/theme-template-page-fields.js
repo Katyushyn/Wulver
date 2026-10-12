@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateConditionalFieldsVisibility() {
-        const isParentPage = templateType.value === "parent_page";
-        const isParentArticle = templateType.value === "parent_article";
+        const isChildrenPage = templateType.value === "parent_page";
+        const isChildrenArticle = templateType.value === "parent_article";
 
-        setFieldsetVisibility(pageFields, isParentPage);
-        setFieldsetVisibility(articleFields, isParentArticle);
+        setFieldsetVisibility(pageFields, isChildrenPage);
+        setFieldsetVisibility(articleFields, isChildrenArticle);
     }
 
     templateType.addEventListener("change", updateConditionalFieldsVisibility);

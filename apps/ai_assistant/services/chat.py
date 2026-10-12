@@ -125,6 +125,50 @@ def get_simple_message_response(text):
     return ""
 
 
+def get_demo_message_response(text):
+    normalized = re.sub(r"\s+", " ", text.strip().lower())
+    is_ukrainian = bool(re.search(r"[іїєґ]", normalized)) or any(
+        word in normalized
+        for word in ("привіт", "що", "як", "може", "сайт", "шаблон", "статт")
+    )
+
+    if any(word in normalized for word in ("template", "theme", "шаблон", "тем")):
+        if is_ukrainian:
+            return (
+                "Демо-режим: Wulver дозволяє керувати темами, шаблонами та компонентами "
+                "через адмінку. Підключіть справжній API-ключ, щоб асистент відповідав "
+                "на основі вашої бази знань."
+            )
+        return (
+            "Demo mode: Wulver lets you manage themes, templates, and reusable components "
+            "from the admin. Connect a real API key for answers based on your knowledge base."
+        )
+
+    if any(word in normalized for word in ("article", "blog", "статт", "блог")):
+        if is_ukrainian:
+            return (
+                "Демо-режим: у Wulver можна створювати категорії, статті, теги, авторів "
+                "та адаптивні AVIF-зображення. Для повноцінних AI-відповідей замініть "
+                "демонстраційний ключ на справжній."
+            )
+        return (
+            "Demo mode: Wulver supports categories, articles, tags, authors, and responsive "
+            "AVIF images. Replace the placeholder key to enable full AI responses."
+        )
+
+    if is_ukrainian:
+        return (
+            "Це демонстраційний AI-асистент Wulver. Він працює без зовнішнього API та показує "
+            "інтерфейс чату. Щоб отримувати повні відповіді, адміністратор має вимкнути "
+            "Demo mode і замінити OPENAI_API_KEY на справжній ключ."
+        )
+    return (
+        "This is the Wulver AI assistant in demo mode. It runs without an external API and "
+        "demonstrates the chat interface. To enable full answers, disable Demo mode and replace "
+        "OPENAI_API_KEY with a real key."
+    )
+
+
 def maybe_update_contact_data(session, message_text):
     phone = extract_phone(message_text)
     email = extract_email(message_text)
@@ -245,6 +289,18 @@ def ask_assistant(question, session=None, assistant=None, channel="web"):
             saved_fields.append("email")
 
         answer_text = "Дякую, я зафіксував: " + ", ".join(saved_fields) + "."
+        assistant_message = create_assistant_message(session, assistant, answer_text)
+
+        return {
+            "session": session,
+            "user_message": user_message,
+            "assistant_message": assistant_message,
+            "answer": answer_text,
+            "chunks": [],
+        }
+
+    if assistant.demo_mode:
+        answer_text = get_demo_message_response(question)
         assistant_message = create_assistant_message(session, assistant, answer_text)
 
         return {

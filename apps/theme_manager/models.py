@@ -83,9 +83,9 @@ class Theme(models.Model):
 class TemplateType(models.TextChoices):
     BASE_TEMPLATE = "base_template", _("Base Template")
     INCLUDE_BLOCK = "include_block", _("-- Include block")
-    PARENT_PAGE = "parent_page", _("-- Parent Page")
-    PARENT_BLOG = "parent_blog", _("-- Parent Blog")
-    PARENT_ARTICLE = "parent_article", _("-- Parent Article")
+    CHILDREN_PAGE = "parent_page", _("-- Children Pages")
+    CHILDREN_BLOG = "parent_blog", _("-- Children Blog Categories")
+    CHILDREN_ARTICLE = "parent_article", _("-- Children Articles")
     SEARCH_PAGE = "search_page", _("-- Search Page")
     ERROR_TEMPLATE = "error_template", _("Error Page")
 

@@ -70,6 +70,11 @@ class AssistantProfile(models.Model):
     )
 
     is_enabled = models.BooleanField(default=True, verbose_name=_("Assistant enabled"))
+    demo_mode = models.BooleanField(
+        default=False,
+        verbose_name=_("Demo mode"),
+        help_text=_("Return built-in demonstration responses without contacting an AI provider."),
+    )
     allow_anonymous_users = models.BooleanField(default=True, verbose_name=_("Allow anonymous users"))
     require_privacy_consent = models.BooleanField(default=True, verbose_name=_("Require privacy consent"))
     privacy_notice = models.CharField(

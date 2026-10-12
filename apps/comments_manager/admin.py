@@ -16,7 +16,16 @@ from .defaults import (
     DEFAULT_COMMENT_TEMPLATES,
     DEFAULT_COMMENT_TEXTS,
 )
-from .models import CommentSettings, CommentTemplate
+from .models import CommentSettings, CommentTemplate, LatestCommentsModule
+
+
+@admin.register(LatestCommentsModule)
+class LatestCommentsModuleAdmin(ModelAdmin):
+    list_display = ("name", "slug", "comments_count", "per_article_limit", "excerpt_words", "is_active")
+    list_filter = ("is_active", "include_descendants")
+    search_fields = ("name", "slug")
+    prepopulated_fields = {"slug": ("name",)}
+    filter_horizontal = ("categories",)
 
 
 class CommentSettingsAdminForm(forms.ModelForm):

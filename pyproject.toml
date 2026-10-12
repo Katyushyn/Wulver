@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wulver"
+version = "0.1.0a7"
+description = "A Django CMS with a configurable template manager"
+readme = "README.md"
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: Django",
+  "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+wulver = "wulver.cli:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["packaging-requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["wulver*", "apps", "apps.*"]
+namespaces = true
+exclude = ["apps.*.tests*"]
+
+[tool.setuptools.package-data]
+"*" = ["**/*.html", "**/*.css", "**/*.js", "**/*.po", "**/*.mo", "**/*.svg", "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.avif", "**/*.gif", "**/*.webp", "**/*.json", "**/*.txt"]
+
+[tool.setuptools.cmdclass]
+build_py = "wulver.build.BuildPy"

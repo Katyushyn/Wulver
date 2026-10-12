@@ -1,0 +1,288 @@
+{% extends "admin/index.html" %}{% load i18n %}
+{% block content %}
+<p class="mb-6 font-normal text-base-500 dark:text-base-400">{% trans "Recent messages, comments, subscriptions and AI activity, together with site environment settings." %}</p>
+<div class="flex flex-wrap items-center gap-4 mb-6">
+  <span>Wulver {{ wulver_version }}</span>
+  <a href="/" target="_blank" rel="noopener noreferrer">{% trans "Open site" %} ↗</a>
+</div>
+{% if analytics_overview %}
+<section class="wulver-analytics mb-6 rounded border border-base-200 dark:border-base-700 p-4 lg:p-6" aria-labelledby="wulver-analytics-title">
+  <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+    <div>
+      <h2 id="wulver-analytics-title" class="text-xl font-semibold">{% trans "Site analytics" %}</h2>
+      <p class="text-sm text-base-500 dark:text-base-400">{% trans "Last 14 days" %} · {{ analytics_overview.mode }}</p>
+    </div>
+    <div class="flex gap-3">
+      <a href="{{ analytics_overview.statistics_url }}">{% trans "All statistics" %} →</a>
+      <a href="{{ analytics_overview.settings_url }}">{% trans "Settings" %}</a>
+    </div>
+  </div>
+  {% if not analytics_overview.enabled %}
+    <p class="mb-4 text-amber-600">{% trans "Analytics collection is disabled." %}</p>
+  {% endif %}
+  <div class="wulver-analytics-metrics mb-6">
+    <div><span>{% trans "Views today" %}</span><strong>{{ analytics_overview.today_views }}</strong></div>
+    <div><span>{% trans "Visitors today" %}</span><strong>{{ analytics_overview.today_visitors }}</strong></div>
+    <div><span>{% trans "Views in 30 days" %}</span><strong>{{ analytics_overview.month_views }}</strong></div>
+    <div><span>{% trans "Average per day" %}</span><strong>{{ analytics_overview.average_views }}</strong></div>
+  </div>
+  <div class="wulver-chart-wrap">
+    <div class="wulver-chart-scale" aria-hidden="true"><span>{{ analytics_overview.chart_max }}</span><span>0</span></div>
+    <div class="wulver-chart" role="img" aria-label="{% trans 'Views and unique visitors for the last 14 days' %}">
+      {% for point in analytics_overview.chart %}
+      <div class="wulver-chart-day">
+        <div class="wulver-chart-bars">
+          <span class="wulver-chart-bar wulver-chart-views" style="height:{{ point.views_height }}%" title="{{ point.date|date:'SHORT_DATE_FORMAT' }} — {% trans 'Views' %}: {{ point.views }}"></span>
+          <span class="wulver-chart-bar wulver-chart-visitors" style="height:{{ point.visitors_height }}%" title="{{ point.date|date:'SHORT_DATE_FORMAT' }} — {% trans 'Unique visitors' %}: {{ point.visitors }}"></span>
+        </div>
+        <span class="wulver-chart-label">{{ point.label }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="flex flex-wrap justify-between gap-3 mt-4 text-sm">
+    <div class="wulver-chart-legend"><span class="views"></span>{% trans "Views" %}<span class="visitors"></span>{% trans "Unique visitors" %}</div>
+    {% if analytics_overview.top_page %}<p>{% trans "Top page in 30 days" %}: <strong>{{ analytics_overview.top_page.path }}</strong> — {{ analytics_overview.top_page.views }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}
+{% if dashboard_health.warnings %}
+<section id="site-attention" class="wulver-attention mb-6 rounded border border-base-200 dark:border-base-700 p-4 lg:p-6" aria-labelledby="site-attention-title">
+  <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+    <div>
+      <h2 id="site-attention-title" class="text-xl font-semibold">{% trans "Needs attention" %}</h2>
+      <p class="text-sm text-base-500 dark:text-base-400">
+        {% blocktrans with errors=dashboard_health.errors warnings=dashboard_health.warning_count %}Errors: {{ errors }} · Warnings: {{ warnings }}{% endblocktrans %}
+      </p>
+    </div>
+    <a href="{{ dashboard_health.refresh_url }}" class="border rounded px-3 py-2 text-sm">{% trans "Run checks again" %}</a>
+  </div>
+  <div class="wulver-attention-list">
+    {% for item in dashboard_health.warnings %}
+    <article class="wulver-attention-item wulver-attention-{{ item.severity }}">
+      <span class="material-symbols-outlined" aria-hidden="true">{% if item.severity == 'error' %}error{% else %}warning{% endif %}</span>
+      <div class="min-w-0 grow">
+        <h3 class="font-semibold"><a href="{{ item.url }}">{{ item.title }}{% if item.count is not None %} <span class="wulver-attention-count">{{ item.count }}</span>{% endif %}</a></h3>
+        <p class="text-sm text-base-500 dark:text-base-400 mt-1">{{ item.description }}</p>
+      </div>
+      <a href="{{ item.url }}" class="wulver-attention-open" aria-label="{{ item.title }}">→</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+<div class="flex flex-col lg:flex-row lg:gap-8">
+<div class="grow min-w-0">
+<div class="wulver-activity-grid mb-6">
+{% for panel in activity_panels %}
+  <section class="wulver-overview-card rounded border border-base-200 dark:border-base-700 p-4 min-w-0">
+    <a class="wulver-card-link" href="{{ panel.url }}" aria-label="{{ panel.title }}"></a>
+    <h2 class="font-semibold mb-3"><a class="wulver-activity-heading" href="{{ panel.url }}">{{ panel.title }} <span class="text-base-500">({{ panel.count }})</span><span class="wulver-activity-arrow" aria-hidden="true">→</span></a></h2>
+    {% if panel.attention_label %}<a class="wulver-card-action block mb-2 text-sm {% if panel.attention_count %}text-amber-600{% else %}text-base-500{% endif %}" href="{{ panel.attention_url }}">{{ panel.attention_label }}: {{ panel.attention_count }}</a>{% endif %}
+    {% if panel.seen_token %}
+    <p class="text-sm text-base-500">{% trans "Review tracking is personal. Opening a list does not mark records as reviewed." %}</p>
+    {% if panel.attention_count %}<form method="post" class="mt-3">{% csrf_token %}
+      <input type="hidden" name="environment_action" value="mark_seen">
+      <input type="hidden" name="seen_token" value="{{ panel.seen_token }}">
+      <button class="wulver-card-action border rounded px-3 py-2 text-sm" type="submit">{% trans "Mark current records as reviewed" %}</button>
+    </form>{% endif %}
+    {% endif %}
+  </section>
+{% endfor %}
+</div>
+<style>
+ .wulver-activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+ .wulver-analytics-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+ .wulver-analytics-metrics>div{padding:.85rem 1rem;border:1px solid var(--color-base-200,#e2e8f0);border-radius:.5rem;display:flex;flex-direction:column;gap:.25rem}
+ .dark .wulver-analytics-metrics>div{border-color:var(--color-base-700,#334155)}
+ .wulver-analytics-metrics span{font-size:.8rem;color:#64748b}
+ .wulver-analytics-metrics strong{font-size:1.5rem;line-height:1.2}
+ .wulver-chart-wrap{height:230px;display:flex;gap:.75rem;min-width:0}
+ .wulver-chart-scale{width:2rem;display:flex;flex-direction:column;justify-content:space-between;text-align:right;font-size:.7rem;color:#64748b;padding-bottom:1.45rem}
+ .wulver-chart{height:100%;flex:1;display:grid;grid-template-columns:repeat(14,minmax(18px,1fr));gap:.35rem;border-bottom:1px solid #cbd5e1;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(25% - 1px),rgba(148,163,184,.18) 25%);overflow-x:auto}
+ .wulver-chart-day{min-width:18px;height:100%;display:flex;flex-direction:column;align-items:center}
+ .wulver-chart-bars{height:calc(100% - 1.45rem);width:100%;display:flex;align-items:flex-end;justify-content:center;gap:2px}
+ .wulver-chart-bar{display:block;width:min(40%,14px);min-height:0;border-radius:3px 3px 0 0;transition:filter .15s}
+ .wulver-chart-bar:hover{filter:brightness(1.15)}
+ .wulver-chart-views{background:#2563eb}.wulver-chart-visitors{background:#14b8a6}
+ .wulver-chart-label{height:1.45rem;font-size:.66rem;color:#64748b;white-space:nowrap;padding-top:.35rem}
+ .wulver-chart-legend{display:flex;align-items:center;gap:.45rem}.wulver-chart-legend span{width:.75rem;height:.75rem;border-radius:2px;margin-left:.5rem}.wulver-chart-legend .views{background:#2563eb;margin-left:0}.wulver-chart-legend .visitors{background:#14b8a6}
+ .wulver-attention-list{display:grid;gap:.75rem}
+ .wulver-attention-item{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;border:1px solid;border-radius:.5rem}
+ .wulver-attention-error{border-color:#fca5a5;background:rgba(239,68,68,.06)}
+ .wulver-attention-warning{border-color:#fcd34d;background:rgba(245,158,11,.06)}
+ .wulver-attention-error>.material-symbols-outlined{color:#dc2626}.wulver-attention-warning>.material-symbols-outlined{color:#d97706}
+ .wulver-attention-count{display:inline-flex;align-items:center;justify-content:center;min-width:1.5rem;height:1.5rem;padding:0 .4rem;margin-left:.3rem;border-radius:999px;background:rgba(100,116,139,.15);font-size:.75rem}
+ .wulver-attention-open{font-size:1.25rem;line-height:1;flex-shrink:0}
+ .wulver-activity-heading{display:inline-flex;align-items:center;gap:.5rem}
+ .wulver-overview-card{position:relative;transition:transform .18s ease,box-shadow .18s ease}
+ .wulver-overview-card:hover,.wulver-overview-card:focus-within{transform:translateY(-3px);box-shadow:0 8px 22px rgba(15,23,42,.13)}
+ .wulver-card-link{position:absolute;inset:0;z-index:1;border-radius:inherit}
+ .wulver-card-link:focus-visible{outline:2px solid #2563eb;outline-offset:3px}
+ .wulver-card-action{position:relative;z-index:2}
+ .wulver-activity-arrow{opacity:0;transition:opacity .15s}
+ .wulver-overview-card:hover .wulver-activity-arrow,.wulver-overview-card:focus-within .wulver-activity-arrow{opacity:1}
+ @media(prefers-reduced-motion:reduce){.wulver-overview-card{transition:none}.wulver-overview-card:hover,.wulver-overview-card:focus-within{transform:none}}
+ @media(hover:none){.wulver-activity-arrow{opacity:1}}
+ @media(max-width:767px){.wulver-activity-grid{grid-template-columns:minmax(0,1fr)}.wulver-analytics-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.wulver-chart-wrap{height:190px}.wulver-chart{min-width:520px}.wulver-chart-wrap{overflow-x:auto}.wulver-chart-scale{position:sticky;left:0;background:var(--color-base-50,#fff);z-index:1}}
+</style>
+{% if overview_backups %}
+<section class="wulver-overview-card mb-6 rounded border border-base-200 dark:border-base-700 p-4">
+  <a class="wulver-card-link" href="{{ overview_backups.url }}" aria-label="{% trans 'Backups' %}"></a>
+  <h2 class="font-semibold mb-3"><a class="wulver-activity-heading" href="{{ overview_backups.url }}">{% trans "Backups" %}<span class="wulver-activity-arrow wulver-backup-arrow" aria-hidden="true">→</span></a></h2>
+  {% if overview_backups.latest %}
+    <p>{% trans "Latest backup" %}: {{ overview_backups.latest.created_at|date:"SHORT_DATETIME_FORMAT" }} — <span {% if overview_backups.latest.status == 'failed' %}class="text-amber-600"{% endif %}>{{ overview_backups.latest.get_status_display }}</span></p>
+  {% else %}<p class="text-amber-600">{% trans "No backups yet. Create a backup before making important changes." %}</p>{% endif %}
+  {% if overview_backups.last_success %}<p class="mt-2">{% trans "Last completed backup" %}: {{ overview_backups.last_success.completed_at|default:overview_backups.last_success.created_at|date:"SHORT_DATETIME_FORMAT" }}</p>
+  {% elif overview_backups.latest %}<p class="mt-2 text-amber-600">{% trans "No completed backup is available." %}</p>{% endif %}
+  {% if overview_backups.create_url %}<a class="wulver-card-action inline-block mt-3 border rounded px-3 py-2" href="{{ overview_backups.create_url }}">{% trans "Create full backup" %}</a>{% endif %}
+</section>
+{% endif %}
+{% if user.is_superuser %}
+{% if environment_refresh_after_reload %}
+<p role="status" class="mb-4">{% trans "Waiting for application reload. This page will refresh shortly." %}</p>
+{% endif %}
+<details class="mb-8 rounded border border-base-200 dark:border-base-700 p-6">
+  <summary class="text-xl font-semibold cursor-pointer">{% trans "Environment configuration" %}</summary>
+  <div class="mt-4">
+  <p class="mb-3">{% if environment_local %}{% trans "Local development mode" %}{% else %}{% trans "DEBUG is disabled. Review production settings below." %}{% endif %}</p>
+  <p class="mb-4">{% trans "These checks describe the running application, not a complete production security audit." %}</p>
+  <form method="post" id="wulver-environment-form">{% csrf_token %}
+  <input type="hidden" name="environment_action" value="apply">
+  <input type="hidden" name="environment_revision" value="{{ environment_revision }}">
+  <div class="mb-5 grid gap-3">
+  {% for switch in environment_switches %}
+    <div>
+    <label class="flex items-center gap-3 cursor-pointer">
+      <input type="checkbox" role="switch" name="switch_{{ switch.key }}" {% if switch.enabled %}checked{% endif %} {% if switch.external %}disabled{% endif %} class="wulver-env-switch" aria-label="{{ switch.key }}">
+      <span>{{ switch.key }}</span>
+      {% if switch.production_checked %}{% if switch.production_ok %}<span class="text-green-600">✓</span>{% else %}<span class="text-amber-600">⚠ {% trans "Development setting / review required" %}</span>{% endif %}{% endif %}
+      {% if switch.external %}<span>{% trans "Externally managed" %}</span>{% endif %}
+    </label>
+    {% if switch.help %}
+    <div class="mt-2 text-sm text-base-500 dark:text-base-400">
+      <p>{{ switch.help }}</p>
+      <p class="mt-1">{% trans "Local default" %}: {{ switch.local_default }} · {% trans "Production guidance" %}: {{ switch.production_default }}</p>
+    </div>
+    {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+  {% for field in environment_deployment_fields %}
+  <label class="block mb-3"><span class="block mb-1">{{ field.key }}</span>
+    {% if field.production_checked %}{% if field.production_ok %}<span class="text-green-600">✓</span>{% else %}<span class="text-amber-600">⚠ {% trans "Development setting / review required" %}</span>{% endif %}{% endif %}
+    <input type="text" name="{{ field.key }}" value="{{ field.value }}" {% if field.external %}disabled{% endif %} class="w-full border border-base-300 dark:border-base-600 rounded px-3 py-2 bg-white dark:bg-base-900">
+    {% if field.external %}<span>{% trans "Externally managed" %}</span>{% endif %}
+  </label>
+  {% endfor %}
+  {% if environment_basic_ready %}<p class="mb-3 text-green-600">{% trans "Basic production checks passed. Verify HTTPS, backups and deployment separately." %}</p>{% endif %}
+  {% if environment_mail_console %}<p class="mb-3">{% trans "Email is printed to the console, not sent. Configure SMTP and EMAIL_BACKEND in .env before sending real email." %}</p>{% endif %}
+  <div class="mb-5">
+    <label for="env-email-backend" class="block mb-2">EMAIL_BACKEND — {% trans "Email backend" %}</label>
+    <select id="env-email-backend" name="value_EMAIL_BACKEND" {% if environment_email_backend_external %}disabled{% endif %} class="w-full border border-base-300 dark:border-base-600 rounded px-3 py-2 bg-white dark:bg-base-900" aria-describedby="env-email-backend-help">
+      <option value="django.core.mail.backends.console.EmailBackend" {% if environment_email_backend == 'django.core.mail.backends.console.EmailBackend' %}selected{% endif %}>{% trans "Console — local development" %}</option>
+      <option value="{{ environment_smtp_backend }}" {% if environment_email_backend == environment_smtp_backend %}selected{% endif %}>{% trans "SMTP — send real email" %}</option>
+    </select>
+    <div id="env-email-backend-help" class="mt-2">
+      <p>{% trans "Console: displays email in the terminal without sending it. Recommended for local development." %}</p>
+      <p>{% trans "SMTP: sends real email. Configure the SMTP host, port, TLS, username, password and sender address below." %}</p>
+    </div>
+    {% if environment_email_backend_external %}<span>{% trans "Externally managed" %}</span>{% endif %}
+  </div>
+  <p class="mb-4">{% trans "Keys below show configuration presence only. Saved values are never displayed. Changes are saved together when you apply them." %}</p>
+  {% for item in environment_keys %}
+  <div class="py-3 border-b border-base-200 dark:border-base-700">
+    <div class="flex flex-wrap items-center gap-3">
+      <label for="env-{{ item.key }}" class="font-medium">{{ item.key }} — {{ item.label }}</label>
+      {% if item.production_checked and not item.production_ok %}<span class="text-amber-600">⚠ {% trans "Development setting / review required" %}</span>{% endif %}
+      {% if item.configured %}<span class="text-green-600">✓ {% trans "Configured" %}</span>
+        {% if item.external %}<span>{% trans "Externally managed" %}</span>{% endif %}
+        {% if item.clearable %}<label class="flex gap-2 items-center"><input type="checkbox" name="clear_{{ item.key }}"> × {% trans "Clear on apply" %}</label>{% endif %}
+      {% else %}
+        <input id="env-{{ item.key }}" name="value_{{ item.key }}" type="{% if item.secret %}password{% else %}text{% endif %}" {% if item.external %}disabled{% endif %} autocomplete="off" class="border border-base-300 dark:border-base-600 rounded px-3 py-2 bg-white dark:bg-base-900" aria-label="{{ item.label }}">
+        {% if item.external %}<span>{% trans "Externally managed" %}</span>{% endif %}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  <p class="mt-4">{% trans "SECRET_KEY cannot be cleared: replacing it invalidates sessions and signed links. Manage rotation deliberately in .env." %}</p>
+  <label class="flex gap-2 items-start my-4"><input type="checkbox" name="confirm_risks"><span>{% trans "I confirm security changes. HTTPS, trusted proxies and HSTS must match the hosting configuration." %}</span></label>
+  <button type="submit" class="border rounded px-4 py-2 font-semibold">{% trans "Apply changes and reload" %}</button>
+  <p class="mt-3">{% trans "Runserver reloads automatically. Passenger requires explicit configuration; other servers require a manual restart." %}</p>
+  <p>{% trans "Restart mode" %}: {{ environment_restart_mode }}</p>
+  </form>
+  <style>
+    .wulver-env-switch{appearance:none;width:2.75rem;height:1.5rem;border:1px solid #64748b;border-radius:999px;background:#64748b;position:relative;flex-shrink:0;cursor:pointer;transition:background .15s}
+    .wulver-env-switch:before{content:"";position:absolute;width:1.125rem;height:1.125rem;top:.125rem;left:.125rem;background:white;border-radius:50%;transition:transform .15s}
+    .wulver-env-switch:checked{background:#2563eb;border-color:#2563eb}
+    .wulver-env-switch:checked:before{transform:translateX(1.25rem)}
+    .wulver-env-switch:focus-visible{outline:2px solid #2563eb;outline-offset:3px}
+  </style>
+  </div>
+</details>
+<div id="wulver-reload-overlay" role="status" aria-live="polite" {% if not environment_refresh_after_reload %}hidden{% endif %}>
+  <div class="wulver-reload-card">
+    <div class="wulver-reload-spinner" aria-hidden="true"></div>
+    <p id="wulver-reload-message">{% trans "Applying changes and waiting for the server to restart…" %}</p>
+    <button type="button" id="wulver-reload-close" hidden>{% trans "Close" %}</button>
+  </div>
+</div>
+<style>
+  #wulver-reload-overlay:not([hidden]){position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(15,23,42,.75)}
+  .wulver-reload-card{background:#fff;color:#0f172a;padding:2rem;border-radius:1rem;text-align:center;max-width:32rem;margin:1rem}
+  .wulver-reload-spinner{width:3rem;height:3rem;border:4px solid #cbd5e1;border-top-color:#2563eb;border-radius:50%;margin:0 auto 1rem;animation:wulver-reload-spin .8s linear infinite}
+  #wulver-reload-close{margin-top:1rem;border:1px solid #64748b;border-radius:.5rem;padding:.5rem 1rem}
+  @keyframes wulver-reload-spin{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.wulver-reload-spinner{animation:none}}
+</style>
+<script>
+(() => {
+  const overlay = document.getElementById('wulver-reload-overlay');
+  const close = document.getElementById('wulver-reload-close');
+  const show = () => { overlay.hidden = false; document.body.style.overflow = 'hidden'; };
+  close.addEventListener('click', () => { overlay.hidden = true; document.body.style.overflow = ''; });
+  document.getElementById('wulver-environment-form').addEventListener('submit', show);
+  function revealEnvironmentField() {
+    const hash = window.location.hash;
+    if (!hash.startsWith('#env-') && hash !== '#wulver-environment-form') return;
+    const target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    const details = target.closest('details');
+    if (details) details.open = true;
+    target.scrollIntoView({block: 'center'});
+    if (target.matches('input, select')) target.focus({preventScroll: true});
+  }
+  window.addEventListener('hashchange', revealEnvironmentField);
+  revealEnvironmentField();
+  {% if environment_refresh_after_reload %}
+  show();
+  const url = new URL(window.location.href);
+  const previous = url.searchParams.get('previous_process');
+  const probe = new URL(url); probe.search = ''; probe.searchParams.set('environment_probe', '1');
+  const deadline = Date.now() + 120000;
+  async function waitForServer() {
+    try {
+      const response = await fetch(probe, {cache: 'no-store', credentials: 'same-origin', signal: AbortSignal.timeout(5000)});
+      if (response.ok) {
+        const result = await response.json();
+        if (result.process && result.process !== previous) {
+          url.searchParams.delete('environment_reload'); url.searchParams.delete('previous_process');
+          window.location.replace(url.toString()); return;
+        }
+      }
+    } catch (_) { /* The application may temporarily be unavailable during restart. */ }
+    if (Date.now() < deadline) { setTimeout(waitForServer, 1500); return; }
+    document.querySelector('.wulver-reload-spinner').hidden = true;
+    {% trans "The server has not confirmed a restart. Check the application and refresh the page manually." as reload_timeout %}
+    document.getElementById('wulver-reload-message').textContent = '{{ reload_timeout|escapejs }}';
+    close.hidden = false;
+  }
+  waitForServer();
+  {% endif %}
+})();
+</script>
+{% endif %}
+</div>
+{% include "unfold/helpers/history.html" %}
+</div>
+{% endblock %}

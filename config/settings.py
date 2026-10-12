@@ -22,7 +22,11 @@ from django.utils.translation import get_language_info
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-environ.Env.read_env(BASE_DIR / ".env")
+from apps.core_manager.environment_runtime import load_site_environment
+load_site_environment(BASE_DIR / ".env")
+
+WULVER_RESTART_MODE = env("WULVER_RESTART_MODE", default="auto")
+WULVER_PASSENGER_APP_ROOT = env("WULVER_PASSENGER_APP_ROOT", default="")
 
 DEBUG = env.bool("DEBUG", default=True)
 SERVE_MEDIA_LOCALLY = env.bool("SERVE_MEDIA_LOCALLY", default=DEBUG)
@@ -131,6 +135,7 @@ INSTALLED_APPS = [
     "apps.userprofile.apps.UserprofileConfig",
     "apps.theme_manager.apps.ThemeManagerConfig",
     "apps.core_manager.apps.CoreManagerConfig",
+    "apps.analytics_manager.apps.AnalyticsManagerConfig",
     "apps.backup_manager.apps.BackupManagerConfig",
     "apps.comments_manager.apps.CommentsManagerConfig",
     "apps.blog_manager.apps.BlogManagerConfig",
@@ -150,6 +155,8 @@ MIDDLEWARE = [
 
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+
+    "apps.analytics_manager.middleware.VisitTrackingMiddleware",
 
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -502,6 +509,36 @@ UNFOLD = {
             },
 
             {
+                "title": _("Analytics"),
+                "separator": True,
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": _("Daily statistics"),
+                        "icon": "monitoring",
+                        "link": reverse_lazy(
+                            "admin:analytics_manager_dailypagestat_changelist"
+                        ),
+                    },
+                    {
+                        "title": _("Detailed visits"),
+                        "icon": "visibility",
+                        "link": reverse_lazy(
+                            "admin:analytics_manager_visit_changelist"
+                        ),
+                    },
+                    {
+                        "title": _("Analytics settings"),
+                        "icon": "analytics",
+                        "link": reverse_lazy(
+                            "admin:analytics_manager_analyticssettings_change",
+                            args=[1],
+                        ),
+                    },
+                ],
+            },
+
+            {
                 "title": _("System"),
                 "separator": True,
                 "collapsible": True,
@@ -615,6 +652,11 @@ UNFOLD = {
                         "title": _("Comment templates"),
                         "icon": "code",
                         "link": reverse_lazy("admin:comments_manager_commenttemplate_changelist"),
+                    },
+                    {
+                        "title": _("Modules — Latest comments"),
+                        "icon": "forum",
+                        "link": reverse_lazy("admin:comments_manager_latestcommentsmodule_changelist"),
                     },
                 ],
             },

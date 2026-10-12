@@ -47,6 +47,7 @@ class AssistantProfileAdmin(SingletonAdminMixin, ModelAdmin):
     fieldsets = (
         (_("Provider"), {
             "fields": (
+                "demo_mode",
                 "provider_type",
                 "chat_model",
                 "embedding_model",

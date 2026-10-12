@@ -1,9 +1,19 @@
 from django.db import models
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from urllib.parse import urlsplit
+
+
+class DashboardReadState(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    model_label = models.CharField(max_length=100)
+    seen_until = models.DateTimeField()
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=('user', 'model_label'), name='dashboard_read_state_unique')]
 
 
 class SiteSettings(models.Model):
@@ -75,11 +85,6 @@ class SiteSettings(models.Model):
         null=True,
         related_name="site_settings_home",
         help_text=_("Rendered at the site root URL."),
-    )
-    latest_articles_count = models.PositiveIntegerField(
-        _("Latest articles count"),
-        default=3,
-        help_text=_("Number of latest articles shown on regular site pages."),
     )
     reviews_enabled = models.BooleanField(
         _("Reviews enabled"),
@@ -387,6 +392,7 @@ class NewsletterSubscription(models.Model):
 
 
 class Page(models.Model):
+    seo_title = models.CharField(_("SEO title"), max_length=250, blank=True)
     title = models.CharField(_("Title"), max_length=255)
     slug = models.SlugField(
         max_length=250,
