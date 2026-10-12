@@ -60,6 +60,11 @@ issues privately as described in [SECURITY.md](SECURITY.md).
 
 ## License
 
-A redistribution license has not been selected yet. Until a license is added,
-the source is not offered for redistribution. License selection is a required
-task before the repository becomes public.
+Original Wulver code is licensed under the [MIT License](LICENSE).
+It may be used, modified, and redistributed free of charge, including for
+commercial projects, subject to preserving the copyright and license notice.
+
+The MIT license does not relicense third-party materials. The Story theme by
+BootstrapMade is redistributed with the author's permission and retains its
+own terms and credits. Bundled libraries, fonts, images, and other third-party
+assets retain their respective licenses and notices.
