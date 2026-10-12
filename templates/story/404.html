@@ -1,0 +1,46 @@
+{% extends 'story/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load comments %}
+{% load blog_modules %}
+{% block main %}
+    <main class="main">
+            <!-- Error 404 Section -->
+            <section class="error-404 section" id="error-404">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center">
+                        <div class="error-icon mb-4" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="bi bi-exclamation-circle">
+                            </i>
+                        </div>
+                        <h1 class="error-code mb-4" data-aos="fade-up" data-aos-delay="300">
+                            404
+                        </h1>
+                        <h2 class="error-title mb-3" data-aos="fade-up" data-aos-delay="400">
+                            {{ error_title }}
+                        </h2>
+                        <p class="error-text mb-4" data-aos="fade-up" data-aos-delay="500">
+                            {{ error_message }}
+                        </p>
+                        <div class="search-box mb-4" data-aos="fade-up" data-aos-delay="600">
+                            <form action="{% url 'core_manager:search' %}" class="search-form" method="get" role="search">
+                                <div class="input-group">
+                                    <input name="title" aria-label="{% trans 'Search articles by title' %}" class="form-control" placeholder="{% trans 'Search articles by title' %}" type="text" required/>
+                                    <button class="btn search-btn" title="{% trans 'Search' %}" aria-label="{% trans 'Search' %}" type="submit">
+                                        <i class="bi bi-search" aria-hidden="true">
+                                        </i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="error-action" data-aos="fade-up" data-aos-delay="700">
+                            <a class="btn btn-primary" href="{% url 'core_manager:home' %}">
+                                {% trans "Back to Home" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Error 404 Section -->
+        </main>
+{% endblock %}

@@ -1,0 +1,164 @@
+{% extends 'story/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load comments %}
+{% load blog_modules %}
+{% block main %}
+{% module_author "profile-admin-featured" as profile_author %}
+    <main class="main">
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="heading">
+                <div class="container">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-lg-8">
+                            <h1 class="heading-title">
+                                {% trans "Author Profile" %}
+                            </h1>
+                            <p class="mb-0">
+                                {% trans "Meet the editor and discover their latest stories." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="breadcrumbs">
+                <div class="container">
+                    <ol>
+                        <li>
+                            <a href="{% url 'core_manager:home' %}">
+                                {% trans "Home" %}
+                            </a>
+                        </li>
+                        <li class="current">
+                            {% trans "Author Profile" %}
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+        <!-- Author Profile Section -->
+        <section class="author-profile section" id="author-profile">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="author-profile-1">
+                    <div class="row">
+                        <!-- Author Info -->
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                            <div class="author-card" data-aos="fade-up">
+                                <div class="author-image">
+                                    {% if profile_author.userprofile.avatar %}<img alt="{{ profile_author.get_full_name|default:profile_author.username }}" class="img-fluid rounded" src="{{ profile_author.userprofile.avatar.url }}"/>{% endif %}
+                                </div>
+                                <div class="author-info">
+                                    <h2>
+                                        {{ profile_author.get_full_name|default:profile_author.username }}
+                                    </h2>
+                                    <p class="designation">
+                                        {% trans "Story Editor" %}
+                                    </p>
+                                    <div class="author-bio">
+                                        {% trans "I write about small discoveries, creative projects, and practical ideas that make everyday life more interesting." %}
+                                    </div>
+                                    <div class="author-stats text-center my-4"><div class="stat-item"><h4>{{ profile_author.published_count }}</h4><p>{% trans "Articles" %}</p></div></div>
+                                    <div class="social-links">
+                                        {% if site_settings.facebook_url %}
+                                        <a class="facebook" href="{{ site_settings.facebook_url }}" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                                        </a>
+                                        {% endif %}
+                                        {% if site_settings.x_url %}
+                                        <a class="twitter" href="{{ site_settings.x_url }}" aria-label="X" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-twitter-x" aria-hidden="true"></i>
+                                        </a>
+                                        {% endif %}
+                                        {% if site_settings.instagram_url %}
+                                        <a class="instagram" href="{{ site_settings.instagram_url }}" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                                        </a>
+                                        {% endif %}
+                                        {% if site_settings.linkedin_url %}
+                                        <a class="linkedin" href="{{ site_settings.linkedin_url }}" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Author Content -->
+                        <div class="col-lg-8">
+                            <div class="author-content" data-aos="fade-up" data-aos-delay="200">
+                                <div class="content-header">
+                                    <h3>
+                                        {% trans "About Me" %}
+                                    </h3>
+                                </div>
+                                <div class="content-body">
+                                    <p>
+                                        {% trans "As the editor of this demo publication, I bring together stories about creative work, everyday discoveries, and lifelong learning. Explore the articles below to see how Wulver connects authors with their content." %}
+                                    </p>
+                                    <div class="expertise-areas">
+                                        <h4>
+                                            {% trans "Areas of Expertise" %}
+                                        </h4>
+                                        <div class="tags">
+                                            <span>
+                                                {% trans "Artificial Intelligence" %}
+                                            </span>
+                                            <span>
+                                                {% trans "Cybersecurity" %}
+                                            </span>
+                                            <span>
+                                                {% trans "Smart Home Technology" %}
+                                            </span>
+                                            <span>
+                                                {% trans "Digital Privacy" %}
+                                            </span>
+                                            <span>
+                                                {% trans "Consumer Electronics" %}
+                                            </span>
+                                            <span>
+                                                {% trans "Future Tech Trends" %}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-articles mt-5">
+                                        <h4>{% trans "Featured Articles" %}</h4>
+                                        {% latest_articles_module "profile-admin-featured" as featured_articles %}
+                                        <div class="row g-4">
+                                            {% for article in featured_articles %}
+                                            {% get_comment_count for article as comment_count %}
+                                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                                                <article class="article-card">
+                                                    <div class="article-img">
+                                                        {% if article.img_crop %}
+                                                        <a href="{{ article.get_absolute_url }}"><img alt="{{ article.title }}" class="img-fluid" loading="lazy" src="{{ article.img_crop.url }}"/></a>
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="article-details">
+                                                        <div class="post-category">
+                                                            <a href="{% url 'blog:category' category_slug=article.category.slug %}">{{ article.category.title }}</a>
+                                                        </div>
+                                                        <h5><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h5>
+                                                        <div class="post-meta">
+                                                            <span><i class="bi bi-clock" aria-hidden="true"></i> <time datetime="{{ article.publish|date:'c' }}">{{ article.publish|date:"M j, Y" }}</time></span>
+                                                            <span><i class="bi bi-chat-dots" aria-hidden="true"></i> {{ comment_count }} {% trans "Comments" %}</span>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            {% empty %}
+                                            <div class="col-12"><p>{% trans "No articles yet." %}</p></div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Author Profile Section -->
+    </main>
+{% endblock %}

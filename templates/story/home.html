@@ -1,0 +1,406 @@
+{% extends 'story/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load comments %}
+{% load blog_modules %}
+{% block main %}
+    <main class="main">
+        <!-- Blog Hero Section -->
+        <section class="blog-hero section" id="blog-hero">
+            <div class="container-fluid p-0" data-aos="fade">
+                <div class="blog-hero-slider swiper init-swiper">
+                    <script class="swiper-config" type="application/json">
+                        {
+                                                                                                                    "loop": true,
+                                                                                                                    "speed": 1000,
+                                                                                                                    "effect": "fade",
+                                                                                                                    "autoplay": {
+                                                                                                                            "delay": 5000
+                                                                                                                    },
+                                                                                                                    "slidesPerView": 1,
+                                                                                                                    "navigation": {
+                                                                                                                            "nextEl": ".swiper-button-next",
+                                                                                                                            "prevEl": ".swiper-button-prev"
+                                                                                                                    }
+                                                                                                            }
+                    </script>
+                    {% latest_articles_module "homepage-slide" as slide_articles %}
+                    <div class="swiper-wrapper">
+                        {% for article in slide_articles %}
+                            <div class="swiper-slide">
+                                <article class="blog-hero-item">
+                                    {% if article.img %}
+                                        <img alt="{{ article.title }}" class="img-fluid" src="{{ article.img.url }}"/>
+                                    {% endif %}
+                                    <div class="blog-hero-content">
+                                        {% if article.category %}
+                                            <a class="category text-white" href="{{ article.category.get_absolute_url }}">
+                                                {{ article.category.title }}
+                                            </a>
+                                        {% endif %}
+                                        <h1>
+                                            <a class="text-white" href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                                        </h1>
+                                        <div class="meta">
+                                            {% if article.author %}
+                                                <span class="author">
+                                                    {% trans "By" %} {{ article.author.get_full_name|default:article.author.username }}
+                                                </span>
+                                            {% endif %}
+                                            <time class="date" datetime="{{ article.publish|date:'c' }}">
+                                                {{ article.publish|date:"d M, Y" }}
+                                            </time>
+                                        </div>
+                                        <a class="read-more" href="{{ article.get_absolute_url }}">
+                                            {% trans "Continue Reading" %}
+                                            <i aria-hidden="true" class="bi bi-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-prev">
+                    </div>
+                    <div class="swiper-button-next">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Blog Hero Section -->
+        <!-- Featured Posts Section -->
+        {% latest_articles_module "homepage-featured" as featured_articles %}
+<section class="featured-posts section" id="featured-posts">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">{% trans "Featured Posts" %}</span>
+                <h2>{% trans "Featured Posts" %}</h2>
+                <p>
+                    {% trans "Discover recent stories, fresh perspectives, and practical ideas from our authors." %}
+                </p>
+            </div>
+            <!-- End Section Title -->
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-posts-slider swiper init-swiper">
+                    <script class="swiper-config" type="application/json">
+                        {
+                                                                                                                    "loop": true,
+                                                                                                                    "speed": 600,
+                                                                                                                    "autoplay": {
+                                                                                                                            "delay": 4500
+                                                                                                                    },
+                                                                                                                    "slidesPerView": 1,
+                                                                                                                    "spaceBetween": 40,
+                                                                                                                    "centeredSlides": true,
+                                                                                                                    "breakpoints": {
+                                                                                                                            "768": {
+                                                                                                                                    "slidesPerView": 1.5,
+                                                                                                                                    "spaceBetween": 30
+                                                                                                                            },
+                                                                                                                            "1200": {
+                                                                                                                                    "slidesPerView": 2.2,
+                                                                                                                                    "spaceBetween": 40
+                                                                                                                            }
+                                                                                                                    },
+                                                                                                                    "pagination": {
+                                                                                                                            "el": ".swiper-pagination",
+                                                                                                                            "clickable": true
+                                                                                                                    }
+                                                                                                            }
+                    </script>
+                    <div class="swiper-wrapper">
+                        {% for article in featured_articles %}
+<div class="swiper-slide">
+                            <article class="blog-card">
+                                <div class="blog-image">
+                                    {% if article.img %}<img alt="{{ article.title }}" loading="lazy" src="{{ article.img.url }}"/>{% endif %}
+                                    <div class="category-badge">{{ article.category.title }}</div>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="author-info">
+                                        {% if article.author.userprofile.avatar %}<img alt="{{ article.author.get_full_name|default:article.author.username }}" class="author-avatar" src="{{ article.author.userprofile.avatar.url }}"/>{% endif %}
+                                        <div class="author-details">
+                                            <span class="author-name">{{ article.author.get_full_name|default:article.author.username }}</span>
+                                            <span class="publish-date">{{ article.publish|date:"d M, Y" }}</span>
+                                        </div>
+                                    </div>
+                                    <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+                                    <p>{{ article.intro|striptags }}</p>
+                                    <div class="blog-footer">
+                                        <a class="btn-read-more" href="{{ article.get_absolute_url }}">
+                                            <span>{% trans "Continue Reading" %}</span>
+                                            <i class="bi bi-arrow-right">
+                                            </i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+{% endfor %}
+                        <!-- End slide item -->
+                    </div>
+                    <div class="swiper-pagination">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Featured Posts Section -->
+        <!-- Category Section Section -->
+        {% latest_articles_module "homepage-category" as category_articles %}
+<section class="category-section section" id="category-section">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">{% trans "Category Section" %}</span>
+                <h2>{% trans "Category Section" %}</h2>
+                <p>
+                    {% trans "Discover recent stories, fresh perspectives, and practical ideas from our authors." %}
+                </p>
+            </div>
+            <!-- End Section Title -->
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <!-- Main Featured Post -->
+                <div class="row gy-4 mb-5">
+                    <div class="col-lg-8">
+                        {% with article=category_articles.0 %}{% if article %}
+<article class="hero-post" data-aos="zoom-out" data-aos-delay="200">
+                            <div class="post-img">
+                                {% if article.img %}<img alt="{{ article.title }}" class="img-fluid" loading="lazy" src="{{ article.img.url }}"/>{% endif %}
+                            </div>
+                            <div class="post-content">
+                                <div class="author-info">
+                                    {% if article.author.userprofile.avatar %}<img alt="{{ article.author.get_full_name|default:article.author.username }}" class="author-avatar" src="{{ article.author.userprofile.avatar.url }}"/>{% endif %}
+                                    <div class="author-details">
+                                        <span class="author-name">{{ article.author.get_full_name|default:article.author.username }}</span>
+                                        <span class="post-date">{{ article.publish|date:"d M, Y" }}</span>
+                                    </div>
+                                </div>
+                                <h2 class="post-title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+                                <p class="post-excerpt">{{ article.intro|striptags }}</p>
+                                <div class="post-stats">
+                                    
+                                    <span class="comments">
+                                        <i class="bi bi-chat-dots">
+                                        </i>
+                                        {% get_comment_count for article as article_comment_count %}{{ article_comment_count }} {% trans "comments" %}
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+{% endif %}{% endwith %}
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sidebar-posts">
+                            {% with article=category_articles.0 %}
+                            {% if article %}
+                            {% get_comment_list for article as category_comments %}
+                            {% for comment in category_comments|dictsortreversed:"submit_date"|slice:":4" %}
+                            <article class="sidebar-post" data-aos="fade-left" data-aos-delay="300">
+                                <div class="post-content">
+                                    <span class="post-category">{{ comment.name }}</span>
+                                    <h4 class="title">
+                                        <a href="{{ article.get_absolute_url }}#c{{ comment.pk }}">{{ comment.comment }}</a>
+                                    </h4>
+                                    <div class="post-meta">
+                                        <time class="post-date" datetime="{{ comment.submit_date|date:'c' }}">{{ comment.submit_date|date:"d M, Y" }}</time>
+                                    </div>
+                                </div>
+                            </article>
+                            {% empty %}
+                            <p>{% trans "No comments yet." %}</p>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid Posts -->
+                <div class="posts-grid">
+                    <div class="row gy-4">
+                        {% for article in category_articles|slice:"1:" %}
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <article class="grid-post">
+                                <div class="post-img">
+                                    {% if article.img %}<img alt="{{ article.title }}" class="img-fluid" loading="lazy" src="{{ article.img.url }}"/>{% endif %}
+                                    <div class="post-overlay">
+                                        <span class="category-tag">{{ article.category.title }}</span>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <h3 class="title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+                                    <p class="excerpt">{{ article.intro|striptags }}</p>
+                                    <div class="post-footer">
+                                        <div class="author-info">
+                                            {% if article.author.userprofile.avatar %}<img alt="{{ article.author.get_full_name|default:article.author.username }}" class="author-img" src="{{ article.author.userprofile.avatar.url }}"/>{% endif %}
+                                            <span class="author-name">{{ article.author.get_full_name|default:article.author.username }}</span>
+                                        </div>
+                                        <time class="post-date ms-auto text-end" datetime="{{ article.publish|date:'c' }}">{{ article.publish|date:"d M, Y" }}</time>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Category Section Section -->
+
+        <!-- Tag Cloud Section -->
+        {% tags_module "global-tag-cloud" as homepage_tags %}
+        {% if homepage_tags %}
+            <section class="home-tag-cloud section" id="tag-cloud">
+                <div class="container section-title" data-aos="fade-up">
+                    <span class="description-title">{% trans "Explore by Topic" %}</span>
+                    <h2>{% trans "Explore by Topic" %}</h2>
+                    <p>{% trans "Discover stories through the subjects that interest you most." %}</p>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tag-cloud-list" aria-label="{% trans 'Article topics' %}">
+                        {% for item in homepage_tags %}
+                            <a class="tag-cloud-link"
+                               href="{% url 'core_manager:search' %}?tag={{ item.slug|urlencode }}">
+                                <span>{{ item.title }}</span>
+                                <small>{{ item.article_count }}</small>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        <!-- /Tag Cloud Section -->
+
+        <!-- Advertising Banners Section -->
+        <section class="advertising-banners section" id="advertising">
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">{% trans "From Our Partners" %}</span>
+                <h2>{% trans "From Our Partners" %}</h2>
+                <p>{% trans "Selected services and ideas from partners we recommend." %}</p>
+            </div>
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <a class="advertising-banner advertising-banner-primary" href="{% url 'blog:category' category_slug='creative' %}" aria-label="{% trans 'Discover creative tools' %}">
+                            <span class="advertising-label">{% trans "Sponsored" %}</span>
+                            <strong>{% trans "Tools for better creative work" %}</strong>
+                            <span class="advertising-action">{% trans "Discover more" %} <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a class="advertising-banner advertising-banner-secondary" href="{% url 'blog:category' category_slug='travel' %}" aria-label="{% trans 'Plan your next journey' %}">
+                            <span class="advertising-label">{% trans "Sponsored" %}</span>
+                            <strong>{% trans "Plan your next inspiring journey" %}</strong>
+                            <span class="advertising-action">{% trans "Explore destinations" %} <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a class="advertising-banner advertising-banner-accent" href="{% url 'blog:category' category_slug='education' %}" aria-label="{% trans 'Start learning today' %}">
+                            <span class="advertising-label">{% trans "Sponsored" %}</span>
+                            <strong>{% trans "Learn a useful skill at your pace" %}</strong>
+                            <span class="advertising-action">{% trans "Start learning" %} <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Advertising Banners Section -->
+
+        <!-- Latest Posts Section -->
+        {% latest_articles_module "homepage-latest" as latest_articles %}
+<section class="latest-posts section" id="latest-posts">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <span class="description-title">{% trans "Latest Posts" %}</span>
+                <h2>{% trans "Latest Posts" %}</h2>
+                <p>
+                    {% trans "Discover recent stories, fresh perspectives, and practical ideas from our authors." %}
+                </p>
+            </div>
+            <!-- End Section Title -->
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4 align-items-stretch">
+                    {% with article=latest_articles.0 %}{% if article %}
+                        <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="150">
+                        <article class="featured-post position-relative h-100">
+                            <figure class="featured-media m-0">
+                                {% if article.img %}<img alt="{{ article.title }}" class="img-fluid w-100" loading="lazy" src="{{ article.img.url }}"/>{% endif %}
+                            </figure>
+                            <div class="featured-content">
+                                <div class="date-badge">
+                                    <span class="day">{{ article.publish|date:"d" }}</span>
+                                    <span class="mon">{{ article.publish|date:"M" }}</span>
+                                </div>
+                                <span class="cat-badge inverse">{{ article.category.title }}</span>
+                                <h3 class="title">{{ article.title }}</h3>
+                                <p class="excerpt d-none d-md-block">{{ article.intro|striptags }}</p>
+                                <a class="readmore stretched-link" href="{{ article.get_absolute_url }}">
+                                    <span>{% trans "Continue" %}</span>
+                                    <i class="bi bi-arrow-right">
+                                    </i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+{% endif %}{% endwith %}
+                    <!-- End Featured Post -->
+                    <div class="col-lg-7">
+                        <div class="row gy-4">
+                            {% for article in latest_articles|slice:"1:4" %}
+<div class="col-12" data-aos="fade-left" data-aos-delay="200">
+                                <article class="compact-post h-100">
+                                    <div class="thumb">
+                                        {% if article.img %}<img alt="{{ article.title }}" class="img-fluid" loading="lazy" src="{{ article.img.url }}"/>{% endif %}
+                                    </div>
+                                    <div class="content">
+                                        <div class="meta">
+                                            <span class="date">{{ article.publish|date:"d M" }}</span>
+                                            <span class="dot">
+                                                •
+                                            </span>
+                                            <span class="category">{{ article.category.title }}</span>
+                                        </div>
+                                        <h4 class="title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h4>
+                                        <a class="readmore" href="{{ article.get_absolute_url }}">
+                                            <span>{% trans "Read Article" %}</span>
+                                            <i class="bi bi-arrow-right">
+                                            </i>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+{% endfor %}
+                            <!-- End Compact Post -->
+                        </div>
+                    </div>
+                    <!-- End Right Column -->
+                    {% for article in latest_articles|slice:"3:" %}
+<div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <article class="card-post h-100">
+                            <div class="post-img position-relative overflow-hidden">
+                                {% if article.img %}<img alt="{{ article.title }}" class="img-fluid w-100" loading="lazy" src="{{ article.img.url }}"/>{% endif %}
+                            </div>
+                            <div class="content">
+                                <div class="meta d-flex align-items-center flex-wrap gap-2">
+                                    <span class="cat-badge">{{ article.category.title }}</span>
+                                    <div class="d-flex align-items-center ms-auto">
+                                        <i class="bi bi-person">
+                                        </i>
+                                        <span class="ps-2">{{ article.author.get_full_name|default:article.author.username }}</span>
+                                    </div>
+                                </div>
+                                <h3 class="title"><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+                                <a class="readmore" href="{{ article.get_absolute_url }}">
+                                    <span>{% trans "Read More" %}</span>
+                                    <i class="bi bi-arrow-right">
+                                    </i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+{% endfor %}
+                    <!-- End Grid Post -->
+                </div>
+            </div>
+        </section>
+        <!-- /Latest Posts Section -->
+    </main>
+{% endblock %}

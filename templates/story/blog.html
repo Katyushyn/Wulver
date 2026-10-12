@@ -1,0 +1,185 @@
+{% extends 'story/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load comments %}
+{% load blog_modules %}
+{% load blog_categories %}
+{% load comment_modules %}
+{% load pagination %}
+{% block main %}
+    <main class="main">
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="heading">
+                <div class="container">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-lg-8">
+                            <h1 class="heading-title">
+                                {{ category.title }}
+                            </h1>
+                            <p class="mb-0">
+                                {{ category.intro }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="breadcrumbs">
+                <div class="container">
+                    <ol>
+                        <li>
+                            <a href="{% url 'core_manager:home' %}">
+                                {% trans "Home" %}
+                            </a>
+                        </li>
+                        <li class="current">
+                            {{ category.title }}
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Category Postst Section -->
+                    <section class="category-postst section" id="category-postst">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                            <div class="row gy-5">
+                                {% for article in articles %}
+                                <div class="col-lg-6">
+                                    <article>
+                                        {% if article.img %}
+                                        <div class="post-img">
+                                            <a href="{{ article.get_absolute_url }}">
+                                                <img alt="{{ article.title }}" class="img-fluid" loading="lazy" src="{{ article.img.url }}"/>
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                        <div class="meta-top">
+                                            <ul>
+                                                <li class="d-flex align-items-center">
+                                                    <a href="{% url 'blog:category' category_slug=article.category.slug %}">{{ article.category.title }}</a>
+                                                </li>
+                                                <li class="d-flex align-items-center">
+                                                    <i class="bi bi-dot"></i>
+                                                    <a href="{{ article.get_absolute_url }}">
+                                                        <time datetime="{{ article.publish|date:'c' }}">{{ article.publish|date:"M j, Y" }}</time>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h2 class="title">
+                                            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                                        </h2>
+                                    </article>
+                                </div>
+                                {% empty %}
+                                <div class="col-12"><p>{% trans "No articles yet." %}</p></div>
+                                {% endfor %}
+                            </div>
+                            <!-- End blog posts list -->
+                        </div>
+                    </section>
+                    <!-- /Category Postst Section -->
+                    {% if is_paginated %}
+                    <section class="pagination-2 section" id="pagination-2">
+                        <div class="container">
+                            <nav class="d-flex justify-content-center" aria-label="{% trans 'Pagination' %}">
+                                <ul>
+                                    {% if page_obj.has_previous %}
+                                    <li><a href="{% if page_obj.previous_page_number == 1 %}{{ request.path }}{% else %}?page={{ page_obj.previous_page_number }}{% endif %}" rel="prev" title="{% trans 'Previous' %}" aria-label="{% trans 'Previous' %}"><i class="bi bi-chevron-left" aria-hidden="true"></i></a></li>
+                                    {% endif %}
+                                    {% elided_page_range page_obj as page_numbers %}
+                                    {% for number in page_numbers %}
+                                        {% if number == page_obj.paginator.ELLIPSIS %}
+                                        <li><span class="disabled" aria-disabled="true">{{ number }}</span></li>
+                                        {% else %}
+                                        {% if number == page_obj.number %}
+                                        <li><span class="active" aria-current="page" aria-disabled="true">{{ number }}</span></li>
+                                        {% else %}
+                                        <li><a href="{% if number == 1 %}{{ request.path }}{% else %}?page={{ number }}{% endif %}">{{ number }}</a></li>
+                                        {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}" rel="next" title="{% trans 'Next' %}" aria-label="{% trans 'Next' %}"><i class="bi bi-chevron-right" aria-hidden="true"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                    </section>
+                    {% endif %}
+                </div>
+                <div class="col-lg-4 sidebar">
+                    <div class="widgets-container">
+                        <!-- Search Widget -->
+                        <div class="search-widget widget-item">
+                            <h3 class="widget-title">
+                                {% trans "Search" %}
+                            </h3>
+                            <form action="{% url 'core_manager:search' %}" method="get" role="search">
+                                <input type="text" name="title" aria-label="{% trans 'Search articles by title' %}" required/>
+                                <button title="{% trans 'Search' %}" aria-label="{% trans 'Search' %}" type="submit">
+                                    <i class="bi bi-search" aria-hidden="true">
+                                    </i>
+                                </button>
+                            </form>
+                        </div>
+                        <!--/Search Widget -->
+                        <!-- Categories Widget -->
+                        <div class="categories-widget widget-item">
+                            <h3 class="widget-title">{% trans "Categories" %}</h3>
+                            {% get_blog_category_children 1 with_counts=True as sidebar_categories %}
+                            <ul class="mt-3">
+                                {% for sidebar_category in sidebar_categories %}
+                                <li>
+                                    <a href="{% url 'blog:category' category_slug=sidebar_category.slug %}"{% if sidebar_category.pk == category.pk %} aria-current="page"{% endif %}>
+                                        {{ sidebar_category.title }}
+                                        <span>({{ sidebar_category.article_count }})</span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!--/Categories Widget -->
+                        <!-- Latest Comments Widget -->
+                        <div class="recent-posts-widget latest-comments-widget widget-item">
+                            <h3 class="widget-title">{% trans "Latest Comments" %}</h3>
+                            {% latest_comments_module "blog-sidebar-comments" as recent_comments %}
+                            {% for item in recent_comments %}
+                            <div class="post-item">
+                                {% if item.article.img_crop %}
+                                <img alt="{{ item.article.title }}" class="flex-shrink-0" loading="lazy" src="{{ item.article.img_crop.url }}"/>
+                                {% endif %}
+                                <div>
+                                    <h4><a href="{{ item.article.get_absolute_url }}">{{ item.article.title }}</a></h4>
+                                    <p class="mb-0">{{ item.excerpt }}</p>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <p>{% trans "No comments yet." %}</p>
+                            {% endfor %}
+                        </div>
+                        <!--/Latest Comments Widget -->
+                        <!-- Tags Widget -->
+                        <div class="tags-widget widget-item">
+                            <h3 class="widget-title">{% trans "Tags" %}</h3>
+                            {% tags_module "global-tag-cloud" as sidebar_tags %}
+                            {% url 'core_manager:search' as tag_search_url %}
+                            <ul>
+                                {% for item in sidebar_tags %}
+                                <li>
+                                    <a href="{{ tag_search_url }}?tag={{ item.slug|urlencode }}"{% if item.css_class %} class="{{ item.css_class }}"{% endif %}>{{ item.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!--/Tags Widget -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

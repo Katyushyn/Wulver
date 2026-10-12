@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {{ title }}
+        </title>
+        <meta name="description" content="{{ description }}">
+        <meta name="author" content="{{ author }}">
+        <meta name="robots" content="{{ robots }}">
+        {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+        {{ alternate_links|safe }}
+        <link rel="preconnect" href="{{ base_url }}" crossorigin>
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:type" content="{{ type_content }}">
+        <meta property="og:url" content="{{ canonical_url }}">
+        <meta property="og:site_name" content="{{ og_site_name }}">
+        <meta property="og:locale" content="{{ og_locale }}">
+        <meta property="og:image" content="{{ preview_url }}">
+        <meta property="og:image:secure_url" content="{{ preview_url }}">
+        <meta property="og:image:type" content="{{ preview_mime }}">
+        <meta property="og:image:width" content="{{ preview_width }}">
+        <meta property="og:image:height" content="{{ preview_height }}">
+        <meta property="og:image:alt" content="{{ image_alt }}">
+        {{ article_meta|safe }}
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:image" content="{{ preview_url }}">
+        <meta name="twitter:image:alt" content="{{ image_alt }}">
+        <meta name="twitter:site" content="{{ twitter }}">
+        <meta name="twitter:creator" content="{{ twitter }}">
+        <meta name="theme-color" content="{{ theme_color }}">
+        <meta name="msapplication-TileColor" content="{{ theme_color }}">
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        {% if schema_graph and not is_error_page %}<script type="application/ld+json">
+            {{ schema_graph|safe }}
+        </script>{% endif %}
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+        <link href="{% static 'themes/story/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'themes/story/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet"/>
+        <link href="{% static 'themes/story/assets/vendor/aos/aos.css' %}" rel="stylesheet"/>
+        <link href="{% static 'themes/story/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'themes/story/assets/css/main.css' %}" rel="stylesheet"/>
+    </head>
+    <body class="index-page">
+        {% include 'story/header.html' %}
+        {% block main %}
+        {% endblock %}
+        {% include 'story/footer.html' %}
+        {% include 'includes/ai_chat_widget.html' %}
+        <!-- Scroll Top -->
+        <a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top">
+            <i class="bi bi-arrow-up-short">
+            </i>
+        </a>
+        <!-- Preloader -->
+        <div id="preloader">
+        </div>
+        <!-- Vendor JS Files -->
+        <script src="{% static 'themes/story/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}">
+        </script>
+        <script src="{% static 'themes/story/assets/vendor/php-email-form/validate.js' %}">
+        </script>
+        <script src="{% static 'themes/story/assets/vendor/aos/aos.js' %}">
+        </script>
+        <script src="{% static 'themes/story/assets/vendor/swiper/swiper-bundle.min.js' %}">
+        </script>
+        <script src="{% static 'themes/story/assets/vendor/purecounter/purecounter_vanilla.js' %}">
+        </script>
+        <!-- Main JS File -->
+        <script src="{% static 'themes/story/assets/js/main.js' %}">
+        </script>
+    </body>
+</html>

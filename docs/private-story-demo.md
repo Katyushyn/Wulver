@@ -1,6 +1,6 @@
-# Private Story installer — licensing review only
+# Story demo — distribution and installer notes
 
-This prototype is not authorized for public redistribution. Do not publish its wheel, bundle or site archive to PyPI or a public repository until explicit permission is obtained. Story design remains credited to BootstrapMade in the footer.
+The Wulver maintainer confirmed on 2026-10-13 that permission to redistribute Story has been obtained from its author. The theme assets and adapted templates are included in the Wulver repository. Story design remains credited to BootstrapMade in the footer; preserve the author's credits and bundled third-party notices. This permission does not relicense Story or its dependencies under a future Wulver license.
 
 ## Build explicitly
 
@@ -35,4 +35,4 @@ The wizard asks `[y/N]`: `y` installs Story; `n` or Enter installs the minimal s
 
 The importer refuses an existing theme/article dataset and refuses overwriting destination files. It imports only bundled demo records, maps authors and comment content types to the target database, and rolls back newly written files and database records on import failure.
 
-After approval, review licensing of all bundled third-party theme assets and photos separately before public release.
+Keep the author's permission with the project's licensing records. Review the separate licenses of bundled third-party assets and photos when preparing release packages. Publishing these source files does not automatically change the existing opt-in demo packaging workflow.

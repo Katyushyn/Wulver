@@ -1,0 +1,131 @@
+{% load i18n %}
+<footer class="footer position-relative light-background" id="footer">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-4">
+                <div class="footer-brand">
+                    <a class="logo d-flex align-items-center mb-3" href="{% url 'core_manager:home' %}">
+                        <span class="sitename">
+                            Story
+                        </span>
+                    </a>
+                    <p class="tagline">
+                        {% trans "Innovating the digital landscape with elegant solutions and timeless design." %}
+                    </p>
+                    <div class="social-links mt-4">
+                        {% if site_settings.facebook_url %}
+                            <a aria-label="Facebook" href="{{ site_settings.facebook_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-facebook"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.instagram_url %}
+                            <a aria-label="Instagram" href="{{ site_settings.instagram_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-instagram"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.linkedin_url %}
+                            <a aria-label="LinkedIn" href="{{ site_settings.linkedin_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-linkedin"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.x_url %}
+                            <a aria-label="X" href="{{ site_settings.x_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-twitter-x"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.youtube_url %}
+                            <a aria-label="YouTube" href="{{ site_settings.youtube_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-youtube"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.tiktok_url %}
+                            <a aria-label="TikTok" href="{{ site_settings.tiktok_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-tiktok"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.telegram_url %}
+                            <a aria-label="Telegram" href="{{ site_settings.telegram_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-telegram"></i>
+                            </a>
+                        {% endif %}
+                        {% if site_settings.whatsapp_url %}
+                            <a aria-label="WhatsApp" href="{{ site_settings.whatsapp_url }}" rel="noopener noreferrer" target="_blank">
+                                <i aria-hidden="true" class="bi bi-whatsapp"></i>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer-links-grid">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <h5>{% trans "Site Navigation" %}</h5>
+                            <p class="tagline mb-2">{% trans "Browse the full list of pages and articles on our site." %}</p>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'sitemap-index' %}">{% trans "Sitemap" %}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <h5>{% trans "About" %}</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'core_manager:slug_detail' slug='about' %}">{% trans "About Us" %}</a></li>
+                                <li><a href="{% url 'core_manager:slug_detail' slug='about' %}#team">{% trans "Our Authors" %}</a></li>
+                                <li><a href="{% url 'core_manager:slug_detail' slug='contacts' %}">{% trans "Contact Us" %}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <h5>{% trans "Explore" %}</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'blog:category' category_slug='blog' %}">{% trans "Latest Articles" %}</a></li>
+                                <li><a href="{% url 'core_manager:search' %}">{% trans "Search" %}</a></li>
+                                <li><a href="{% url 'core_manager:slug_detail' slug='profile' %}">{% trans "Author Profile" %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="footer-cta">
+                    <h5>
+                        {% trans "Subscribe" %}
+                    </h5>
+                    <form action="{% url 'core_manager:newsletter_subscribe' %}" method="post" class="footer-subscription" data-error-message="{% trans 'Unable to submit. Please try again.' %}">
+                        {% csrf_token %}
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px"/>
+                        <input type="email" name="email" class="form-control mb-2" placeholder="{% trans 'Email address' %}" aria-label="{% trans 'Email address' %}" required/>
+                        <button type="submit" class="btn btn-outline w-100">{% trans "Subscribe" %}</button>
+                        <p class="subscription-status small mt-2 mb-0" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-bottom-content">
+                        <p class="mb-0">
+                            ©
+                            <strong>
+                                Story
+                            </strong>
+                            {% trans "All rights reserved." %}
+                        </p>
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you've purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                            {% trans "Designed by" %}
+                            <span class="text-primary">
+                                BootstrapMade
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

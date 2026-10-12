@@ -1,0 +1,107 @@
+{% load i18n %}
+{% load site_language %}
+{% load blog_categories %}
+{% get_blog_category_children 1 as blog_categories %}
+{% url 'core_manager:home' as home_url %}
+<header class="header d-flex align-items-center position-relative" id="header">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a class="logo d-flex align-items-center me-auto me-xl-0" href="{{ home_url }}">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.webp" alt=""> -->
+            <h1 class="sitename">
+                Story
+            </h1>
+        </a>
+        <nav class="navmenu" id="navmenu">
+            <ul>
+                <li>
+                    <a {% if request.path == home_url %}class="active" aria-current="page"{% endif %} href="{{ home_url }}">
+                        {% trans "Home" %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core_manager:slug_detail' slug='about' %}">
+                        {% trans "About" %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'blog:category' category_slug='blog' %}">
+                        <span>{% trans "Blog" %}</span>
+                        <i class="bi bi-chevron-down toggle-dropdown"></i>
+                    </a>
+                    <ul>
+                        {% for blog_category in blog_categories %}
+                        <li>
+                            <a href="{% url 'blog:category' category_slug=blog_category.slug %}">{{ blog_category.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'core_manager:slug_detail' slug='profile' %}">
+                        {% trans "Author Profile" %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'core_manager:slug_detail' slug='contacts' %}">
+                        {% trans "Contact" %}
+                    </a>
+                </li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list">
+            </i>
+        </nav>
+        {% site_language_links as language_links %}
+        <div class="d-flex align-items-center gap-2 ms-3" role="group" aria-label="{% trans 'Language' %}">
+            {% for language_link in language_links %}
+                {% if language_link.is_active %}
+                <span class="btn btn-sm btn-secondary" aria-current="true">{{ language_link.code|upper }}</span>
+                {% else %}
+                <a class="btn btn-sm btn-outline-secondary" href="{{ language_link.url }}" lang="{{ language_link.code }}" hreflang="{{ language_link.code }}" aria-label="{{ language_link.name }}">{{ language_link.code|upper }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="header-social-links">
+            {% if site_settings.x_url %}
+                <a aria-label="X" class="twitter" href="{{ site_settings.x_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-twitter-x"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.facebook_url %}
+                <a aria-label="Facebook" class="facebook" href="{{ site_settings.facebook_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-facebook"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.instagram_url %}
+                <a aria-label="Instagram" class="instagram" href="{{ site_settings.instagram_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-instagram"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.linkedin_url %}
+                <a aria-label="LinkedIn" class="linkedin" href="{{ site_settings.linkedin_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-linkedin"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.youtube_url %}
+                <a aria-label="YouTube" class="youtube" href="{{ site_settings.youtube_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-youtube"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.tiktok_url %}
+                <a aria-label="TikTok" class="tiktok" href="{{ site_settings.tiktok_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-tiktok"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.telegram_url %}
+                <a aria-label="Telegram" class="telegram" href="{{ site_settings.telegram_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-telegram"></i>
+                </a>
+            {% endif %}
+            {% if site_settings.whatsapp_url %}
+                <a aria-label="WhatsApp" class="whatsapp" href="{{ site_settings.whatsapp_url }}" rel="noopener noreferrer" target="_blank">
+                    <i aria-hidden="true" class="bi bi-whatsapp"></i>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</header>

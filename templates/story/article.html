@@ -1,0 +1,82 @@
+{% extends 'story/base.html' %}
+{% load i18n comments %}
+{% block main %}
+<main class="main">
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1 class="heading-title">{{ article.title }}</h1>
+                        <p class="mb-0">{{ article.intro|striptags }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="breadcrumbs" aria-label="{% trans 'Breadcrumbs' %}">
+            <div class="container">
+                <ol>
+                    <li><a href="{% url 'core_manager:home' %}">{% trans "Home" %}</a></li>
+                    <li><a href="{% url 'blog:category' category_slug=article.category.slug %}">{{ article.category.title }}</a></li>
+                    <li class="current" aria-current="page">{{ article.title }}</li>
+                </ol>
+            </div>
+        </nav>
+    </div>
+    <section class="blog-details section" id="blog-details">
+        <div class="container" data-aos="fade-up">
+            {% if article.img %}
+            <div class="article-hero article-image-only">
+                <img alt="{{ article.title }}" class="img-fluid w-100" src="{{ article.img.url }}"/>
+            </div>
+            {% endif %}
+            <div class="article-body d-block">
+                <div class="main-content">
+                    <div class="content-block">{{ article.body|safe }}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if article.author %}
+    <section class="blog-author section" id="blog-author">
+        <div class="container" data-aos="fade-up">
+            <div class="author-card">
+                <div class="author-header">
+                    <div class="author-image-container">
+                        {% if article.author.userprofile.avatar %}
+                        <img alt="{{ article.author.get_full_name|default:article.author.username }}" class="author-image" loading="lazy" src="{{ article.author.userprofile.avatar.url }}"/>
+                        {% else %}
+                        <i class="bi bi-person-circle display-1" aria-hidden="true"></i>
+                        {% endif %}
+                    </div>
+                    <div class="author-intro">
+                        <div class="name-block">
+                            <h3 class="author-name">{{ article.author.get_full_name|default:article.author.username }}</h3>
+                            <span class="verified-badge">{% trans "Author" %}</span>
+                        </div>
+                        <p class="author-tagline">{% trans "Sharing practical ideas and fresh perspectives" %}</p>
+                    </div>
+                </div>
+                <div class="author-content">
+                    <div class="bio-section">
+                        <p class="bio-text">{% trans "Our authors explore everyday life, travel, design, and learning through thoughtful stories and useful examples." %}</p>
+                    </div>
+                    <div class="author-footer">
+                        <div class="connect-links">
+                            {% if site_settings.facebook_url %}<a class="social-link" href="{{ site_settings.facebook_url }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i><span>Facebook</span></a>{% endif %}
+                            {% if site_settings.instagram_url %}<a class="social-link" href="{{ site_settings.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i><span>Instagram</span></a>{% endif %}
+                            {% if site_settings.linkedin_url %}<a class="social-link" href="{{ site_settings.linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>{% endif %}
+                            {% if site_settings.x_url %}<a class="social-link" href="{{ site_settings.x_url }}" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i><span>X</span></a>{% endif %}
+                            {% if site_settings.youtube_url %}<a class="social-link" href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i><span>YouTube</span></a>{% endif %}
+                            {% if site_settings.telegram_url %}<a class="social-link" href="{{ site_settings.telegram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="bi bi-telegram" aria-hidden="true"></i><span>Telegram</span></a>{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    {% render_comment_list for article %}
+    {% render_comment_form for article %}
+</main>
+{% endblock %}

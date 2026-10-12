@@ -1,0 +1,163 @@
+{% extends 'story/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load comments %}
+{% load blog_modules %}
+{% block main %}
+    <main class="main">
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="heading">
+                <div class="container">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-lg-8">
+                            <h1 class="heading-title">
+                                {% trans "About" %}
+                            </h1>
+                            <p class="mb-0">
+                                {% trans "Meet the team behind Story, a Wulver demo blog about creativity, travel, and everyday life." %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="breadcrumbs">
+                <div class="container">
+                    <ol>
+                        <li>
+                            <a href="{% url 'core_manager:home' %}">
+                                {% trans "Home" %}
+                            </a>
+                        </li>
+                        <li class="current">
+                            {% trans "About" %}
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 position-relative">
+                        <div class="about-img" data-aos="fade-right">
+                            <img alt="" class="img-fluid" src="{% static 'themes/story/assets/img/about/about-portrait-2.webp' %}"/>
+                        </div>
+                        <div class="experience-badge" data-aos="fade-up">
+                            <h2>
+                                3
+                            </h2>
+                            <p>
+                                {% trans "Authors" %}
+                            </p>
+                        </div>
+                        <div class="projects-badge" data-aos="fade-left">
+                            <h2>
+                                6
+                            </h2>
+                            <p>
+                                {% trans "Categories" %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h2 class="display-4 fw-bold mb-4">
+                            {% trans "Stories That Inspire Everyday Discovery" %}
+                        </h2>
+                        <p class="lead mb-4">
+                            {% trans "Story is a demo publication built with Wulver. Meet our writers and explore ideas for a more creative, curious, and thoughtful life." %}
+                        </p>
+                        <div class="features">
+                            <div class="feature-item mb-4" data-aos="fade-up">
+                                <div class="feature-icon">
+                                    <i class="bi bi-rocket-takeoff">
+                                    </i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>
+                                        {% trans "Ideas Worth Trying" %}
+                                    </h4>
+                                    <p>
+                                        {% trans "Small, practical steps help turn inspiration into a personal habit or project." %}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="feature-item mb-4" data-aos="fade-up" data-aos-delay="100">
+                                <div class="feature-icon">
+                                    <i class="bi bi-globe2">
+                                    </i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>
+                                        {% trans "A Wider Perspective" %}
+                                    </h4>
+                                    <p>
+                                        {% trans "Explore different places, experiences, and approaches through our authors’ stories." %}
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="check-list" data-aos="fade-up" data-aos-delay="200">
+                                <li>
+                                    <i class="bi bi-check-circle">
+                                    </i>
+                                    {% trans "Thoughtful stories written by our demo editorial team." %}
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle">
+                                    </i>
+                                    {% trans "Fresh ideas across six categories, from design to education." %}
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle">
+                                    </i>
+                                    {% trans "Fresh perspectives on creativity, travel, and everyday life." %}
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle">
+                                    </i>
+                                    {% trans "Practical ideas to inspire your next project or adventure." %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /About Section -->
+<!-- Team Section -->
+<section class="team section" id="team">
+    <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">{% trans "Team" %}</span>
+        <h2>{% trans "Team" %}</h2>
+        <p>{% trans "Meet our authors." %}</p>
+    </div>
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        {% blog_authors as team_members %}
+        <div class="row g-4">
+            {% for member in team_members %}
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-member">
+                    <div class="member-image">
+                        {% if member.userprofile.avatar %}
+                        <img alt="{{ member.get_full_name|default:member.username }}" class="img-fluid" loading="lazy" src="{{ member.userprofile.avatar.url }}"/>
+                        {% else %}
+                        <div class="d-flex align-items-center justify-content-center bg-light" style="aspect-ratio: 1 / 1;">
+                            <i class="bi bi-person-circle display-1 text-secondary" aria-hidden="true"></i>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="member-info">
+                        <h4>{{ member.get_full_name|default:member.username }}</h4>
+                        <span>{% trans "Author" %}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- /Team Section -->
+    </main>
+{% endblock %}
