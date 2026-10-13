@@ -19,7 +19,39 @@ one administration interface.
 - optional AI-assisted administration features;
 - Django Unfold administration and Rosetta translation management.
 
-## Local development
+## Quick start from PyPI
+
+Use Python 3.12 or newer (Python 3.14 is recommended). Create and activate a
+virtual environment in a new directory.
+
+Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install wulver
+wulver init site
+cd site
+python manage.py runserver
+```
+
+Linux and macOS:
+
+```bash
+python3.14 -m venv .venv
+source .venv/bin/activate
+python -m pip install wulver
+wulver init site
+cd site
+python manage.py runserver
+```
+
+The installer asks for languages, whether to install the complete Story demo,
+and administrator credentials. Both choices start with local-development
+settings. Review the generated `.env` and administration dashboard before
+production deployment. This is an alpha release, not a production-readiness guarantee.
+
+## Develop from source
 
 Requirements: Python 3.14 and the system libraries required by Pillow and the
 database driver you choose.
@@ -34,12 +66,9 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-For a clean starter database, the Wulver initialization command can generate
-migrations, apply them, and synchronize built-in template components:
-
-```bash
-python manage.py wulver_init
-```
+`python manage.py wulver_init` is an internal source-development command, not
+the public installation workflow. New sites should be created with
+`wulver init site` as shown above.
 
 Never commit `.env`, a local database, uploaded media, generated static files,
 or backup archives. The supplied `.gitignore` excludes these runtime files.

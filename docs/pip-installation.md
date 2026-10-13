@@ -1,13 +1,14 @@
-# Wulver pip installation — local alpha
+# Wulver pip installation — public alpha
 
-Nothing is published to PyPI yet. This is a packaging prototype, not a production release.
+Wulver is published as an alpha package. Test upgrades and keep a verified
+backup before using an alpha release for a live site.
 
 ## Build and install
 
 ```sh
 python -m pip install build
 python -m build
-python -m pip install dist/wulver-0.1.0a1-py3-none-any.whl
+python -m pip install wulver
 wulver init mysite
 cd mysite
 python manage.py runserver
