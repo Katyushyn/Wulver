@@ -1,4 +1,4 @@
-﻿annotated-types==0.7.0
+annotated-types==0.7.0
 anyio==4.13.0
 asgiref==3.11.1
 beautifulsoup4==4.15.0
@@ -29,7 +29,7 @@ lxml==6.1.1
 openai==2.41.1
 packaging==26.2
 pillow==12.2.0
-pillow-avif-plugin==1.5.5
+pillow-avif-plugin==1.6.0
 polib==1.2.0
 pycparser==3.0
 pycryptodomex==3.23.0
