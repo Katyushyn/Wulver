@@ -1,4 +1,4 @@
-﻿annotated-types==0.7.0
+annotated-types==0.7.0
 anyio==4.13.0
 asgiref==3.11.1
 beautifulsoup4==4.15.0
@@ -36,7 +36,7 @@ pycryptodomex==3.23.0
 pydantic==2.13.4
 pydantic_core==2.46.4
 PyJWT==2.13.0
-pyzipper==0.3.6
+pyzipper==0.4.0
 rcssmin==1.2.2
 regex==2026.5.9
 requests==2.34.2
