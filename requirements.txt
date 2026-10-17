@@ -1,4 +1,4 @@
-﻿annotated-types==0.7.0
+annotated-types==0.7.0
 anyio==4.13.0
 asgiref==3.11.1
 beautifulsoup4==4.15.0
@@ -48,7 +48,7 @@ tiktoken==0.13.0
 tqdm==4.68.2
 typing_extensions==4.15.0
 typing-inspection==0.4.2
-tzdata==2026.2
+tzdata==2026.5
 Unidecode==1.4.0
 urllib3==2.7.0
 whitenoise==6.12.0
